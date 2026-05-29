@@ -1,0 +1,6 @@
+openai
+requests
+feedparser
+beautifulsoup4
+PyYAML
+python-dateutil
