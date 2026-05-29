@@ -87,7 +87,9 @@ When changing the brief criteria, update both places:
 
 ## LINE Dispatch
 
-The workflow `.github/workflows/line-dispatch.yml` runs when a Markdown file under `articles/**/*.md` is pushed to `main` or `claude/**`.
+The workflow `.github/workflows/line-dispatch.yml` runs when a Markdown file under `articles/**/*.md` is pushed to `main`.
+
+If Claude Routine opens a pull request instead of pushing directly to `main`, LINE is sent only after the PR is merged. This avoids sending once from the Claude branch and again from the merge commit.
 
 It also supports manual `workflow_dispatch` for testing. Manual dispatch uses the newest Markdown file in `articles/`; the included `articles/sample-ai-brief.md` exists so you can test the LINE path before Claude writes a real article.
 
