@@ -1,17 +1,43 @@
 from __future__ import annotations
 
+import logging
 import os
 from pathlib import Path
 from typing import Any
 
 import requests
 
-from utils import REPORTS_DIR, configure_logging, graceful_truncate
 
-
-LOGGER = configure_logging("send_line")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+REPORTS_DIR = PROJECT_ROOT / "reports"
+LOGGER = logging.getLogger("send_line")
 LINE_PUSH_ENDPOINT = "https://api.line.me/v2/bot/message/push"
 LINE_MAX_CHARS = 4490
+
+
+def configure_logging() -> None:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
+    )
+
+
+def graceful_truncate(text: str, max_chars: int, suffix: str) -> str:
+    text = text.strip()
+    if len(text) <= max_chars:
+        return text
+    budget = max_chars - len(suffix)
+    if budget <= 0:
+        return text[:max_chars]
+    cut = text[:budget].rstrip()
+    newline_cut = cut.rfind("\n")
+    if newline_cut > budget * 0.65:
+        cut = cut[:newline_cut].rstrip()
+    else:
+        space_cut = cut.rfind(" ")
+        if space_cut > budget * 0.8:
+            cut = cut[:space_cut].rstrip()
+    return cut + suffix
 
 
 def required_env(name: str) -> str:
@@ -47,6 +73,7 @@ def push_line_message(token: str, recipient: str, text: str) -> requests.Respons
 
 
 def main() -> int:
+    configure_logging()
     token = required_env("LINE_CHANNEL_ACCESS_TOKEN")
     recipient = required_env("LINE_TO")
     digest = load_digest(REPORTS_DIR / "latest_line_digest.txt")

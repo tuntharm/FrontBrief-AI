@@ -3,4 +3,5 @@ __pycache__/
 .venv/
 data/*.tmp
 reports/*.tmp
+reports/latest_line_digest.txt
 .pytest_cache/
