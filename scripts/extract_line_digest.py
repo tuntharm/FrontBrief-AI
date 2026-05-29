@@ -18,6 +18,16 @@ class TopSignal:
     link: str = ""
 
 
+SIGNAL_SECTION_HEADINGS = [
+    "Global AI / Frontier Models",
+    "AI Infrastructure / Markets",
+    "Research / Technical Signal",
+    "Product / Startup / Adoption Signal",
+    "Tharm's Deeptech Lens",
+    "Tharm’s Deeptech Lens",
+]
+
+
 def newest_article() -> Path:
     articles = sorted(ARTICLES_DIR.glob("*.md"), key=article_sort_key, reverse=True)
     if not articles:
@@ -78,14 +88,21 @@ def field_value(block: str, field_name: str) -> str:
     return match.group(1).strip() if match else ""
 
 
-def extract_top_signals(text: str) -> list[TopSignal]:
-    body = section_body(text, "Top Signals")
-    if not body:
-        body = text
+def signal_source_body(text: str) -> str:
+    top_signals = section_body(text, "Top Signals")
+    if top_signals:
+        return top_signals
 
+    bodies = [section_body(text, heading) for heading in SIGNAL_SECTION_HEADINGS]
+    bodies = [body for body in bodies if body]
+    return "\n\n".join(bodies) if bodies else text
+
+
+def extract_top_signals(text: str) -> list[TopSignal]:
+    body = signal_source_body(text)
     heading_matches = list(re.finditer(r"^###\s+(.+?)\s*$", body, flags=re.MULTILINE))
     signals: list[TopSignal] = []
-    for index, match in enumerate(heading_matches[:3]):
+    for index, match in enumerate(heading_matches[:5]):
         start = match.end()
         end = heading_matches[index + 1].start() if index + 1 < len(heading_matches) else len(body)
         block = body[start:end]
@@ -106,7 +123,7 @@ def extract_top_signals(text: str) -> list[TopSignal]:
 
 
 def extract_founder_takeaway(text: str) -> str:
-    body = section_body(text, "Founder Takeaway")
+    body = section_body(text, "Founder / Investor Takeaway") or section_body(text, "Founder Takeaway")
     lines = [
         re.sub(r"^\s*[-*]\s+", "", line).strip()
         for line in body.splitlines()
@@ -132,6 +149,14 @@ def graceful_truncate(text: str, max_chars: int = MAX_LINE_CHARS) -> str:
     return cut + suffix
 
 
+def display_article_path(article_path: Path) -> str:
+    resolved = article_path.resolve()
+    try:
+        return resolved.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return article_path.as_posix()
+
+
 def build_digest(article_path: Path, text: str) -> str:
     report_date = extract_report_date(article_path, text)
     tldr = extract_tldr(text) or ["No TL;DR bullets found in the article."]
@@ -139,12 +164,12 @@ def build_digest(article_path: Path, text: str) -> str:
     founder_takeaway = extract_founder_takeaway(text)
 
     top_lines: list[str] = []
-    for index, signal in enumerate(top_signals[:3], start=1):
+    for index, signal in enumerate(top_signals[:5], start=1):
         top_lines.append(f"{index}. [{signal.headline}] — {signal.why_it_matters}")
         if signal.link:
             top_lines.append(f"   Read: {signal.link}")
     if not top_lines:
-        top_lines = ["1. No Top Signals section found in the article."]
+        top_lines = ["1. No signal sections found in the article."]
 
     digest = "\n".join(
         [
@@ -160,7 +185,7 @@ def build_digest(article_path: Path, text: str) -> str:
             founder_takeaway,
             "",
             "Full report:",
-            article_path.relative_to(PROJECT_ROOT).as_posix(),
+            display_article_path(article_path),
         ]
     )
     return graceful_truncate(digest)

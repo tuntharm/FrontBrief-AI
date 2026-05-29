@@ -1,4 +1,4 @@
-# Daily AI & Deeptech Brief
+# Daily AI Brief
 
 This repository is a Claude Routine plus GitHub Actions LINE-dispatch pipeline.
 
@@ -6,13 +6,15 @@ Claude Routine does the intelligence work: it searches, writes, and commits a Ma
 
 This version does **not** use the OpenAI API. `OPENAI_API_KEY` is no longer required, and no OpenAI API billing is needed for this version. Claude Routine uses your Claude account/routine quota.
 
+The brief is broad AI-world intelligence, not a PhD-only or deeptech-only digest. Tharm's PhD lens appears as one optional section: `Tharm's Deeptech Lens`.
+
 This repo uses the LINE Messaging API only.
 
 ## Architecture
 
 ```text
 Claude Routine, daily 07:00 Europe/London
-  -> searches AI/deeptech news
+  -> searches broad AI-world news
   -> writes articles/YYYY-MM-DD-ai-brief.md
   -> commits and pushes the article
 
@@ -70,6 +72,11 @@ with commit message:
 Add daily AI brief YYYY-MM-DD
 ```
 
+When you change the news context, update both places:
+
+1. Edit `docs/claude-routine-prompt.md` in GitHub for version control.
+2. Paste the same updated prompt into Claude Routine Instructions, because the scheduler uses the Instructions box directly.
+
 ## LINE Dispatch
 
 The workflow `.github/workflows/line-dispatch.yml` runs when a Markdown file under `articles/**/*.md` is pushed to `main` or `claude/**`.
@@ -107,22 +114,26 @@ python scripts/send_line.py
 Claude Routine should follow the format in `docs/claude-routine-prompt.md`:
 
 ```text
-# Daily AI & Deeptech Brief — YYYY-MM-DD
+# Daily AI Brief — YYYY-MM-DD
 
 ## TL;DR
 
-## Top Signals
+## Global AI / Frontier Models
 
-## Scientific ML / Engineering Simulation Signal
+## AI Infrastructure / Markets
 
-## Market / Investment Signal
+## Research / Technical Signal
 
-## Founder Takeaway
+## Product / Startup / Adoption Signal
+
+## Tharm's Deeptech Lens
+
+## Founder / Investor Takeaway
 
 ## Watchlist
 ```
 
-`scripts/extract_line_digest.py` degrades gracefully if optional sections are missing, but `TL;DR`, `Top Signals`, and `Founder Takeaway` give the best LINE digest. `TL;DR` is the strategic summary; `Top Signals` should contain the evidence trail with source links. The LINE digest includes `Read:` links when Claude writes `Link:` fields in the article.
+`scripts/extract_line_digest.py` degrades gracefully if optional sections are missing. `TL;DR` becomes the strategic summary in LINE. The five track sections provide the evidence trail, and the LINE digest includes `Read:` links when Claude writes `Link:` fields in the article.
 
 ## Security
 
