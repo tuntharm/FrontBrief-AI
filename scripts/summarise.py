@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 import argparse
-import json
 import os
+import re
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
-
-from openai import OpenAI
 
 from utils import (
     CONFIG_DIR,
@@ -19,6 +17,7 @@ from utils import (
     graceful_truncate,
     load_yaml,
     london_report_date,
+    parse_datetime,
     read_json,
     write_json,
     write_text,
@@ -26,7 +25,6 @@ from utils import (
 
 
 LOGGER = configure_logging("summarise")
-DEFAULT_MODEL = "gpt-5.4"
 LINE_MAX_CHARS = 4490
 SCORE_FIELDS = [
     "phd_relevance",
@@ -36,7 +34,141 @@ SCORE_FIELDS = [
     "urgency",
 ]
 
-SYSTEM_INSTRUCTION = """You are an intelligence analyst for a PhD researcher and future deeptech founder/investor. Your job is to filter signal from noise. Be concise, technical where useful, and commercially aware. Do not hype. Do not include generic AI news unless it affects infrastructure economics, scientific ML, engineering simulation, deeptech commercialisation, or investment structure."""
+TRACK_BONUSES = {
+    "ai_infrastructure": {"investment_relevance": 2, "moat_implication": 1, "urgency": 1},
+    "markets_investment": {"investment_relevance": 2, "moat_implication": 1, "urgency": 1},
+    "frontier_research": {"phd_relevance": 1, "technical_novelty": 2},
+    "scientific_ml": {"phd_relevance": 2, "technical_novelty": 2},
+    "engineering_simulation": {"phd_relevance": 2, "technical_novelty": 1, "moat_implication": 1},
+    "aerospace_robotics_shm": {"phd_relevance": 1, "technical_novelty": 1, "moat_implication": 1},
+    "deeptech_policy_startups": {"investment_relevance": 1, "moat_implication": 1, "urgency": 1},
+}
+
+KEYWORDS = {
+    "phd_relevance": [
+        "scientific machine learning",
+        "surrogate",
+        "neural operator",
+        "fourier neural operator",
+        "deeponet",
+        "graph neural",
+        "gnn",
+        "meshgraphnet",
+        "graphcast",
+        "physics-informed",
+        "pde",
+        "finite element",
+        "fea",
+        "cfd",
+        "simulation",
+        "computational fluid",
+        "structural dynamics",
+        "structural health",
+        "digital twin",
+        "aerospace",
+        "robotics",
+        "rollout",
+        "boundary condition",
+    ],
+    "investment_relevance": [
+        "nvidia",
+        "amd",
+        "tsmc",
+        "broadcom",
+        "hyperscaler",
+        "gpu",
+        "accelerator",
+        "ai server",
+        "data center",
+        "datacenter",
+        "hbm",
+        "memory",
+        "networking",
+        "ethernet",
+        "infiniband",
+        "capex",
+        "capacity",
+        "supply chain",
+        "inference",
+        "energy",
+        "cooling",
+        "funding",
+        "raises",
+        "acquisition",
+        "startup",
+        "investment",
+    ],
+    "technical_novelty": [
+        "research",
+        "paper",
+        "arxiv",
+        "nature",
+        "science",
+        "benchmark",
+        "dataset",
+        "architecture",
+        "model",
+        "method",
+        "open source",
+        "open-source",
+        "introduces",
+        "announces",
+        "released",
+        "launches",
+    ],
+    "moat_implication": [
+        "capacity",
+        "cowos",
+        "advanced packaging",
+        "foundry",
+        "supply chain",
+        "proprietary",
+        "partnership",
+        "exclusive",
+        "ecosystem",
+        "platform",
+        "deployment",
+        "customer",
+        "talent",
+        "acquires",
+        "acquisition",
+        "infrastructure",
+        "energy",
+        "cooling",
+        "data center",
+        "datacenter",
+    ],
+    "urgency": [
+        "announces",
+        "launches",
+        "released",
+        "raises",
+        "acquires",
+        "acquisition",
+        "earnings",
+        "guidance",
+        "policy",
+        "regulation",
+        "ban",
+        "export control",
+        "partnership",
+        "contract",
+        "deployment",
+    ],
+}
+
+IGNORE_KEYWORDS = [
+    "prompt engineering",
+    "consumer app",
+    "chatbot",
+    "productivity tips",
+    "top 10",
+    "how to use",
+    "opinion",
+    "will change everything",
+    "social media",
+    "image generator",
+]
 
 
 def parse_args() -> argparse.Namespace:
@@ -47,95 +179,84 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def extract_json_object(text: str) -> dict[str, Any]:
-    stripped = text.strip()
-    if stripped.startswith("```"):
-        stripped = stripped.strip("`")
-        if stripped.lower().startswith("json"):
-            stripped = stripped[4:].strip()
-    try:
-        return json.loads(stripped)
-    except json.JSONDecodeError:
-        start = stripped.find("{")
-        end = stripped.rfind("}")
-        if start == -1 or end == -1 or end <= start:
-            raise
-        return json.loads(stripped[start : end + 1])
+def text_for_item(item: dict[str, Any]) -> str:
+    return " ".join(
+        str(item.get(field, ""))
+        for field in ("title", "summary", "source", "track")
+    ).lower()
 
 
-def openai_json(client: OpenAI, model: str, system: str, user: str) -> dict[str, Any]:
-    completion = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": system},
-            {"role": "user", "content": user},
-        ],
-        response_format={"type": "json_object"},
-    )
-    content = completion.choices[0].message.content or "{}"
-    return extract_json_object(content)
+def keyword_hits(text: str, keywords: list[str]) -> list[str]:
+    return [keyword for keyword in keywords if keyword in text]
 
 
-def compact_candidates(candidates: list[dict[str, Any]], limit: int = 60) -> list[dict[str, Any]]:
-    sorted_candidates = sorted(candidates, key=lambda item: item.get("published_at") or "", reverse=True)
-    compact: list[dict[str, Any]] = []
-    for item in sorted_candidates[:limit]:
-        compact.append(
-            {
-                "id": item.get("id"),
-                "title": item.get("title"),
-                "source": item.get("source"),
-                "url": item.get("url"),
-                "published_at": item.get("published_at"),
-                "summary": item.get("summary"),
-                "track": item.get("track"),
-            }
-        )
-    return compact
+def recency_score(item: dict[str, Any]) -> int:
+    published_at = parse_datetime(item.get("published_at"))
+    if not published_at:
+        return 1
+    age_hours = (datetime.now(UTC) - published_at).total_seconds() / 3600
+    if age_hours <= 24:
+        return 2
+    if age_hours <= 48:
+        return 1
+    return 0
 
 
-def score_candidates(
-    client: OpenAI,
-    model: str,
-    candidates: list[dict[str, Any]],
-    scoring_config: dict[str, Any],
-) -> list[dict[str, Any]]:
-    prompt = {
-        "task": "Score every candidate for a daily AI/deeptech intelligence brief. Return JSON only.",
-        "audience": "Tharm, a PhD researcher in AI/surrogate modelling for engineering simulation and future deeptech founder/investor.",
-        "score_fields": {
-            "phd_relevance": "0-5 relevance to scientific ML, surrogate modelling, engineering AI, PhD research direction.",
-            "investment_relevance": "0-5 relevance to AI infrastructure, deeptech markets, capex, supply chain, startup/funding/acquisition signals.",
-            "technical_novelty": "0-5 technical novelty or research significance.",
-            "moat_implication": "0-5 implication for defensibility, bottlenecks, talent, data, hardware, or commercial moat.",
-            "urgency": "0-5 need to read now rather than monitor.",
-        },
-        "weights": scoring_config.get("weights", {}),
-        "rules": scoring_config.get("inclusion_rules", {}),
-        "ignore": scoring_config.get("guidance", {}).get("ignore", []),
-        "output_schema": {
-            "scored_candidates": [
-                {
-                    "candidate_id": "string, must match input id",
-                    "scores": {
-                        "phd_relevance": "integer 0-5",
-                        "investment_relevance": "integer 0-5",
-                        "technical_novelty": "integer 0-5",
-                        "moat_implication": "integer 0-5",
-                        "urgency": "integer 0-5",
-                    },
-                    "score_reason": "one concise line",
-                    "suggested_section": "market | research | engineering | watchlist | ignore",
-                }
-            ]
-        },
-        "candidates": compact_candidates(candidates),
+def score_item(item: dict[str, Any]) -> dict[str, Any]:
+    text = text_for_item(item)
+    track = str(item.get("track", ""))
+    score_map = {field: 0 for field in SCORE_FIELDS}
+    matched_terms: dict[str, list[str]] = {}
+
+    for field, bonus in TRACK_BONUSES.get(track, {}).items():
+        score_map[field] += bonus
+
+    for field, keywords in KEYWORDS.items():
+        hits = keyword_hits(text, keywords)
+        matched_terms[field] = hits[:5]
+        score_map[field] += min(3, len(hits))
+
+    score_map["urgency"] += recency_score(item)
+
+    penalty_hits = keyword_hits(text, IGNORE_KEYWORDS)
+    if penalty_hits:
+        score_map["phd_relevance"] -= 2
+        score_map["investment_relevance"] -= 2
+        score_map["technical_novelty"] -= 1
+        score_map["moat_implication"] -= 1
+        score_map["urgency"] -= 1
+
+    scores = {field: clamp_score(value) for field, value in score_map.items()}
+    reason_terms = sorted({term for terms in matched_terms.values() for term in terms})[:5]
+    if penalty_hits:
+        reason = f"Filtered down for low-signal terms: {', '.join(penalty_hits[:3])}."
+    elif reason_terms:
+        reason = f"Matched {track} signal terms: {', '.join(reason_terms)}."
+    else:
+        reason = f"Track-level signal from {track}, but limited supporting keywords."
+
+    return {
+        "candidate_id": item.get("id"),
+        "scores": scores,
+        "score_reason": reason,
+        "suggested_section": suggested_section(item, scores),
     }
-    result = openai_json(client, model, SYSTEM_INSTRUCTION, json.dumps(prompt, ensure_ascii=False))
-    scored = result.get("scored_candidates", [])
-    if not isinstance(scored, list):
-        raise ValueError("OpenAI scoring response did not contain scored_candidates list")
-    return scored
+
+
+def suggested_section(item: dict[str, Any], scores: dict[str, int]) -> str:
+    track = str(item.get("track", ""))
+    if track in {"ai_infrastructure", "markets_investment", "deeptech_policy_startups"}:
+        return "market"
+    if track in {"scientific_ml", "engineering_simulation", "aerospace_robotics_shm"}:
+        return "engineering"
+    if scores["technical_novelty"] >= scores["investment_relevance"]:
+        return "research"
+    return "market"
+
+
+def score_candidates(candidates: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    sorted_candidates = sorted(candidates, key=lambda item: item.get("published_at") or "", reverse=True)
+    return [score_item(item) for item in sorted_candidates[:80]]
 
 
 def apply_scoring_rules(
@@ -152,8 +273,7 @@ def apply_scoring_rules(
 
     enriched: list[dict[str, Any]] = []
     for scored in model_scores:
-        candidate_id = str(scored.get("candidate_id", ""))
-        candidate = candidates_by_id.get(candidate_id)
+        candidate = candidates_by_id.get(str(scored.get("candidate_id", "")))
         if not candidate:
             continue
         scores_raw = scored.get("scores", {})
@@ -188,8 +308,80 @@ def apply_scoring_rules(
     return enriched, selected
 
 
+def first_sentence(text: str, fallback: str, limit: int = 220) -> str:
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if not text:
+        text = fallback
+    parts = re.split(r"(?<=[.!?])\s+", text)
+    sentence = parts[0] if parts else text
+    if len(sentence) > limit:
+        sentence = sentence[: limit - 3].rsplit(" ", 1)[0].rstrip() + "..."
+    return sentence
+
+
+def action_for(item: dict[str, Any]) -> str:
+    scores = item.get("scores", {})
+    if item.get("weighted_score", 0) >= 3.8 or scores.get("urgency", 0) >= 4:
+        return "Read now"
+    if item.get("decision") == "include":
+        return "Monitor"
+    return "Ignore"
+
+
+def why_it_matters(item: dict[str, Any]) -> str:
+    section = item.get("suggested_section")
+    if section == "market":
+        return "Potential signal on AI infrastructure economics, supply constraints, capex, or strategic positioning."
+    if section == "engineering":
+        return "Potential signal for scientific ML, simulation acceleration, digital twins, or engineering AI workflows."
+    return "Potential research signal that may affect model capability, methods, or technical direction."
+
+
+def escape_table(value: Any) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ").strip()
+
+
+def item_block(item: dict[str, Any], section: str) -> str:
+    title = item.get("title", "Untitled")
+    source = item.get("source", "Unknown")
+    link = item.get("url", "")
+    summary = first_sentence(item.get("summary"), str(title))
+    reason = item.get("score_reason", "")
+    action = action_for(item)
+
+    if section == "market":
+        return f"""### {title}
+- Source: {source}
+- Link: {link}
+- What happened: {summary}
+- Why it matters: {why_it_matters(item)}
+- Investment implication: Watch whether this changes compute supply, margins, capex timing, or startup leverage.
+- Moat implication: {reason}
+- Action: {action}
+"""
+    if section == "research":
+        return f"""### {title}
+- Source: {source}
+- Link: {link}
+- What happened: {summary}
+- Technical significance: {why_it_matters(item)}
+- What this may replace or weaken: Existing assumptions, toolchains, or benchmarks if the result is validated.
+- Relevance to scientific ML / engineering AI: {reason}
+- Action: {action}
+"""
+    return f"""### {title}
+- Source: {source}
+- Link: {link}
+- What happened: {summary}
+- Why it matters technically: {why_it_matters(item)}
+- Relevance to Tharm's PhD: Check for links to surrogate modelling, PDE learning, FEA/CFD acceleration, rollout stability, or digital twins.
+- Risk / limitation: Metadata-only scoring; read the source before treating this as evidence.
+- Action: {action}
+"""
+
+
 def empty_report(report_date: str, reason: str) -> tuple[str, str]:
-    full_report = f"""# Daily AI & Deeptech Brief — {report_date}
+    full_report = f"""# Daily AI & Deeptech Brief - {report_date}
 
 ## TL;DR
 - {reason}
@@ -216,7 +408,7 @@ There is no need to force a read today. Preserve attention for stronger signals 
 |---:|---|---|---:|---:|---:|---:|---:|---|
 | - | No candidates | - | - | - | - | - | - | - |
 """
-    digest = f"""Daily AI & Deeptech Brief — {report_date}
+    digest = f"""Daily AI & Deeptech Brief - {report_date}
 
 TL;DR:
 1. {reason}
@@ -225,121 +417,135 @@ Top Signals:
 1. No strong signal passed the filter today.
 
 Founder/Researcher Takeaway:
-Do not pad the pipeline with weak news. Monitor infrastructure economics and scientific ML for stronger evidence tomorrow.
+No model API was used. Do not pad the pipeline with weak news; monitor for stronger evidence tomorrow.
 
 Full report saved in GitHub: reports/{report_date}-brief.md"""
     return full_report, digest
 
 
+def section_text(title: str, selected: list[dict[str, Any]], section: str) -> str:
+    items = [item for item in selected if item.get("suggested_section") == section]
+    if not items:
+        return f"## {title}\nNo high-quality {title.lower()} passed the filter today.\n"
+    blocks = "\n".join(item_block(item, section).rstrip() for item in items)
+    return f"## {title}\n{blocks}\n"
+
+
+def tldr_bullets(selected: list[dict[str, Any]]) -> list[str]:
+    bullets = []
+    for item in selected[:3]:
+        bullets.append(f"{item.get('title')} - {why_it_matters(item)}")
+    return bullets or ["No high-quality signal passed the filter today; weak items were excluded."]
+
+
+def founder_takeaway(selected: list[dict[str, Any]]) -> str:
+    if not selected:
+        return "No strong signal changes the research or founder map today. Keep the pipeline strict and wait for clearer evidence."
+    tracks = sorted({str(item.get("track", "unknown")) for item in selected})
+    return (
+        "Today's selected signals cluster around "
+        + ", ".join(tracks)
+        + ". Treat this as a monitoring brief, not a final judgement: the no-API scorer preserves cost discipline, but important nuance still requires reading the linked source."
+    )
+
+
+def watchlist(selected: list[dict[str, Any]]) -> list[str]:
+    base = [
+        "AI infrastructure capex, accelerator supply, memory, networking, energy, and cooling.",
+        "Scientific ML methods that improve PDE surrogate accuracy, stability, or boundary-condition generalisation.",
+        "Deeptech funding, acquisition, policy, or talent movement that changes defensibility.",
+    ]
+    if not selected:
+        return base
+    top_tracks = [str(item.get("track")) for item in selected[:3]]
+    return [f"Fresh signals in {track}." for track in top_tracks] + base[: max(0, 3 - len(top_tracks))]
+
+
+def scored_table(scored_candidates: list[dict[str, Any]]) -> str:
+    rows = [
+        "| Rank | Title | Track | PhD | Investment | Novelty | Moat | Urgency | Decision |",
+        "|---:|---|---|---:|---:|---:|---:|---:|---|",
+    ]
+    for item in scored_candidates[:30]:
+        scores = item.get("scores", {})
+        rows.append(
+            "| {rank} | {title} | {track} | {phd} | {investment} | {novelty} | {moat} | {urgency} | {decision} |".format(
+                rank=item.get("rank", "-"),
+                title=escape_table(item.get("title", "")),
+                track=escape_table(item.get("track", "")),
+                phd=scores.get("phd_relevance", 0),
+                investment=scores.get("investment_relevance", 0),
+                novelty=scores.get("technical_novelty", 0),
+                moat=scores.get("moat_implication", 0),
+                urgency=scores.get("urgency", 0),
+                decision=escape_table(item.get("decision", "")),
+            )
+        )
+    return "\n".join(rows)
+
+
 def compose_report(
-    client: OpenAI,
-    model: str,
     report_date: str,
     scored_candidates: list[dict[str, Any]],
     selected: list[dict[str, Any]],
     scoring_config: dict[str, Any],
 ) -> tuple[str, str]:
-    strong_note = ""
     threshold = int(scoring_config.get("inclusion_rules", {}).get("fewer_strong_items_note_threshold", 3))
+    bullets = tldr_bullets(selected)
+    fewer_note = []
     if len(selected) < threshold:
-        strong_note = "Fewer than 3 high-quality signals passed the threshold today. Do not pad the brief."
+        fewer_note.append("Fewer than 3 high-quality signals passed the threshold today; weak items were not included.")
 
-    prompt = {
-        "task": "Write the full Markdown report and one LINE digest. Return JSON only.",
-        "report_date": report_date,
-        "style": [
-            "English only.",
-            "Sharp and concise.",
-            "No motivational filler.",
-            "No generic hype.",
-            "Avoid saying revolutionary unless justified.",
-            "Be direct about weak signals.",
-            "If selected_items is empty, say there was no high-quality news and do not pad.",
-            "Use selected_items only for the main report sections and Top Signals.",
-            "Do not promote ignored candidates into narrative sections; ignored items may appear only in the Scored Candidates table.",
-        ],
-        "strong_note": strong_note,
-        "full_report_required_format": """# Daily AI & Deeptech Brief — YYYY-MM-DD
+    full_report = "\n".join(
+        [
+            f"# Daily AI & Deeptech Brief - {report_date}",
+            "",
+            "## TL;DR",
+            *[f"- {bullet}" for bullet in fewer_note + bullets],
+            "",
+            section_text("Market / Investment Signal", selected, "market").rstrip(),
+            "",
+            section_text("Research Signal", selected, "research").rstrip(),
+            "",
+            section_text("Scientific ML / Engineering Simulation Signal", selected, "engineering").rstrip(),
+            "",
+            "## Founder Takeaway",
+            founder_takeaway(selected),
+            "",
+            "## Watchlist",
+            *[f"- {item}" for item in watchlist(selected)[:3]],
+            "",
+            "## Scored Candidates",
+            scored_table(scored_candidates),
+        ]
+    )
 
-## TL;DR
-- Maximum 3 bullets.
-
-## Market / Investment Signal
-### [Headline]
-- Source:
-- Link:
-- What happened:
-- Why it matters:
-- Investment implication:
-- Moat implication:
-- Action: Read now / Monitor / Ignore
-
-## Research Signal
-### [Headline]
-- Source:
-- Link:
-- What happened:
-- Technical significance:
-- What this may replace or weaken:
-- Relevance to scientific ML / engineering AI:
-- Action: Read now / Monitor / Ignore
-
-## Scientific ML / Engineering Simulation Signal
-### [Headline]
-- Source:
-- Link:
-- What happened:
-- Why it matters technically:
-- Relevance to Tharm's PhD:
-- Risk / limitation:
-- Action: Read now / Monitor / Ignore
-
-## Founder Takeaway
-One sharp paragraph.
-
-## Watchlist
-Three things to monitor next.
-
-## Scored Candidates
-| Rank | Title | Track | PhD | Investment | Novelty | Moat | Urgency | Decision |""",
-        "line_digest_required_format": f"""Daily AI & Deeptech Brief — {report_date}
-
-TL;DR:
-1. ...
-2. ...
-3. ...
-
-Top Signals:
-1. [Headline] — one-line why it matters.
-
-Founder/Researcher Takeaway:
-...
-
-Full report saved in GitHub: reports/{report_date}-brief.md""",
-        "line_digest_max_chars": LINE_MAX_CHARS,
-        "selected_items": selected,
-        "scored_candidates": scored_candidates[:30],
-        "output_schema": {
-            "full_report": "markdown string",
-            "line_digest": "plain text string under 4500 characters",
-        },
-    }
-    result = openai_json(client, model, SYSTEM_INSTRUCTION, json.dumps(prompt, ensure_ascii=False))
-    full_report = str(result.get("full_report", "")).strip()
-    line_digest = str(result.get("line_digest", "")).strip()
-    if not full_report.startswith("# Daily AI & Deeptech Brief"):
-        raise ValueError("OpenAI composition response did not include a valid full_report")
-    if "Full report saved in GitHub:" not in line_digest:
-        line_digest = line_digest.rstrip() + f"\n\nFull report saved in GitHub: reports/{report_date}-brief.md"
-    if len(selected) < threshold and "Fewer than 3 high-quality signals" not in full_report:
-        note = "- Fewer than 3 high-quality signals passed the threshold today; weak items were not included.\n"
-        full_report = full_report.replace("## TL;DR\n", f"## TL;DR\n{note}", 1)
-    line_digest = graceful_truncate(
-        line_digest,
+    top_lines = [
+        f"{index}. {item.get('title')} - {why_it_matters(item)}"
+        for index, item in enumerate(selected[:3], start=1)
+    ] or ["1. No strong signal passed the filter today."]
+    digest = "\n".join(
+        [
+            f"Daily AI & Deeptech Brief - {report_date}",
+            "",
+            "TL;DR:",
+            *[f"{index}. {bullet}" for index, bullet in enumerate(bullets[:3], start=1)],
+            "",
+            "Top Signals:",
+            *top_lines,
+            "",
+            "Founder/Researcher Takeaway:",
+            founder_takeaway(selected),
+            "",
+            f"Full report saved in GitHub: reports/{report_date}-brief.md",
+        ]
+    )
+    digest = graceful_truncate(
+        digest,
         LINE_MAX_CHARS,
         "\n\n[Truncated to fit LINE. Full report is in GitHub.]",
     )
-    return full_report, line_digest
+    return full_report, digest
 
 
 def main() -> int:
@@ -357,25 +563,19 @@ def main() -> int:
         write_text(REPORTS_DIR / "latest_line_digest.txt", digest)
         write_json(
             DATA_DIR / "scored_candidates.json",
-            {"generated_at": datetime.now(UTC).isoformat(), "items": []},
+            {"generated_at": datetime.now(UTC).isoformat(), "scoring_mode": "deterministic_no_api", "items": []},
         )
         LOGGER.info("No candidates found; wrote empty report")
         return 0
 
-    api_key = os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        raise RuntimeError("OPENAI_API_KEY is required to score and summarise candidates")
-    model = os.getenv("OPENAI_MODEL") or DEFAULT_MODEL
-    client = OpenAI(api_key=api_key)
-
-    LOGGER.info("Scoring %d candidates with model %s", min(len(candidates), 60), model)
-    model_scores = score_candidates(client, model, candidates, scoring_config)
-    scored_candidates, selected = apply_scoring_rules(candidates, model_scores, scoring_config)
+    LOGGER.info("Scoring %d candidates with deterministic no-API rules", min(len(candidates), 80))
+    candidate_scores = score_candidates(candidates)
+    scored_candidates, selected = apply_scoring_rules(candidates, candidate_scores, scoring_config)
     write_json(
         DATA_DIR / "scored_candidates.json",
         {
             "generated_at": datetime.now(UTC).isoformat(),
-            "model": model,
+            "scoring_mode": "deterministic_no_api",
             "selected_count": len(selected),
             "items": scored_candidates,
         },
@@ -385,8 +585,8 @@ def main() -> int:
         reason = "No candidate passed the quality threshold today; weak or generic items were intentionally excluded."
         full_report, digest = empty_report(report_date, reason)
     else:
-        LOGGER.info("Composing report with %d selected items", len(selected))
-        full_report, digest = compose_report(client, model, report_date, scored_candidates, selected, scoring_config)
+        LOGGER.info("Composing no-API report with %d selected items", len(selected))
+        full_report, digest = compose_report(report_date, scored_candidates, selected, scoring_config)
 
     write_text(REPORTS_DIR / f"{report_date}-brief.md", full_report)
     write_text(REPORTS_DIR / "latest_line_digest.txt", digest)

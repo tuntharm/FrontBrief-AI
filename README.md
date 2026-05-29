@@ -1,68 +1,89 @@
 # Daily AI & Deeptech Brief
 
-This repository runs a daily GitHub Actions pipeline that fetches public AI/deeptech signals, uses the OpenAI API to score and summarise them, archives a full Markdown report in `reports/`, and sends one short digest to LINE through the LINE Messaging API.
+This repository supports a Claude Routine that generates a daily AI/deeptech intelligence brief, archives the full report in GitHub, and sends one short digest to LINE through the LINE Messaging API.
 
-It is built for Tharm: a PhD researcher working on AI/surrogate modelling for engineering simulation and a future deeptech founder/investor. The brief filters for infrastructure economics, semiconductor supply chains, scientific ML, engineering simulation, frontier research, robotics/aerospace/SHM, digital twins, and deeptech commercialisation. It intentionally ignores generic chatbot/product news and low-signal commentary.
+It is built for Tharm: a PhD researcher working on AI/surrogate modelling for engineering simulation and a future deeptech founder/investor. The brief filters for infrastructure economics, semiconductor supply chains, scientific ML, engineering simulation, frontier research, robotics/aerospace/SHM, digital twins, and deeptech commercialisation.
+
+This version does **not** use the OpenAI API and does **not** require `OPENAI_API_KEY`. It uses Claude Routine reasoning under your Claude Pro/Routine allowance, so there is no extra OpenAI API billing.
 
 LINE Notify is not used. LINE Notify is discontinued; this repo uses the LINE Messaging API push endpoint only.
 
 ## Architecture
 
 ```text
-GitHub Actions scheduler
-  -> scripts/fetch_news.py
+Claude Routine at 07:00 Europe/London
+  -> fresh clone of tuntharm/DailyAIBrief
+  -> python scripts/fetch_news.py
        -> data/news_raw.json
        -> data/news_candidates.json
-  -> scripts/summarise.py
-       -> OpenAI API scoring and report generation
-       -> data/scored_candidates.json
-       -> reports/YYYY-MM-DD-brief.md
-       -> reports/latest_line_digest.txt
-  -> scripts/send_line.py
+  -> Claude Routine reads candidates and scoring config
+       -> writes data/scored_candidates.json
+       -> writes reports/YYYY-MM-DD-brief.md
+       -> writes reports/latest_line_digest.txt
+  -> commits generated data and reports back to GitHub
+  -> python scripts/send_line.py
        -> LINE Messaging API push endpoint
        -> exactly one text message
-  -> git commit generated data and reports
 ```
 
-The workflow runs fully on GitHub Actions. It does not depend on Claude Routine, a local machine, a Mac mini, or any always-on computer.
+The routine runs on Anthropic-managed cloud infrastructure. It does not depend on your local machine, Mac mini, or an always-on computer.
+
+## Why Claude Routine
+
+The previous GitHub Actions + OpenAI API design was more independent, but it required OpenAI API billing. This version is designed for someone already paying for Claude Pro and wanting to avoid extra model API billing.
+
+Tradeoff: Claude Routines are a Claude product feature and count against Claude/Routine usage limits. They are not the same as the Anthropic API, and this repo does not require a Claude API key.
 
 ## Setup
 
 1. Create a LINE Official Account.
 2. Create or enable a LINE Messaging API channel for that account.
-3. Issue a channel access token for the Messaging API channel.
-4. Get the LINE recipient ID for `LINE_TO`. It can be a user ID, group ID, or room ID. For a user ID, the user normally needs to add the bot as a friend and you can capture the ID from a webhook event.
-5. Add these GitHub Actions secrets in the repository settings:
-   - `OPENAI_API_KEY`
+3. Rotate and issue a fresh Messaging API channel access token.
+4. Get the LINE recipient ID for `LINE_TO`. It can be a user ID, group ID, or room ID.
+5. In Claude Code on the web, connect GitHub and grant access to this repository:
+   `tuntharm/DailyAIBrief`
+6. Create a Claude Routine at:
+   `https://claude.ai/code/routines`
+7. Add this repository to the routine.
+8. Use a Claude Routine cloud environment with these environment variables:
    - `LINE_CHANNEL_ACCESS_TOKEN`
    - `LINE_TO`
-6. Open the `Daily AI Deeptech Brief` workflow in GitHub Actions and run it manually with `workflow_dispatch`.
-
-Optional: set a repository variable named `OPENAI_MODEL` to override the default model used by `scripts/summarise.py`.
+9. Paste the prompt from `routine/claude-daily-brief.md`.
+10. Add a daily schedule for `07:00 Europe/London`.
+11. If you want the routine to commit directly to `main`, enable unrestricted branch pushes for this repository in the routine settings. Otherwise, Claude may push to a `claude/` branch and you will need to merge the report branch manually.
+12. Click `Run now` once to test.
 
 ## Schedule And UK Time
 
-GitHub Actions cron uses UTC. The workflow has two cron triggers:
+Set the Claude Routine schedule to daily at `07:00` in `Europe/London`.
 
-```yaml
-- cron: "0 6 * * *"
-- cron: "0 7 * * *"
+Claude Routine schedule times are entered in your local zone and converted automatically by Claude's cloud scheduler. Runs may start a few minutes after the scheduled time because routines are staggered.
+
+There is no GitHub Actions cron in this version.
+
+## Required Secrets
+
+Add these to the Claude Routine cloud environment, not to the repository files:
+
+```text
+LINE_CHANNEL_ACCESS_TOKEN
+LINE_TO
 ```
 
-Inside the workflow, it checks the actual current hour in `Europe/London`. Scheduled runs continue only when the London hour is `07`; otherwise they exit cleanly. This handles UK daylight saving safely:
+Do not add:
 
-- During British Summer Time, `06:00 UTC` is `07:00 Europe/London`.
-- During Greenwich Mean Time, `07:00 UTC` is `07:00 Europe/London`.
+```text
+OPENAI_API_KEY
+ANTHROPIC_API_KEY
+```
 
-The workflow also compares the cron expression that triggered the run against the current London UTC offset. This prevents a delayed inactive cron trigger from sending a duplicate digest during the 07:00 hour.
-
-Manual `workflow_dispatch` runs ignore the hour check and run immediately.
+They are not needed for this version.
 
 ## LINE Quota
 
-LINE Messaging API quota is based on sent message count, not word count. This repo sends exactly one text message per run, and the scheduled hour gate is designed so only one scheduled run sends per day.
+LINE Messaging API quota is based on sent message count, not word count. The routine prompt instructs Claude to send exactly one text message per successful run.
 
-The digest is capped below 4,500 characters and is truncated gracefully if necessary. The script never splits the digest into multiple LINE messages.
+`scripts/send_line.py` sends one text message only and caps the digest below 4,500 characters.
 
 ## Customisation
 
@@ -88,18 +109,28 @@ moat_implication: 0.15
 urgency: 0.10
 ```
 
-Scores are 0-5. Items are included only when the weighted score is at least `3.0/5` or the raw score is at least `15/25`. The brief selects up to 5 strong items and does not pad weak news.
+Scores are 0-5. Items should be included only when the weighted score is at least `3.0/5` or the raw score is at least `15/25`. The brief selects up to 5 strong items and should not pad weak news.
 
-Set `OPENAI_MODEL` as a GitHub repository variable or environment variable to change the model without editing code.
+Edit `routine/claude-daily-brief.md` to tune the analyst style or the routine's run steps.
 
-## Manual Testing
+## Local Testing
 
-From the repository root:
+Fetch candidates locally:
 
 ```bash
 python -m pip install -r requirements.txt
 python scripts/fetch_news.py
-OPENAI_API_KEY=... python scripts/summarise.py
+```
+
+Optional no-model fallback report:
+
+```bash
+python scripts/summarise.py
+```
+
+Send a real LINE message locally:
+
+```bash
 LINE_CHANNEL_ACCESS_TOKEN=... LINE_TO=... python scripts/send_line.py
 ```
 
@@ -108,21 +139,18 @@ On Windows PowerShell:
 ```powershell
 python -m pip install -r requirements.txt
 python scripts/fetch_news.py
-$env:OPENAI_API_KEY="..."
 python scripts/summarise.py
 $env:LINE_CHANNEL_ACCESS_TOKEN="..."
 $env:LINE_TO="..."
 python scripts/send_line.py
 ```
 
-`send_line.py` sends a real LINE message. Test fetch and summarise first, inspect `reports/latest_line_digest.txt`, then run the send step.
-
-Manual `workflow_dispatch` also sends a real LINE message because it is intended for end-to-end testing and backfills.
+`send_line.py` sends a real LINE message. Inspect `reports/latest_line_digest.txt` before running it.
 
 ## Troubleshooting
 
 No LINE message received:
-Check that the bot is allowed to send messages to the recipient, the user has added the bot if using a user ID, and the workflow reached the `Send LINE digest` step.
+Check that the bot is allowed to send messages to the recipient, the user has added the bot if using a user ID, and the routine reached the `python scripts/send_line.py` step.
 
 Invalid token:
 Regenerate the Messaging API channel access token and update `LINE_CHANNEL_ACCESS_TOKEN`. Do not use a LINE Notify token.
@@ -130,23 +158,22 @@ Regenerate the Messaging API channel access token and update `LINE_CHANNEL_ACCES
 Wrong `LINE_TO`:
 Confirm whether the ID is a user ID, group ID, or room ID from a Messaging API webhook event. A display name, phone number, or LINE account name will not work.
 
-GitHub Actions cron delay:
-GitHub scheduled workflows may start late. The workflow checks the actual `Europe/London` hour and exits if it is not `07`. If GitHub delays the active run beyond the 07:00 London hour, it exits rather than sending late.
+Routine does not commit to `main`:
+Check the routine repository permissions. By default, Claude may only push to `claude/` branches. Enable unrestricted branch pushes for direct archive commits to `main`, or merge the generated branch manually.
 
 No fresh stories found:
-The fetcher prefers the last 48 hours. If no source has fresh public metadata, the report will say there were no high-quality fresh signals instead of padding the brief.
-
-OpenAI API error:
-Check `OPENAI_API_KEY`, billing/access for the selected model, and optionally set `OPENAI_MODEL` to a model available to your account.
+The fetcher prefers the last 48 hours. If no source has fresh public metadata, the report should say there were no high-quality fresh signals instead of padding the brief.
 
 Source failures:
-One failing source does not fail the pipeline. If all enabled sources fail, `fetch_news.py` exits with a clear error.
+One failing source does not fail the fetcher. If all enabled sources fail, `fetch_news.py` exits with a clear error.
+
+Routine usage limits:
+Claude Routines count against Claude/Routine usage limits. If the routine does not run, check `claude.ai/code/routines` and your Claude usage page.
 
 ## Security
 
-Never commit secrets. Use GitHub Actions secrets for:
+Never commit secrets. Store only these in the Claude Routine cloud environment:
 
-- `OPENAI_API_KEY`
 - `LINE_CHANNEL_ACCESS_TOKEN`
 - `LINE_TO`
 
