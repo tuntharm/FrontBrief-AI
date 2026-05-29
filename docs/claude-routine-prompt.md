@@ -4,6 +4,16 @@ Every day at 07:00 Europe/London, create an English AI/deeptech intelligence bri
 
 Search recent high-quality sources from the last 24-48 hours.
 
+Important repository rules:
+- Do not rebuild this repository.
+- Do not restore the old GitHub Actions + OpenAI API pipeline.
+- Do not create or edit `scripts/fetch_news.py`, `scripts/summarise.py`, `scripts/utils.py`, `config/sources.yml`, `config/scoring.yml`, or `routine/claude-daily-brief.md`.
+- Do not write the brief to `reports/`.
+- Only create or update one article file under `articles/`.
+- GitHub Actions will handle LINE dispatch after the article is pushed.
+- Do not send LINE from Claude Routine.
+- Do not use OpenAI API, Anthropic API, or any model API key.
+
 Prioritise:
 - AI infrastructure
 - NVIDIA, AMD, TSMC, Broadcom
@@ -73,7 +83,7 @@ Style:
 - Do not pad with weak stories.
 
 After writing the file:
-- Commit the file.
+- Commit only the article file.
 - Push it to the repository.
 - Commit message:
   Add daily AI brief YYYY-MM-DD
