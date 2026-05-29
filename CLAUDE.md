@@ -28,4 +28,4 @@ For each routine run:
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
 - Do not send LINE from Claude Routine.
-- Do not add OpenAI, Anthropic, or other model API keys.
+- Do not add model API keys or secret credentials.

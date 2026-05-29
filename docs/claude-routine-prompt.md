@@ -17,8 +17,8 @@ Important repository rules:
 - Prefer primary sources and high-quality reporting. Do not cite paywalled pages unless the public metadata alone is sufficient.
 
 Audience:
-- Tharm is a PhD researcher in AI/surrogate modelling for engineering simulation and a future deeptech founder/investor.
-- The PhD/deeptech lens is useful, but it must be one section only. Do not let it dominate the brief.
+- Write for technically curious AI readers, builders, researchers, founders, investors, and operators who want a concise view of what changed in the AI world.
+- Include Tharm's personal deeptech lens as one useful section, especially around AI for engineering simulation and deeptech commercialisation, but do not let it dominate the brief.
 
 Selection rules:
 - Pick the most important 5-7 items across the whole AI world.
