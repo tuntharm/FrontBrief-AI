@@ -72,7 +72,7 @@ def first_sentence(value: str, limit: int = 220) -> str:
 
 
 def field_value(block: str, field_name: str) -> str:
-    pattern = rf"^\s*[-*]\s+{re.escape(field_name)}:\s*(.+?)\s*$"
+    pattern = rf"^\s*[-*]\s+(?:\*\*)?{re.escape(field_name)}:?(?:\*\*)?\s*(.+?)\s*$"
     match = re.search(pattern, block, flags=re.MULTILINE | re.IGNORECASE)
     return match.group(1).strip() if match else ""
 
@@ -80,7 +80,7 @@ def field_value(block: str, field_name: str) -> str:
 def extract_top_signals(text: str) -> list[TopSignal]:
     body = section_body(text, "Top Signals")
     if not body:
-        return []
+        body = text
 
     heading_matches = list(re.finditer(r"^###\s+(.+?)\s*$", body, flags=re.MULTILINE))
     signals: list[TopSignal] = []
