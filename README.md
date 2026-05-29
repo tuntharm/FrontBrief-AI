@@ -33,7 +33,6 @@ LINE Official Account
 .github/workflows/line-dispatch.yml
 articles/sample-ai-brief.md
 docs/claude-routine-prompt.md
-reports/.gitkeep
 scripts/extract_line_digest.py
 scripts/send_line.py
 requirements.txt
@@ -107,7 +106,7 @@ $env:LINE_TO="..."
 python scripts/send_line.py
 ```
 
-`send_line.py` sends a real LINE message. Inspect `reports/latest_line_digest.txt` before running it locally.
+`send_line.py` sends a real LINE message. For local tests, `scripts/extract_line_digest.py` creates `reports/latest_line_digest.txt`; inspect that generated file before running `send_line.py`.
 
 ## Article Format
 
