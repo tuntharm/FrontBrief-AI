@@ -1,0 +1,18 @@
+Daily AI & Deeptech Brief - 2026-05-29
+
+TL;DR:
+1. Mistral acquired Emmi AI (physics-aware surrogate models for aerospace/energy/auto) — frontier labs are buying engineering AI capability before founders can build it independently.
+2. NVIDIA: $81.6B Q1 revenue (+85% YoY), Data Center +92% — AI factory buildout confirmed; sovereign/enterprise demand now equals hyperscalers at 50/50.
+3. Neural field surrogate MARIO (arXiv 2505.14704) achieves resolution-invariant CFD inference — architectural step beyond fixed-resolution GNN surrogates.
+
+Top Signals:
+1. Mistral/Emmi AI — Mistral acquires 30-person physics AI team to build industrial engineering AI stack. Direct overlap with surrogate modelling, FEA/CFD, aerospace simulation. Narrows the independent spinout window to ~18-24 months. Action: Read now.
+2. NVIDIA Q1 FY27 — $75.2B Data Center revenue (+92% YoY). Blackwell ramp confirmed. Enterprise and sovereign now 50% of DC revenue — industrial AI compute at escape velocity. Action: Monitor.
+3. MARIO (arXiv 2505.14704) — Neural field surrogate trained on coarse mesh, infers at full resolution without retraining. Architecturally superior to fixed-resolution GNN surrogates for CFD. Potentially generalisable to FEA and FSI. Action: Read now.
+4. Modal Labs $355M at $4.65B — Repositioned as agentic AI compute infrastructure. Revenue 5x since Sept 2024, $300M ARR. Sandbox (isolated code execution for AI agents) is 1/3 of revenue. Action: Monitor.
+5. UK AI for Science Strategy — £137M ring-fenced for AI-enabled scientific breakthroughs within £2B government AI envelope. 5 AI Growth Zones confirmed. Watch UKRI for open grant calls. Action: Monitor.
+
+Founder/Researcher Takeaway:
+The Mistral/Emmi deal closes the window for physics-aware AI startups planning to raise independently before Series A. Moat has shifted: production deployment history and validated domain integration matter more than model architecture. NVIDIA's 50/50 enterprise split confirms industrial AI compute is at escape velocity. Agentic compute (Modal) is absorbing the infrastructure layer below LLM inference. Move faster than you think necessary.
+
+Full report saved in GitHub: reports/2026-05-29-brief.md

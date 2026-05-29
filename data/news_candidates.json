@@ -1,0 +1,35 @@
+{
+  "items": [
+    {
+      "fetched_at": "2026-05-29T10:54:42.663542Z",
+      "id": "45ec1e4ebe6cd90e",
+      "include_undated": false,
+      "published_at": "2026-05-28T16:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights. The post Data Formulator 0.7: AI-powered data analytics for enterprise data appeared first on Microsoft Research .",
+      "title": "Data Formulator 0.7: AI-powered data analytics for enterprise data",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/data-formulator-0-7-ai-powered-data-analytics-for-enterprise-data"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.664053Z",
+      "id": "93b067eb9b2fa313",
+      "include_undated": false,
+      "published_at": "2026-05-27T16:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Understanding AI as an extension of human intelligence—not a replacement for it—offers a more grounded path for building trustworthy AI systems. The post Extending Human Intelligence Through AI appeared first on Microsoft Research .",
+      "title": "Extending Human Intelligence Through AI",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/extending-human-intelligence-through-ai"
+    }
+  ],
+  "metadata": {
+    "candidate_count": 2,
+    "enabled_sources": 38,
+    "failed_sources": 35,
+    "fetched_at": "2026-05-29T10:54:47.025613Z",
+    "lookback_hours": 48,
+    "raw_item_count": 10,
+    "successful_sources": 3
+  }
+}

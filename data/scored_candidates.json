@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "scored_at": "2026-05-29T11:00:00Z",
+    "date": "2026-05-29",
+    "total_candidates_evaluated": 7,
+    "selected_count": 5,
+    "scoring_weights": {
+      "phd_relevance": 0.30,
+      "investment_relevance": 0.25,
+      "technical_novelty": 0.20,
+      "moat_implication": 0.15,
+      "urgency": 0.10
+    }
+  },
+  "candidates": [
+    {
+      "rank": 1,
+      "title": "Mistral AI acquires Emmi AI — physics-aware surrogate models for industrial engineering",
+      "source": "Mistral AI / HPCwire AIwire / The Next Web",
+      "url": "https://mistral.ai/news/accelerate-ai-native-industry/",
+      "track": "scientific_ml / deeptech_policy_startups",
+      "scores": {
+        "phd_relevance": 5,
+        "investment_relevance": 5,
+        "technical_novelty": 4,
+        "moat_implication": 5,
+        "urgency": 5
+      },
+      "weighted_score": 4.80,
+      "raw_score": 24,
+      "decision": "Include",
+      "section": "Scientific ML / Engineering Simulation Signal"
+    },
+    {
+      "rank": 2,
+      "title": "MARIO: Neural Field Surrogate for Large-Scale Aerodynamic CFD with Resolution-Invariant Inference",
+      "source": "arXiv",
+      "url": "https://arxiv.org/abs/2505.14704",
+      "track": "scientific_ml",
+      "scores": {
+        "phd_relevance": 5,
+        "investment_relevance": 2,
+        "technical_novelty": 4,
+        "moat_implication": 3,
+        "urgency": 3
+      },
+      "weighted_score": 3.55,
+      "raw_score": 17,
+      "decision": "Include",
+      "section": "Scientific ML / Engineering Simulation Signal"
+    },
+    {
+      "rank": 3,
+      "title": "NVIDIA Q1 FY27: $81.6B Revenue, Data Center +92% YoY — AI Factory Buildout Confirmed",
+      "source": "NVIDIA Newsroom",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-first-quarter-fiscal-2026",
+      "track": "ai_infrastructure",
+      "scores": {
+        "phd_relevance": 2,
+        "investment_relevance": 5,
+        "technical_novelty": 2,
+        "moat_implication": 5,
+        "urgency": 5
+      },
+      "weighted_score": 3.50,
+      "raw_score": 19,
+      "decision": "Include",
+      "section": "Market / Investment Signal"
+    },
+    {
+      "rank": 4,
+      "title": "Modal Labs Raises $355M at $4.65B — Agentic AI Workloads Become the New Compute Category",
+      "source": "Modal Blog / SiliconANGLE",
+      "url": "https://modal.com/blog/modal-series-c",
+      "track": "ai_infrastructure",
+      "scores": {
+        "phd_relevance": 2,
+        "investment_relevance": 5,
+        "technical_novelty": 3,
+        "moat_implication": 4,
+        "urgency": 4
+      },
+      "weighted_score": 3.45,
+      "raw_score": 18,
+      "decision": "Include",
+      "section": "Market / Investment Signal"
+    },
+    {
+      "rank": 5,
+      "title": "UK AI for Science Strategy: £137M from £2B Envelope, 5 AI Growth Zones",
+      "source": "GOV.UK / TechUK",
+      "url": "https://www.techuk.org/resource/techuk-insight-uk-government-launches-ai-for-science-strategy.html",
+      "track": "deeptech_policy_startups",
+      "scores": {
+        "phd_relevance": 4,
+        "investment_relevance": 4,
+        "technical_novelty": 2,
+        "moat_implication": 3,
+        "urgency": 3
+      },
+      "weighted_score": 3.35,
+      "raw_score": 16,
+      "decision": "Include",
+      "section": "Watchlist / context"
+    },
+    {
+      "rank": 6,
+      "title": "Microsoft Research: Data Formulator 0.7 — AI-Powered Data Analytics for Enterprise",
+      "source": "Microsoft Research Blog",
+      "url": "https://www.microsoft.com/en-us/research/blog/data-formulator-0-7-ai-powered-data-analytics-for-enterprise-data",
+      "track": "frontier_research",
+      "scores": {
+        "phd_relevance": 1,
+        "investment_relevance": 2,
+        "technical_novelty": 2,
+        "moat_implication": 2,
+        "urgency": 2
+      },
+      "weighted_score": 1.75,
+      "raw_score": 9,
+      "decision": "Include (fetched candidate, low signal, included for completeness)",
+      "section": "Research Signal"
+    },
+    {
+      "rank": 7,
+      "title": "Four frontier lab acquisitions in five days (Anthropic/Stainless, Mistral/Emmi, DeepMind, Meta)",
+      "source": "StartupHub.ai / multiple",
+      "url": "https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026",
+      "track": "deeptech_policy_startups",
+      "scores": {
+        "phd_relevance": 2,
+        "investment_relevance": 5,
+        "technical_novelty": 1,
+        "moat_implication": 5,
+        "urgency": 5
+      },
+      "weighted_score": 3.50,
+      "raw_score": 18,
+      "decision": "Merged into Mistral/Emmi signal and Founder Takeaway",
+      "section": "N/A — merged"
+    }
+  ]
+}

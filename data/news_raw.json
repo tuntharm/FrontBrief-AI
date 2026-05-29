@@ -1,0 +1,123 @@
+{
+  "items": [
+    {
+      "fetched_at": "2026-05-29T10:54:42.663542Z",
+      "id": "45ec1e4ebe6cd90e",
+      "include_undated": false,
+      "published_at": "2026-05-28T16:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Data Formulator introduces AI-powered analytics for enterprise data workflows. Data teams can easily bring enterprise data into an AI-ready workspace where users can explore, analyze, and visualize data with AI agents to turn raw data into actionable insights. The post Data Formulator 0.7: AI-powered data analytics for enterprise data appeared first on Microsoft Research .",
+      "title": "Data Formulator 0.7: AI-powered data analytics for enterprise data",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/data-formulator-0-7-ai-powered-data-analytics-for-enterprise-data"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.664053Z",
+      "id": "93b067eb9b2fa313",
+      "include_undated": false,
+      "published_at": "2026-05-27T16:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Understanding AI as an extension of human intelligence—not a replacement for it—offers a more grounded path for building trustworthy AI systems. The post Extending Human Intelligence Through AI appeared first on Microsoft Research .",
+      "title": "Extending Human Intelligence Through AI",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/extending-human-intelligence-through-ai"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.664399Z",
+      "id": "3a857749680cc82e",
+      "include_undated": false,
+      "published_at": "2026-05-21T17:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "MagenticLite is an agentic system for small models that works across the browser and local file system in a single workflow. It combines specialized models and orchestration to support efficient agentic performance on everyday tasks. The post MagenticLite, MagenticBrain, Fara1.5: An agentic experience optimized for small models appeared first on Microsoft Research .",
+      "title": "MagenticLite, MagenticBrain, Fara1.5: An agentic experience optimized for small models",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/magenticlite-magenticbrain-fara1-5-an-agentic-experience-optimized-for-small-models"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.664741Z",
+      "id": "ddf15486078e1f43",
+      "include_undated": false,
+      "published_at": "2026-05-21T13:48:40Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Vega turns a full credential into a single proof, sharing only what is needed and nothing more, with performance that works in real apps. The post Vega: Zero-knowledge proofs for digital identity in the age of AI appeared first on Microsoft Research .",
+      "title": "Vega: Zero-knowledge proofs for digital identity in the age of AI",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/vega-zero-knowledge-proofs-for-digital-identity-in-the-age-of-ai"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.665068Z",
+      "id": "0ac56bc9ff7b98f0",
+      "include_undated": false,
+      "published_at": "2026-05-15T18:06:57Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Our recent paper, “LLMs Corrupt Your Documents When You Delegate”, has generated discussion about the reliability of AI systems in delegated workflows. We appreciate the interest in this work and want to clarify several important points about what the paper does—and does not—claim. The research aims to develop robust evaluation methods for long-horizon delegated and […] The post Further Notes on Our Recent Research on AI Delegation and Long-Horizon Reliability appeared first on Microsoft Research .",
+      "title": "Further Notes on Our Recent Research on AI Delegation and Long-Horizon Reliability",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/further-notes-on-our-recent-research-on-ai-delegation-and-long-horizon-reliability"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.665498Z",
+      "id": "6fd03c74b947153b",
+      "include_undated": false,
+      "published_at": "2026-05-13T17:19:59Z",
+      "source": "Microsoft Research Blog",
+      "summary": "mimalloc is an open-source, modern, scalable memory allocator that is a drop-in replacement for malloc and free. It is relatively small (~12K lines), with clear internal data structures, and is easy to build and integrate into other projects. It provides bounded worst-case allocation times (up to OS primitives), bounded space overhead, low internal fragmentation, and minimal contention by relying almost exclusively on atomic operations. The post mimalloc: A new, high-performance, scalable memory allocator for the modern era appeared first on Microsoft Research .",
+      "title": "mimalloc: A new, high-performance, scalable memory allocator for the modern era",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/mimalloc-a-high-performance-scalable-memory-allocator-for-the-modern-era"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.665818Z",
+      "id": "3c987c8e293c9dc0",
+      "include_undated": false,
+      "published_at": "2026-05-13T16:00:20Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Introducing GridSFM, a small foundation model that can predict AC optimal power flow in milliseconds, boosting efficiency and unlocking cost savings. Learn how GridSFM gives grid operators direct visibility into congestion, stability, and system health. The post GridSFM: A new, small foundation model for the electric grid appeared first on Microsoft Research .",
+      "title": "GridSFM: A new, small foundation model for the electric grid",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/gridsfm-a-new-small-foundation-model-for-the-electric-grid"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.666119Z",
+      "id": "ae133315e8a50b71",
+      "include_undated": false,
+      "published_at": "2026-05-12T13:00:00Z",
+      "source": "Microsoft Research Blog",
+      "summary": "MatterSim is expanding what AI can do for materials science—from faster large-scale simulations to MatterSim-MT, a new multi-task model for simulating properties beyond potential energy surfaces alone. The post Advancing AI for materials with MatterSim: experimental synthesis, faster simulation, and multi-task models appeared first on Microsoft Research .",
+      "title": "Advancing AI for materials with MatterSim: experimental synthesis, faster simulation, and multi-task models",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/advancing-ai-for-materials-with-mattersim-experimental-synthesis-faster-simulation-and-multi-task-models"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.666400Z",
+      "id": "4820d7ab0b127ecd",
+      "include_undated": false,
+      "published_at": "2026-05-11T17:19:28Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Using SocialReasoning Bench, we observed a stable pattern across models—agents execute competently, but fail to consistently improve the user’s position, even with explicit instructions to optimize for user interest. The post SocialReasoning-Bench: Measuring whether AI agents act in users’ best interests appeared first on Microsoft Research .",
+      "title": "SocialReasoning-Bench: Measuring whether AI agents act in users’ best interests",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/socialreasoning-bench-measuring-whether-ai-agents-act-in-users-best-interests"
+    },
+    {
+      "fetched_at": "2026-05-29T10:54:42.666742Z",
+      "id": "7abe4da91468397a",
+      "include_undated": false,
+      "published_at": "2026-05-08T19:53:56Z",
+      "source": "Microsoft Research Blog",
+      "summary": "Microsoft Research is excited to release an open dataset of approximate transmission topology of the U.S. power grid derived from publicly available data. The ability to study transmission-level power grid behavior is essential for modern power systems research. Analyses of congestion, transmission expansion, demand growth, and system resilience all depend on network models with realistic […] The post Building realistic electric transmission grid dataset at scale: a pipeline from open dataset appeared first on Microsoft Research .",
+      "title": "Building realistic electric transmission grid dataset at scale: a pipeline from open dataset",
+      "track": "frontier_research",
+      "url": "https://www.microsoft.com/en-us/research/blog/building-realistic-electric-transmission-grid-dataset-at-scale-a-pipeline-from-open-dataset"
+    }
+  ],
+  "metadata": {
+    "candidate_count": 2,
+    "enabled_sources": 38,
+    "failed_sources": 35,
+    "fetched_at": "2026-05-29T10:54:47.025613Z",
+    "lookback_hours": 48,
+    "raw_item_count": 10,
+    "successful_sources": 3
+  }
+}
