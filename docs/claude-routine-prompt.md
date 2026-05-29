@@ -13,6 +13,8 @@ Important repository rules:
 - GitHub Actions will handle LINE dispatch after the article is pushed.
 - Do not send LINE from Claude Routine.
 - Do not use OpenAI API, Anthropic API, or any model API key.
+- Every selected item must include a direct public source link.
+- Prefer primary sources and high-quality reporting. Do not cite paywalled pages unless the public metadata alone is sufficient.
 
 Prioritise:
 - AI infrastructure
@@ -51,12 +53,13 @@ Format:
 ## TL;DR
 - Maximum 3 bullets.
 - Each bullet should explain the strategic signal, not just the event.
+- No links are needed here; this section is for the compressed strategic readout.
 
 ## Top Signals
 For each selected item:
 ### [Headline]
-- Source:
-- Link:
+- Source: publication or organisation name
+- Link: direct public URL to read the source
 - What happened:
 - Why it matters:
 - Research/founder/investor relevance:
@@ -81,6 +84,8 @@ Style:
 - No motivational filler.
 - If fewer than 3 high-quality signals exist, say so.
 - Do not pad with weak stories.
+- TL;DR is the strategic summary.
+- Top Signals are the clickable evidence trail with source links.
 
 After writing the file:
 - Commit only the article file.

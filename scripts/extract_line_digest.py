@@ -15,6 +15,7 @@ MAX_LINE_CHARS = 4490
 class TopSignal:
     headline: str
     why_it_matters: str
+    link: str = ""
 
 
 def newest_article() -> Path:
@@ -94,7 +95,13 @@ def extract_top_signals(text: str) -> list[TopSignal]:
             or field_value(block, "What happened")
             or first_sentence(block)
         )
-        signals.append(TopSignal(headline=match.group(1).strip(), why_it_matters=first_sentence(why)))
+        signals.append(
+            TopSignal(
+                headline=match.group(1).strip(),
+                why_it_matters=first_sentence(why),
+                link=field_value(block, "Link"),
+            )
+        )
     return signals
 
 
@@ -131,10 +138,13 @@ def build_digest(article_path: Path, text: str) -> str:
     top_signals = extract_top_signals(text)
     founder_takeaway = extract_founder_takeaway(text)
 
-    top_lines = [
-        f"{index}. [{signal.headline}] — {signal.why_it_matters}"
-        for index, signal in enumerate(top_signals[:3], start=1)
-    ] or ["1. No Top Signals section found in the article."]
+    top_lines: list[str] = []
+    for index, signal in enumerate(top_signals[:3], start=1):
+        top_lines.append(f"{index}. [{signal.headline}] — {signal.why_it_matters}")
+        if signal.link:
+            top_lines.append(f"   Read: {signal.link}")
+    if not top_lines:
+        top_lines = ["1. No Top Signals section found in the article."]
 
     digest = "\n".join(
         [

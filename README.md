@@ -122,7 +122,7 @@ Claude Routine should follow the format in `docs/claude-routine-prompt.md`:
 ## Watchlist
 ```
 
-`scripts/extract_line_digest.py` degrades gracefully if optional sections are missing, but `TL;DR`, `Top Signals`, and `Founder Takeaway` give the best LINE digest.
+`scripts/extract_line_digest.py` degrades gracefully if optional sections are missing, but `TL;DR`, `Top Signals`, and `Founder Takeaway` give the best LINE digest. `TL;DR` is the strategic summary; `Top Signals` should contain the evidence trail with source links. The LINE digest includes `Read:` links when Claude writes `Link:` fields in the article.
 
 ## Security
 
