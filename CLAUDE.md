@@ -27,5 +27,6 @@ For each routine run:
 - Commit only that article file.
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
+- After pushing the article to the session branch, also merge it into `main` and push `main` to origin.
 - Do not send LINE from Claude Routine.
 - Do not add model API keys or secret credentials.
