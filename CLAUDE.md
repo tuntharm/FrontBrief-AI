@@ -1,5 +1,12 @@
 # Claude Repository Instructions
 
+## Brand
+
+The product is **FrontBrief.AI** — slogan: *"The AI frontier, briefed daily."*
+Use "FrontBrief.AI" as the brand name on every public surface: the article H1, the LINE Digest
+header, the poster mark/button, and the Instagram caption. (The internal file slug
+`YYYY-MM-DD-ai-brief.md/.png` stays as-is — it is a path identifier, not a brand surface.)
+
 This repository now uses this architecture:
 
 1. Claude Routine searches and writes the daily article.
@@ -40,7 +47,7 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
 
 - Selection is interestingness-first, exactly 5 items. Lead with the single most "must-know"
   story; breadth across the five slots is a guide, not a quota. Do not pad with weak stories.
-- The article H1 is `# AI Brief — YYYY-MM-DD`.
+- The article H1 is `# FrontBrief.AI — YYYY-MM-DD`.
 - The article MUST contain a `## LINE Digest` section written as standalone, punchy plain text.
   GitHub Actions sends this section to LINE verbatim (via `scripts/extract_line_digest.py`), so
   every sentence must stand alone — no "yesterday" references — and include each item's `Link:`.
@@ -52,12 +59,12 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
 A single Canva "parent" file holds the whole poster series; each run appends one new
 page (one day = one page) and exports that page as the committed PNG.
 
-- Parent Canva design: **"Daily AI Brief — Poster Series"**, design ID `DAHMpIU_j38`
+- Parent Canva design: **"FrontBrief.AI — Poster Series"**, design ID `DAHMpIU_j38`
   (edit: https://www.canva.com/d/bMWYO56xKFXmTz6 · view: https://www.canva.com/d/3cUi9X-xizO5rGJ).
 - Style (locked template): Instagram post, 1080×1350 portrait, editorial tech-news look —
-  full-bleed on-theme image; an "AI · [category]" pill top-left; a "DAILY AI BRIEF · DD MON YYYY"
+  full-bleed on-theme image; an "AI · [category]" pill top-left; a "FRONTBRIEF.AI · DD MON YYYY"
   mark top-right; a dark gradient scrim across the bottom with a bold news HEADLINE, a one-line
-  SUBHEAD, and a small kicker (`metric · Source`); an "AI Brief" button bottom-right.
+  SUBHEAD, and a small kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
 - Imagery: AI-generated, on-theme only. No real photos of identifiable people and no
   third-party brand logos (licensing/likeness).
 - Steps each run:

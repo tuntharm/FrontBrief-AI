@@ -1,5 +1,9 @@
 # Claude Routine Prompt
 
+The product is **FrontBrief.AI** — slogan: *"The AI frontier, briefed daily."* Use "FrontBrief.AI"
+as the brand name on every public surface (article H1, LINE Digest header, poster mark/button,
+Instagram caption). The internal file slug `YYYY-MM-DD-ai-brief.md/.png` stays as-is.
+
 Every day at 07:00 Europe/London, create an English AI-world intelligence brief.
 
 Search recent high-quality sources from the last 24-48 hours.
@@ -70,14 +74,14 @@ articles/YYYY-MM-DD-ai-brief.md
 
 Format:
 
-# AI Brief — YYYY-MM-DD
+# FrontBrief.AI — YYYY-MM-DD
 
 ## LINE Digest
 This section is sent to LINE verbatim, so it must be standalone and punchy — every sentence must
 make sense on its own with NO reference to "yesterday" or prior context. Keep it well under 4490
 characters. Write it as plain text (no code fences), in exactly this shape:
 
-    AI Brief — YYYY-MM-DD
+    FrontBrief.AI — YYYY-MM-DD
 
     TL;DR:
     1. Biggest thing.
@@ -134,12 +138,12 @@ Daily social poster (after the article is written):
 A single Canva "parent" file holds the whole series; each run appends one new page (one day =
 one page) and exports that page as the committed PNG.
 
-- Parent Canva design: "Daily AI Brief — Poster Series", design ID `DAHMpIU_j38`
+- Parent Canva design: "FrontBrief.AI — Poster Series", design ID `DAHMpIU_j38`
   (edit: https://www.canva.com/d/bMWYO56xKFXmTz6).
 - Locked template style: Instagram post, 1080×1350 portrait, editorial tech-news look —
-  full-bleed on-theme image; "AI · [category]" pill top-left; "DAILY AI BRIEF · DD MON YYYY"
+  full-bleed on-theme image; "AI · [category]" pill top-left; "FRONTBRIEF.AI · DD MON YYYY"
   mark top-right; bottom gradient scrim with a bold news HEADLINE, one-line SUBHEAD, and a small
-  kicker (`metric · Source`); an "AI Brief" button bottom-right.
+  kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
 - Imagery: AI-generated and on-theme only. No real photos of identifiable people, no third-party
   brand logos.
 - Steps:

@@ -1,4 +1,4 @@
-# Daily AI Brief — 2026-01-01
+# Daily FrontBrief.AI — 2026-01-01
 
 ## TL;DR
 - Sample frontier signal: a new reasoning model changes the agent-tooling roadmap for enterprise AI buyers.

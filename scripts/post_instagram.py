@@ -16,8 +16,10 @@ LOGGER = logging.getLogger("post_instagram")
 INSTAGRAM_API = "https://graph.instagram.com/v21.0"
 REPO_RAW = "https://raw.githubusercontent.com/tuntharm/dailyaibrief/main"
 MAX_CAPTION = 2200
+BRAND = "FrontBrief.AI"
+SLOGAN = "The AI frontier, briefed daily."
 HASHTAGS = (
-    "#AI #DailyAIBrief #ArtificialIntelligence #TechNews #AINews"
+    "#FrontBrief #AI #ArtificialIntelligence #TechNews #AINews"
     " #MachineLearning #DeepTech #FutureOfAI"
 )
 
@@ -51,7 +53,7 @@ def poster_url_for(article: Path) -> str:
 def build_caption(article_text: str) -> str:
     # Pull headline from first Top 5 item
     headline_m = re.search(r"^### 1\. (.+)$", article_text, re.MULTILINE)
-    headline = headline_m.group(1).strip() if headline_m else "Daily AI Brief"
+    headline = headline_m.group(1).strip() if headline_m else BRAND
 
     # Pull the single "Why it's interesting" sentence
     why_m = re.search(r"-\s*Why it.s interesting:\s*(.+)", article_text)
@@ -64,7 +66,7 @@ def build_caption(article_text: str) -> str:
         first_sentence = money_m.group(1).strip().split(". ")[0]
         money_line = f"Money view: {first_sentence}."
 
-    parts = [headline]
+    parts = [f"{BRAND} — {SLOGAN}", f"\n{headline}"]
     if why:
         parts.append(f"\n{why}")
     if money_line:

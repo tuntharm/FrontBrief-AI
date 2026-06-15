@@ -1,6 +1,8 @@
-# Daily AI Brief
+# FrontBrief.AI
 
-Daily AI Brief is a lightweight automation that turns a daily Claude Routine article into a short LINE digest.
+**FrontBrief.AI** — *The AI frontier, briefed daily.*
+
+FrontBrief.AI is a lightweight automation that turns a daily Claude Routine article into a short LINE digest, a social poster, and an Instagram post.
 
 It is designed for people who want a concise, high-signal view of the AI world: frontier models, infrastructure, research, startups, adoption, policy, and selected deeptech angles. The brief can include Tharm's personal deeptech lens, but the core product is broad AI intelligence rather than a PhD-only digest.
 
@@ -124,7 +126,7 @@ python scripts/send_line.py
 Claude Routine should follow the format in `docs/claude-routine-prompt.md`:
 
 ```text
-# Daily AI Brief - YYYY-MM-DD
+# FrontBrief.AI — YYYY-MM-DD
 
 ## TL;DR
 

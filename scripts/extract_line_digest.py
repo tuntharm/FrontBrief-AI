@@ -184,7 +184,7 @@ def build_digest(article_path: Path, text: str) -> str:
 
     digest = "\n".join(
         [
-            f"AI Brief — {report_date}",
+            f"FrontBrief.AI — {report_date}",
             "",
             "TL;DR:",
             *[f"{index}. {bullet}" for index, bullet in enumerate(tldr[:3], start=1)],
