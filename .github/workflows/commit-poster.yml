@@ -1,7 +1,7 @@
 name: Commit Poster
 
 # Downloads the daily poster PNG from a Canva export URL and commits it.
-# The routine (or a person) commits a pointer file `posters/YYYY-MM-DD-ai-brief.png.url`
+# The routine (or a person) commits a pointer file `social/poster/YYYY-MM-DD-ai-brief.png.url`
 # containing the Canva export URL; this workflow fetches it on GitHub's network
 # (which can reach Canva) and commits the resulting PNG. This avoids depending on
 # the routine container's egress allowlist for Canva hosts.
@@ -11,7 +11,7 @@ on:
     branches:
       - main
     paths:
-      - "posters/**/*.png.url"
+      - "social/poster/**/*.png.url"
   workflow_dispatch: {}
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
         run: |
           shopt -s nullglob
           changed=0
-          for f in posters/*.png.url; do
+          for f in social/poster/*.png.url; do
             png="${f%.url}"
             url="$(tr -d '\r\n' < "$f")"
             echo "Fetching $(basename "$png")"
@@ -58,6 +58,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A posters/
+          git add -A social/poster/
           git commit -m "Add daily AI brief poster image"
           git push

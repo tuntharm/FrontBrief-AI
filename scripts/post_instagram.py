@@ -11,6 +11,8 @@ import requests
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ARTICLES_DIR = PROJECT_ROOT / "articles"
+POSTER_DIR = PROJECT_ROOT / "social" / "poster"
+CAPTION_DIR = PROJECT_ROOT / "social" / "caption"
 LOGGER = logging.getLogger("post_instagram")
 
 INSTAGRAM_API = "https://graph.instagram.com/v21.0"
@@ -18,10 +20,8 @@ REPO_RAW = "https://raw.githubusercontent.com/tuntharm/dailyaibrief/main"
 MAX_CAPTION = 2200
 BRAND = "FrontBrief.AI"
 SLOGAN = "A daily brief from the AI frontier."
-HASHTAGS = (
-    "#FrontBrief #AI #ArtificialIntelligence #TechNews #AINews"
-    " #MachineLearning #DeepTech #FutureOfAI"
-)
+# Instagram caption hashtags: at most 5, and the LAST one must be #FrontBriefAI.
+HASHTAGS = "#AI #ArtificialIntelligence #TechNews #AINews #FrontBriefAI"
 
 
 def configure_logging() -> None:
@@ -47,7 +47,20 @@ def newest_article() -> Path:
 
 def poster_url_for(article: Path) -> str:
     date = article.stem.replace("-ai-brief", "")
-    return f"{REPO_RAW}/posters/{date}-ai-brief.png"
+    return f"{REPO_RAW}/social/poster/{date}-ai-brief.png"
+
+
+def caption_file_for(article: Path) -> Path:
+    return CAPTION_DIR / f"{article.stem}.txt"
+
+
+def load_caption(article: Path) -> str | None:
+    """Return the routine-authored IG caption for this day, if present."""
+    path = caption_file_for(article)
+    if not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8").strip()
+    return text or None
 
 
 def build_caption(article_text: str) -> str:
@@ -128,11 +141,15 @@ def main() -> int:
     token = required_env("INSTAGRAM_ACCESS_TOKEN")
 
     article = newest_article()
-    article_text = article.read_text(encoding="utf-8")
     image_url = poster_url_for(article)
 
     LOGGER.info("Posting poster: %s", image_url)
-    caption = build_caption(article_text)
+    caption = load_caption(article)
+    if caption:
+        LOGGER.info("Using routine-authored caption: %s", caption_file_for(article))
+    else:
+        LOGGER.info("No caption file found; building caption from the article")
+        caption = build_caption(article.read_text(encoding="utf-8"))
     LOGGER.info("Caption (%d chars):\n%s", len(caption), caption)
 
     container_id = create_container(user_id, token, image_url, caption)

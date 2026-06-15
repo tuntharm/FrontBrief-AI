@@ -107,11 +107,21 @@ Daily social poster (after the article):
   real photos of identifiable people; imagery is otherwise AI-generated and on-theme.
 - Append the page to DAHMpIU_j38 (Canva merge-designs, insert at end).
 - Export the page as a pro PNG to get the Canva export URL, and write that URL (one line) to
-  posters/YYYY-MM-DD-ai-brief.png.url. Add a row to posters/index.md (date, headline, Canva view link).
+  social/poster/YYYY-MM-DD-ai-brief.png.url. Add a row to social/poster/index.md (date, headline, Canva view link).
   The commit-poster.yml workflow downloads the PNG on GitHub's network and commits the .png — the
   routine does NOT need Canva on its egress allowlist.
 
+Daily Instagram caption (after the poster):
+- Write the caption for the same #1 story to social/caption/YYYY-MM-DD-ai-brief.txt. The
+  post-instagram.yml workflow posts it verbatim with the day's poster (falls back to the article
+  if missing).
+- Plain text, English, lead with the news hook. 1–3 short lines: headline hook → key fact/number →
+  optional money/investment angle (signal, not advice). A light CTA is fine ("Full brief in bio").
+- Hashtags: AT MOST 5, on the last line, and the LAST one MUST be #FrontBriefAI.
+  Example: #AI #Anthropic #AINews #TechNews #FrontBriefAI
+
 After writing the files:
-- Commit the article file, posters/YYYY-MM-DD-ai-brief.png.url, and posters/index.md.
+- Commit the article file, social/poster/YYYY-MM-DD-ai-brief.png.url, social/poster/index.md, and
+  social/caption/YYYY-MM-DD-ai-brief.txt.
 - Push to the repo, then merge into main and push main.
 - Commit message: Add daily AI brief YYYY-MM-DD

@@ -1,0 +1,9 @@
+The US just reached past the chips — to the models.
+
+A US export order forced Anthropic to suspend Claude Fable 5 & Mythos 5 for everyone, days after launch, because the rule bars all foreign nationals from access.
+
+Why it matters: regulation now hits the model layer directly — a new policy overhang for anyone building on a single US frontier API, and a tailwind for model-portability and trusted-access tooling.
+
+Full brief in bio.
+
+#AI #Anthropic #AIRegulation #AINews #FrontBriefAI

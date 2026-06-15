@@ -25,8 +25,9 @@ real photos of identifiable people and no logos of companies the story isn't abo
 
 ## Network requirement
 
-Exporting/downloading the PNG needs these hosts on the environment's network egress allowlist:
-`export-download.canva.com`, `design.canva.ai`, `*.canva.com`. If they are not allowlisted the
-routine still appends the Canva page and records links in `index.md`, but cannot commit the PNG.
+The routine does NOT need Canva on its egress allowlist. It writes a one-line pointer file
+`YYYY-MM-DD-ai-brief.png.url` (the Canva export URL); the `commit-poster.yml` workflow downloads
+the PNG on GitHub's network and commits `YYYY-MM-DD-ai-brief.png` here. (If the routine container
+does have egress, it may download and commit the PNG itself and skip the pointer.)
 
-See `index.md` for the per-day log.
+See `index.md` for the per-day log. The matching Instagram captions live in `../caption/`.

@@ -10,7 +10,7 @@ header, the poster mark/button, and the Instagram caption. (The internal file sl
 This repository now uses this architecture:
 
 1. Claude Routine searches and writes the daily article.
-2. Claude Routine commits `articles/YYYY-MM-DD-ai-brief.md` and the matching social poster `posters/YYYY-MM-DD-ai-brief.png`.
+2. Claude Routine commits `articles/YYYY-MM-DD-ai-brief.md` and the matching social poster `social/poster/YYYY-MM-DD-ai-brief.png`.
 3. GitHub Actions detects article pushes and sends the LINE digest.
 
 Do not rebuild the old implementation.
@@ -33,8 +33,11 @@ For each routine run:
   `articles/YYYY-MM-DD-ai-brief.md`
 - Build the matching daily social poster (see "Daily social poster" below). The PNG itself is
   committed by the `commit-poster.yml` workflow; the routine commits the export-URL pointer
-  `posters/YYYY-MM-DD-ai-brief.png.url`.
-- Commit only the article file, that day's poster `.png.url` pointer, and `posters/index.md`.
+  `social/poster/YYYY-MM-DD-ai-brief.png.url`.
+- Write the matching Instagram caption (see "Daily Instagram caption" below):
+  `social/caption/YYYY-MM-DD-ai-brief.txt`.
+- Commit only the article file, that day's poster `.png.url` pointer, `social/poster/index.md`,
+  and the caption file `social/caption/YYYY-MM-DD-ai-brief.txt`.
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
 - After pushing to the session branch, also merge into `main` and push `main` to origin.
@@ -84,11 +87,24 @@ page (one day = one page) and exports that page as the committed PNG.
      carry over automatically. Do NOT regenerate from scratch — generation drifts off-template.
   4. Append that page to the parent series `DAHMpIU_j38` (Canva `merge-designs`, insert at end).
   5. Export the page as a `pro` PNG to get the Canva export URL, and write that URL into a pointer
-     file `posters/YYYY-MM-DD-ai-brief.png.url` (one line, the URL only).
-  6. Append a row to `posters/index.md` (date, headline, Canva view link).
-- Commit the article, the `posters/YYYY-MM-DD-ai-brief.png.url` pointer, and `posters/index.md`.
+     file `social/poster/YYYY-MM-DD-ai-brief.png.url` (one line, the URL only).
+  6. Append a row to `social/poster/index.md` (date, headline, Canva view link).
+- Commit the article, the `social/poster/YYYY-MM-DD-ai-brief.png.url` pointer, and `social/poster/index.md`.
   The `commit-poster.yml` GitHub Actions workflow downloads the PNG on GitHub's network and commits
-  `posters/YYYY-MM-DD-ai-brief.png` — so the routine does NOT need Canva hosts on its egress
+  `social/poster/YYYY-MM-DD-ai-brief.png` — so the routine does NOT need Canva hosts on its egress
   allowlist. (If the routine container does have egress, it may download and commit the PNG itself
   and skip the pointer.)
 - English only, matching the article.
+
+## Daily Instagram caption
+
+After the poster, write the Instagram caption for the same #1 story to
+`social/caption/YYYY-MM-DD-ai-brief.txt`. The `post-instagram.yml` workflow posts this file
+verbatim with the day's poster; if it is missing, the posting script falls back to building a
+caption from the article.
+
+- Plain text, English, lead with the news hook (the same #1 Must-Know story as the poster).
+- 1–3 short lines: headline hook → the key fact/number → optional money/investment angle
+  (signal, not advice). A light call to action is fine (e.g. "Full brief in bio").
+- Hashtags: **at most 5**, on the last line, and the **last one MUST be `#FrontBriefAI`**.
+  Example: `#AI #Anthropic #AINews #TechNews #FrontBriefAI`
