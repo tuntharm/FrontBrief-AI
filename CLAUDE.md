@@ -70,25 +70,36 @@ page (one day = one page) and exports that page as the committed PNG.
   SUBHEAD, and a small kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
   Keep it clean and professional — NO decorative dot/circle patterns or other clutter over
   the image.
-- Subject company logo: include the logo of the company the lead story is about (e.g. Anthropic,
-  NVIDIA, Cognition) as a small, tasteful mark — this is editorial/nominative use. Source the
-  official logo as a public URL and add it via Canva `upload-asset-from-url` (Canva fetches it
-  server-side). Avoid logos of companies the story is NOT about, and never imply endorsement.
-- Imagery: AI-generated, on-theme only. No real photos of identifiable people. Third-party logos
-  are allowed ONLY for the subject company of the story (above).
+- Imagery (most important — pick on merit): use the single most RELEVANT real editorial image of
+  the actual people / company / product / event in the lead story — e.g. the exec on stage, the
+  launch, the venue — like a press or event photo. Real photos of identifiable people ARE allowed
+  for editorial news use about that story. Search for the best on-topic image and choose it on
+  merit; prefer official press-kit, Creative Commons, or properly-licensed/reusable sources and
+  credit where appropriate. Use a generic/stock or AI-generated on-theme image ONLY as a fallback
+  when no suitable real image exists. Never use an off-topic image (e.g. a generic office or
+  circuit board for a person/company story).
+- Subject company logo (optional, secondary): a small, tasteful logo of the company the story is
+  about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
+  logos of companies the story is NOT about, and never imply endorsement.
 - Steps each run:
   1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
-  2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the
-     key fact/number (do not just drop a stat — lead with the news).
-  3. Build today's page by DUPLICATING page 1 of the parent series (the locked master, which
-     already has the two FrontBrief.AI logos placed — FB monogram top-right, wordmark in the
-     bottom-right pill). Then change ONLY four things: the category pill, the headline, the
-     subhead, and the background image. Do NOT move, swap, recolor, or re-place the logos — they
-     carry over automatically. Do NOT regenerate from scratch — generation drifts off-template.
-  4. Append that page to the parent series `DAHMpIU_j38` (Canva `merge-designs`, insert at end).
-  5. Export the page as a `pro` PNG to get the Canva export URL, and write that URL into a pointer
+  2. AI-write the copy: a short news HEADLINE (keep it ~2 lines — long ones overflow into the
+     subhead) and a one-line SUBHEAD carrying the key fact/number. Lead with the news, not a stat.
+  3. AI-pick the image: search for the single most relevant real photo of the people/company/event
+     in the story (see Imagery), then upload it to Canva via `upload-asset-from-url`.
+  4. Build the page by COPYING page 1 of the parent series (the master — the two FrontBrief.AI logos
+     are already placed: FB monogram top-right, wordmark in the bottom-right pill). Change ONLY four
+     things: the category pill, the headline, the subhead, and the background image (`update_fill`
+     the background — it is now unlocked, so the swap is clean and the logos stay put). Do NOT move,
+     recolor, or re-place the logos. Do NOT regenerate from scratch — generation drifts off-template.
+  5. Balance check before finishing: look at the page thumbnail and confirm the layout is balanced —
+     headline ~2 lines, subhead concise (~2 lines) and sitting just above the button (not sinking to
+     the very bottom), both logos visible, nothing cramped or off-centre. Nudge element positions
+     (e.g. the subhead's `top`) if needed, then re-check.
+  6. Append the finished page to the parent series `DAHMpIU_j38` (Canva `merge-designs`, insert at end).
+  7. Export the page as a `pro` PNG to get the Canva export URL, and write that URL into a pointer
      file `social/poster/YYYY-MM-DD-ai-brief.png.url` (one line, the URL only).
-  6. Append a row to `social/poster/index.md` (date, headline, Canva view link).
+  8. Append a row to `social/poster/index.md` (date, headline, Canva view link).
 - Commit the article, the `social/poster/YYYY-MM-DD-ai-brief.png.url` pointer, and `social/poster/index.md`.
   The `commit-poster.yml` GitHub Actions workflow downloads the PNG on GitHub's network and commits
   `social/poster/YYYY-MM-DD-ai-brief.png` — so the routine does NOT need Canva hosts on its egress

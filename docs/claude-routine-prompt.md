@@ -90,22 +90,26 @@ surface; Top 5 is the full evidence trail with links.
 Daily social poster (after the article):
 - Single Canva parent file holds the series; append one new page per day. Parent design ID:
   DAHMpIU_j38 (edit: https://www.canva.com/d/bMWYO56xKFXmTz6).
-- Build today's page from the #1 Must-Know story. Reframe it as a short news headline + one-line
-  subhead with the key fact/number (lead with the news, not a floating stat). Keep headline ~2 lines.
-- DUPLICATE page 1 of the parent series (the locked master — it already has the two FrontBrief.AI
-  logos placed: FB monogram top-right, wordmark in the bottom-right pill). Change ONLY four things
-  via an editing transaction: category pill, headline, subhead, background image. Do NOT move,
-  swap, recolor, or re-place the logos — they carry over. Do NOT regenerate from scratch (it drifts
-  off-template).
-- Locked style: IG 1080x1350 portrait, full-bleed on-theme image; "AI · [category]" pill top-left;
-  "FRONTBRIEF.AI · DD MON YYYY" mark top-right; bottom gradient scrim with bold HEADLINE + one-line
-  SUBHEAD + small kicker (metric · Source); "FrontBrief.AI" wordmark in the bottom-right pill. Keep
-  it clean and professional — NO decorative dot/circle patterns or clutter.
-- Subject company logo: include the logo of the company the lead story is about (Anthropic, NVIDIA,
-  Cognition, etc.) as a small, tasteful mark — editorial/nominative use; source the official logo
-  as a public URL and add it via Canva upload-asset-from-url. No logos of unrelated companies, no
-  real photos of identifiable people; imagery is otherwise AI-generated and on-theme.
-- Append the page to DAHMpIU_j38 (Canva merge-designs, insert at end).
+- AI-write the copy from the #1 Must-Know story: a short news HEADLINE (keep ~2 lines — long ones
+  overflow into the subhead) + a one-line SUBHEAD with the key fact/number. Lead with the news.
+- AI-pick the image (most important): search for and choose the single most RELEVANT real photo of
+  the actual people / company / product / event in the story — e.g. the exec on stage, the launch,
+  the venue — like a press/event photo. Real photos of identifiable people ARE allowed for editorial
+  news use. Prefer official press-kit / Creative Commons / properly-licensed sources; credit where
+  appropriate. Generic/stock or AI-generated on-theme image ONLY as a fallback. NEVER use an
+  off-topic image (e.g. a generic office or circuit board for a person/company story). Upload via
+  Canva upload-asset-from-url.
+- COPY page 1 of the parent series (the master — the two FrontBrief.AI logos are already placed: FB
+  monogram top-right, wordmark in the bottom-right pill). Change ONLY: category pill, headline,
+  subhead, and background image (update_fill the background — it is now UNLOCKED, so the swap is
+  clean and the logos stay put). Do NOT move, recolor, or re-place the logos. Do NOT regenerate.
+- Locked style: IG 1080x1350 portrait; "AI · [category]" pill top-left; "FRONTBRIEF.AI · DD MON YYYY"
+  mark top-right; bottom gradient scrim with bold HEADLINE + one-line SUBHEAD; FrontBrief.AI wordmark
+  in the bottom-right pill. Clean and professional — NO decorative dot/circle patterns or clutter.
+- Balance check before finishing: view the page thumbnail and confirm it's balanced — headline ~2
+  lines, subhead concise (~2 lines) sitting just above the button (not sinking to the bottom), both
+  logos visible, nothing cramped or off-centre. Nudge element positions (e.g. subhead top) if needed.
+- Append the finished page to DAHMpIU_j38 (Canva merge-designs, insert at end).
 - Export the page as a pro PNG to get the Canva export URL, and write that URL (one line) to
   social/poster/YYYY-MM-DD-ai-brief.png.url. Add a row to social/poster/index.md (date, headline, Canva view link).
   The commit-poster.yml workflow downloads the PNG on GitHub's network and commits the .png — the
