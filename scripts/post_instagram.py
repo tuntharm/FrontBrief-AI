@@ -17,7 +17,7 @@ INSTAGRAM_API = "https://graph.instagram.com/v21.0"
 REPO_RAW = "https://raw.githubusercontent.com/tuntharm/dailyaibrief/main"
 MAX_CAPTION = 2200
 BRAND = "FrontBrief.AI"
-SLOGAN = "The AI frontier, briefed daily."
+SLOGAN = "A daily brief from the AI frontier."
 HASHTAGS = (
     "#FrontBrief #AI #ArtificialIntelligence #TechNews #AINews"
     " #MachineLearning #DeepTech #FutureOfAI"

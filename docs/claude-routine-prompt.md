@@ -1,6 +1,6 @@
 # Claude Routine Prompt
 
-The product is **FrontBrief.AI** — slogan: *"The AI frontier, briefed daily."* Use "FrontBrief.AI"
+The product is **FrontBrief.AI** — slogan: *"A daily brief from the AI frontier."* Use "FrontBrief.AI"
 as the brand name on every public surface (article H1, LINE Digest header, poster mark/button,
 Instagram caption). The internal file slug `YYYY-MM-DD-ai-brief.md/.png` stays as-is.
 

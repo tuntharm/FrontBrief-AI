@@ -1,6 +1,6 @@
 # FrontBrief.AI
 
-**FrontBrief.AI** — *The AI frontier, briefed daily.*
+**FrontBrief.AI** — *A daily brief from the AI frontier.*
 
 FrontBrief.AI is a lightweight automation that turns a daily Claude Routine article into a short LINE digest, a social poster, and an Instagram post.
 

@@ -2,7 +2,7 @@
 
 ## Brand
 
-The product is **FrontBrief.AI** — slogan: *"The AI frontier, briefed daily."*
+The product is **FrontBrief.AI** — slogan: *"A daily brief from the AI frontier."*
 Use "FrontBrief.AI" as the brand name on every public surface: the article H1, the LINE Digest
 header, the poster mark/button, and the Instagram caption. (The internal file slug
 `YYYY-MM-DD-ai-brief.md/.png` stays as-is — it is a path identifier, not a brand surface.)
