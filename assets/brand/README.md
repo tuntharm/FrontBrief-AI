@@ -1,25 +1,22 @@
 # FrontBrief.AI — Brand Assets
 
-Drop the brand image files here so Canva (and anything else) can fetch them from a stable
-public URL. Canva's `upload-asset-from-url` downloads server-side, so the GitHub **raw** URL
-works regardless of the routine container's network egress.
+The brand image files. Canva's `upload-asset-from-url` downloads server-side, so the GitHub
+**raw** URL works regardless of the routine container's network egress.
 
-## Expected files
+## Files
 
-| File | Use | Raw URL (once committed) |
-|------|-----|--------------------------|
-| `frontbrief-logo.png` | FB monogram + wordmark (light bg) | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/frontbrief-logo.png` |
-| `frontbrief-logo-dark.png` | White logo for dark backgrounds (optional) | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/frontbrief-logo-dark.png` |
-| `frontbrief-footer.png` | Dark banner / footer ("A Daily Brief from the AI Frontier") | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/frontbrief-footer.png` |
+| File | Use | Raw URL |
+|------|-----|---------|
+| `whitebg.png` | FB monogram + wordmark on a light/white background | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/whitebg.png` |
+| `blackbg.png` | FB monogram + wordmark on a dark/black background | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/blackbg.png` |
+| `footer.png` | Dark banner / footer ("A daily brief from the AI frontier") | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/footer.png` |
 
-## How the routine uses these
+## How these are used
 
-1. The FrontBrief.AI logo can replace or sit beside the bottom-right `FrontBrief.AI` text button
-   on the poster — add it with Canva `upload-asset-from-url` (pass the raw URL above) then
-   `insert_fill`.
+1. The FrontBrief.AI logo already lives on the Canva poster template (page 1): the FB monogram
+   top-right and the wordmark in the bottom-right pill. These files are the canonical reference —
+   use `whitebg.png` on light layouts, `blackbg.png` on dark ones, and `footer.png` for any post
+   header/sign-off strip. Add to Canva via `upload-asset-from-url` with the raw URL above.
 2. The **subject company's logo** (the company the lead story is about) is sourced fresh each run
    from that company's official site/press kit as a public URL, then added the same way as a
    small, tasteful mark. Editorial/nominative use only — no logos of unrelated companies.
-
-Keep these as transparent PNGs where possible. The dark footer banner is for posts/stories that
-need a header or sign-off strip; the square logo is the primary mark.

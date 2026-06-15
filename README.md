@@ -9,25 +9,32 @@ It is designed for people who want a concise, high-signal view of the AI world: 
 ## How It Works
 
 ```text
-Claude Routine, daily 07:00 Europe/London
+Claude Routine, daily 05:00 Europe/London
   -> searches recent high-quality AI sources
-  -> writes articles/YYYY-MM-DD-ai-brief.md
-  -> commits and pushes the article
+  -> writes articles/YYYY-MM-DD-ai-brief.md (with a ## LINE Digest section)
+  -> builds the daily Canva poster -> social/poster/YYYY-MM-DD-ai-brief.png.url
+  -> writes the IG caption          -> social/caption/YYYY-MM-DD-ai-brief.txt
+  -> commits and pushes, then merges to main
 
 GitHub Actions
-  -> detects the article push
-  -> extracts a short LINE digest
-  -> sends one LINE Messaging API message
+  -> line-dispatch.yml:   article push  -> sends the LINE digest
+  -> commit-poster.yml:   .png.url push -> downloads + commits the poster PNG
+  -> post-instagram.yml:  after poster  -> posts the poster + caption to Instagram
 
-LINE Official Account
-  -> delivers the digest to LINE_TO
+Delivery
+  -> LINE Official Account delivers the digest to LINE_TO
+  -> Instagram posts the poster with the caption
 ```
 
-Claude Routine handles research, writing, scheduling, and committing. GitHub Actions only handles LINE delivery.
+Claude Routine handles research, writing, the poster, the caption, scheduling, and committing.
+GitHub Actions handles LINE delivery, the poster PNG commit, and Instagram posting.
 
 ## Brief Criteria
 
-The brief should pick the most important 5-7 items across five balanced tracks:
+The brief picks **exactly 5 items, interestingness-first** — lead with the single most "must-know"
+story in AI that day, then rank the rest by importance × how interesting/shareable they are. The
+five tracks below are a guide for breadth, **not a quota**; never pad with a weak story to fill a
+track.
 
 - Global AI / Frontier Models: frontier labs, model releases, agents, multimodal AI, reasoning, safety, regulation, and policy.
 - AI Infrastructure / Markets: NVIDIA, AMD, TSMC, Broadcom, hyperscaler capex, data centres, HBM, networking, energy, cooling, and inference economics.
@@ -35,18 +42,25 @@ The brief should pick the most important 5-7 items across five balanced tracks:
 - Product / Startup / Adoption Signal: enterprise AI, developer tools, robotics, healthcare, finance, legal AI, funding, acquisitions, and adoption signals.
 - Tharm's Deeptech Lens: surrogate modelling, neural operators, physics GNNs, FEA/CFD acceleration, aerospace, SHM, robotics, and digital twins.
 
-The deeptech lens is one section, not the whole brief. Niche PhD-relevant items should go there unless they are broadly important to the AI world.
+The deeptech lens is one slot, not the whole brief. Each item carries an investment angle (signal,
+not advice) and a Tharm-relevance line, and the brief closes with a Money Map.
 
 Ignore generic chatbot news, prompt-engineering tips, consumer AI tools, duplicated stories, vague hype, and low-signal opinion pieces.
 
 ## Repository Layout
 
 ```text
-.github/workflows/line-dispatch.yml
-articles/sample-ai-brief.md
+.github/workflows/line-dispatch.yml     # sends the LINE digest on article push
+.github/workflows/commit-poster.yml      # commits the poster PNG from its .png.url pointer
+.github/workflows/post-instagram.yml     # posts poster + caption to Instagram
+articles/                                # daily briefs (+ sample-ai-brief.md)
+assets/brand/                            # logo + footer brand assets
 docs/claude-routine-prompt.md
 scripts/extract_line_digest.py
 scripts/send_line.py
+scripts/post_instagram.py
+social/poster/                           # daily posters (PNG + .png.url + index.md)
+social/caption/                          # daily Instagram captions
 requirements.txt
 ```
 
@@ -57,16 +71,18 @@ Add these repository secrets under GitHub `Settings` -> `Secrets and variables` 
 ```text
 LINE_CHANNEL_ACCESS_TOKEN
 LINE_TO
+INSTAGRAM_USER_ID         # only needed once you enable Instagram auto-posting
+INSTAGRAM_ACCESS_TOKEN    # long-lived Instagram Graph API token
 ```
 
-`LINE_TO` can be a user ID, group ID, or room ID. For a small group of readers, the simplest setup is to add the LINE Official Account to a LINE group and use the group ID as `LINE_TO`.
+`LINE_TO` can be a user ID, group ID, or room ID. For a small group of readers, the simplest setup is to add the LINE Official Account to a LINE group and use the group ID as `LINE_TO`. The two `INSTAGRAM_*` secrets are optional until you turn on Instagram posting.
 
 ## Claude Routine Setup
 
 1. Open `https://claude.ai/code/routines`.
 2. Create a new routine.
 3. Connect/select GitHub repository `tuntharm/DailyAIBrief`.
-4. Schedule it daily at `07:00 Europe/London`.
+4. Schedule it daily at `05:00 Europe/London`.
 5. Paste the full prompt from `docs/claude-routine-prompt.md` into the Routine Instructions box.
 6. Make sure the routine can commit and push to the repository.
 
@@ -128,24 +144,17 @@ Claude Routine should follow the format in `docs/claude-routine-prompt.md`:
 ```text
 # FrontBrief.AI — YYYY-MM-DD
 
-## TL;DR
-
-## Global AI / Frontier Models
-
-## AI Infrastructure / Markets
-
-## Research / Technical Signal
-
-## Product / Startup / Adoption Signal
-
-## Tharm's Deeptech Lens
-
-## Founder / Investor Takeaway
-
-## Watchlist
+## LINE Digest     # standalone, punchy; sent to LINE verbatim
+## TL;DR           # 3 standalone bullets
+## Top 5           # per item: Category / Why interesting / Why it matters /
+                   #           Investment angle / Tharm relevance / Action / Link
+## Money Map       # where capital + pricing momentum moved
+## Watchlist       # three catalysts to monitor next
 ```
 
-`scripts/extract_line_digest.py` degrades gracefully if optional sections are missing. `TL;DR` becomes the strategic summary in LINE. The five track sections provide the evidence trail, and the LINE digest includes `Read:` links when the article has `Link:` fields.
+`scripts/extract_line_digest.py` sends the hand-written `## LINE Digest` section verbatim if
+present, and otherwise degrades gracefully by building a digest from `TL;DR` and the `Top 5`
+links. The `Top 5` is the full evidence trail; each item includes a direct `Link:`.
 
 ## Security
 
