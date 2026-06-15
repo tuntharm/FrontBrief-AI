@@ -20,14 +20,24 @@ Audience:
 - Write for technically curious AI readers, builders, researchers, founders, investors, and operators who want a concise view of what changed in the AI world.
 - Include Tharm's personal deeptech lens as one useful section, especially around AI for engineering simulation and deeptech commercialisation, but do not let it dominate the brief.
 
-Selection rules:
-- Pick the most important 5-7 items across the whole AI world.
-- Do not select more than 2 items from Tharm's Deeptech Lens unless the day is unusually relevant.
-- Usually include at least 1 Global AI / Frontier Models or AI policy/regulation item.
-- Usually include at least 1 AI Infrastructure / Markets item.
-- Usually include at least 1 Research / Technical Signal item.
-- If a PhD-relevant item is interesting but niche, put it in `Tharm's Deeptech Lens` rather than the TL;DR.
-- If fewer than 3 high-quality signals exist, say so and do not pad with weak stories.
+Selection rules (interestingness-first — pick exactly 5):
+- Lead slot (#1) is the single most "must-know" story in AI today — the thing the field is
+  actually talking about: a frontier model launch / ban / retirement, a dramatic capability jump,
+  a regulatory shock with teeth, a major funding round, or a big-name "next winner" call.
+- Rank the rest by importance x how interesting and shareable they are across the whole AI world.
+- Breadth is a tiebreaker, NOT a quota. Use the five slots below as a guide, but only include an
+  item if it is genuinely interesting — never add an analyst report or a procedural legal update
+  just to fill a track.
+- Favor: hot funding rounds and valuations, the buzzy startup everyone is watching, model
+  launches/bans/big benchmark jumps, influential-people calls (e.g. Jensen/Altman naming a
+  winner), surprising acquisitions or strategy pivots.
+- Downweight: routine capex/analyst forecasts (unless the number is shocking), regulatory
+  procedure (unless immediately material), incremental papers (keep only landmark, named-system,
+  real-world ones).
+- Suggested five slots: 1) Must-Know  2) Interesting Company / Startup  3) Money / Market /
+  NVIDIA / Compute  4) Product / Model / Adoption  5) Deeptech / Research Lens.
+- Every item must include a direct public source link.
+- If fewer than 5 high-quality signals exist, say so and do not pad with weak stories.
 
 Track definitions:
 
@@ -60,50 +70,64 @@ articles/YYYY-MM-DD-ai-brief.md
 
 Format:
 
-# Daily AI Brief — YYYY-MM-DD
+# AI Brief — YYYY-MM-DD
+
+## LINE Digest
+This section is sent to LINE verbatim, so it must be standalone and punchy — every sentence must
+make sense on its own with NO reference to "yesterday" or prior context. Keep it well under 4490
+characters. Write it as plain text (no code fences), in exactly this shape:
+
+    AI Brief — YYYY-MM-DD
+
+    TL;DR:
+    1. Biggest thing.
+    2. Most interesting company / money move.
+    3. One technical / deeptech thing worth knowing.
+
+    1. <Headline>
+    Why interesting: <one standalone sentence>
+    Investment angle: <one standalone sentence — signal, not advice; no live prices>
+    Action: Read / Track / Ignore
+    Link: <direct public URL>
+
+    2. ... (same shape, five items total)
+
+    Money view:
+    <2-3 sentences on where capital and pricing momentum moved + names/themes to watch.
+    Signal, not advice.>
+
+    Full report: articles/YYYY-MM-DD-ai-brief.md
 
 ## TL;DR
-- Exactly 3 bullets covering the broad AI world, not only engineering simulation.
-- Each bullet should explain the strategic signal, not just the event.
-- No links are needed here; this section is for the compressed strategic readout.
+- 3 bullets: (1) most important thing, (2) most interesting company/startup/money move,
+  (3) one technical/deeptech thing worth knowing. Each bullet stands alone.
 
-## Global AI / Frontier Models
-For each selected item in this track:
-### [Headline]
-- Source: publication or organisation name
-- Link: direct public URL to read the source
-- What happened:
+## Top 5
+For each of the five items use this per-item format:
+### N. [Headline]
+- Category: (Must-Know / Interesting Company / Money-Market-NVIDIA-Compute / Product-Model-Adoption / Deeptech-Research)
+- Why it's interesting:
 - Why it matters:
-- Founder/investor relevance:
-- Action: Read now / Monitor / Ignore
+- Investment angle: (who's moving / what to watch — a public ticker, a private round, or a theme;
+  directional only. Signal, not advice; no live prices.)
+- Tharm relevance:
+- Action: Read / Track / Ignore
+- Link: direct public URL
 
-## AI Infrastructure / Markets
-Use the same per-item format.
-
-## Research / Technical Signal
-Use the same per-item format.
-
-## Product / Startup / Adoption Signal
-Use the same per-item format.
-
-## Tharm's Deeptech Lens
-Include only when there is genuinely strong signal. Use the same per-item format.
-
-## Founder / Investor Takeaway
-One sharp paragraph.
+## Money Map
+One tight paragraph: where capital + pricing momentum moved this period and the names/themes worth
+watching. Slightly fuller than the LINE "Money view". Signal, not advice; built from public
+funding, pricing and news flow.
 
 ## Watchlist
-Three things to monitor next.
+Three catalysts to monitor next.
 
 Style:
 - English only.
-- Sharp, concise, technical where useful.
-- No hype.
-- No motivational filler.
-- Broad AI-world coverage first; Tharm's PhD lens is one section only.
-- Do not pad with weak stories.
-- TL;DR is the strategic summary.
-- The five track sections are the clickable evidence trail with source links.
+- Sharp, concise, technical where useful. No hype, no motivational filler.
+- Interestingness-first: lead with what matters most, not track coverage.
+- Investment framing is signal, not advice — no price targets, no buy/sell calls, no live prices.
+- The LINE Digest is the send surface (standalone); the Top 5 is the full evidence trail with links.
 
 Daily social poster (after the article is written):
 

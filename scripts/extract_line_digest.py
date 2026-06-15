@@ -89,7 +89,7 @@ def field_value(block: str, field_name: str) -> str:
 
 
 def signal_source_body(text: str) -> str:
-    top_signals = section_body(text, "Top Signals")
+    top_signals = section_body(text, "Top Signals") or section_body(text, "Top 5")
     if top_signals:
         return top_signals
 
@@ -130,6 +130,17 @@ def extract_founder_takeaway(text: str) -> str:
         if line.strip()
     ]
     return first_sentence(" ".join(lines), limit=520)
+
+
+def extract_line_digest_section(text: str) -> str:
+    """Return the article's hand-written `## LINE Digest` section, if present.
+
+    When the article author provides this section, it is sent to LINE verbatim
+    (only truncated to the char limit) instead of mechanically extracting
+    sentences from the long-form body. This keeps LINE messages standalone and
+    punchy rather than scraping context-dependent prose.
+    """
+    return section_body(text, "LINE Digest")
 
 
 def graceful_truncate(text: str, max_chars: int = MAX_LINE_CHARS) -> str:
@@ -194,7 +205,11 @@ def build_digest(article_path: Path, text: str) -> str:
 def main() -> int:
     article_path = newest_article()
     article_text = article_path.read_text(encoding="utf-8")
-    digest = build_digest(article_path, article_text)
+    digest_section = extract_line_digest_section(article_text)
+    if digest_section:
+        digest = graceful_truncate(digest_section)
+    else:
+        digest = build_digest(article_path, article_text)
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     output_path = REPORTS_DIR / "latest_line_digest.txt"
     output_path.write_text(digest.rstrip() + "\n", encoding="utf-8")

@@ -33,6 +33,19 @@ For each routine run:
 - Do not send LINE from Claude Routine.
 - Do not add model API keys or secret credentials.
 
+## Article format
+
+See `docs/claude-routine-prompt.md` for the full template. Key points:
+
+- Selection is interestingness-first, exactly 5 items. Lead with the single most "must-know"
+  story; breadth across the five slots is a guide, not a quota. Do not pad with weak stories.
+- The article H1 is `# AI Brief — YYYY-MM-DD`.
+- The article MUST contain a `## LINE Digest` section written as standalone, punchy plain text.
+  GitHub Actions sends this section to LINE verbatim (via `scripts/extract_line_digest.py`), so
+  every sentence must stand alone — no "yesterday" references — and include each item's `Link:`.
+- Each item carries an `Investment angle` (directional signal, not financial advice; no live
+  prices) and a `Tharm relevance` line. The brief closes with a `Money Map` paragraph.
+
 ## Daily social poster
 
 A single Canva "parent" file holds the whole poster series; each run appends one new
@@ -47,7 +60,7 @@ page (one day = one page) and exports that page as the committed PNG.
 - Imagery: AI-generated, on-theme only. No real photos of identifiable people and no
   third-party brand logos (licensing/likeness).
 - Steps each run:
-  1. Pick the single most shareable lead story from the brief (usually a top "Read now" item).
+  1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
   2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the
      key fact/number (do not just drop a stat — lead with the news).
   3. Generate the poster in the locked style, then append it as a new page to `DAHMpIU_j38`
