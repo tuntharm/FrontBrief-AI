@@ -65,8 +65,14 @@ page (one day = one page) and exports that page as the committed PNG.
   full-bleed on-theme image; an "AI · [category]" pill top-left; a "FRONTBRIEF.AI · DD MON YYYY"
   mark top-right; a dark gradient scrim across the bottom with a bold news HEADLINE, a one-line
   SUBHEAD, and a small kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
-- Imagery: AI-generated, on-theme only. No real photos of identifiable people and no
-  third-party brand logos (licensing/likeness).
+  Keep it clean and professional — NO decorative dot/circle patterns or other clutter over
+  the image.
+- Subject company logo: include the logo of the company the lead story is about (e.g. Anthropic,
+  NVIDIA, Cognition) as a small, tasteful mark — this is editorial/nominative use. Source the
+  official logo as a public URL and add it via Canva `upload-asset-from-url` (Canva fetches it
+  server-side). Avoid logos of companies the story is NOT about, and never imply endorsement.
+- Imagery: AI-generated, on-theme only. No real photos of identifiable people. Third-party logos
+  are allowed ONLY for the subject company of the story (above).
 - Steps each run:
   1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
   2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the

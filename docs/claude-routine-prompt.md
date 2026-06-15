@@ -143,9 +143,14 @@ one page) and exports that page as the committed PNG.
 - Locked template style: Instagram post, 1080×1350 portrait, editorial tech-news look —
   full-bleed on-theme image; "AI · [category]" pill top-left; "FRONTBRIEF.AI · DD MON YYYY"
   mark top-right; bottom gradient scrim with a bold news HEADLINE, one-line SUBHEAD, and a small
-  kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
-- Imagery: AI-generated and on-theme only. No real photos of identifiable people, no third-party
-  brand logos.
+  kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right. Keep it clean and
+  professional — NO decorative dot/circle patterns or clutter over the image.
+- Subject company logo: include the logo of the company the lead story is about (Anthropic,
+  NVIDIA, Cognition, etc.) as a small, tasteful mark — editorial/nominative use. Source the
+  official logo as a public URL and add it via Canva `upload-asset-from-url`. Don't add logos of
+  companies the story isn't about, and never imply endorsement.
+- Imagery: AI-generated and on-theme only. No real photos of identifiable people. Third-party
+  logos allowed ONLY for the subject company of the story.
 - Steps:
   1. Use the brief's #1 Must-Know story as the poster story.
   2. Reframe it as marketing content — a short news headline + a one-line subhead with the key

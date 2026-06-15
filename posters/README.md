@@ -18,8 +18,10 @@ Social posters (Instagram, 1080×1350 portrait) that accompany each daily brief 
 Editorial tech-news look: full-bleed on-theme image; an `AI · [category]` pill top-left; a
 `FRONTBRIEF.AI · DD MON YYYY` mark top-right; a dark gradient scrim across the bottom carrying a
 bold news headline, a one-line subhead, and a small kicker (`metric · Source`); and a
-`FrontBrief.AI` button bottom-right. Imagery is AI-generated and on-theme — no real photos of
-identifiable people and no third-party brand logos.
+`FrontBrief.AI` button bottom-right. Keep it clean and professional — no decorative dot/circle
+patterns over the image. Include the **subject company's logo** (the company the story is about)
+as a small, tasteful mark (editorial use); imagery is otherwise AI-generated and on-theme — no
+real photos of identifiable people and no logos of companies the story isn't about.
 
 ## Network requirement
 
