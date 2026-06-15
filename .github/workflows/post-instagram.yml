@@ -1,0 +1,46 @@
+name: Post to Instagram
+
+# Fires after the Commit Poster workflow completes successfully on main.
+# The PNG is already committed by then, so we serve it via GitHub's raw URL —
+# no extra hosting required.
+
+on:
+  workflow_run:
+    workflows: ["Commit Poster"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: post-instagram
+  cancel-in-progress: false
+
+jobs:
+  post-instagram:
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Post to Instagram
+        env:
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+        run: python scripts/post_instagram.py
