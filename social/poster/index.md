@@ -9,4 +9,5 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
-| 2026-06-15 | Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order | [view](https://www.canva.com/d/od6Ua4xeuN6hvna) | _pending egress allowlist_ |
+| 2026-06-15 | Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order | [view](https://www.canva.com/d/od6Ua4xeuN6hvna) | committed by workflow |
+| 2026-06-15 (pipeline test) | Sakana AI's "AI Scientist" clears peer review in Nature | [view](https://www.canva.com/d/rwMPl1zbclx66KE) | `social/poster/2026-06-15-sakana-test.png.url` |
