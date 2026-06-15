@@ -143,18 +143,21 @@ one page) and exports that page as the committed PNG.
 - Imagery: AI-generated and on-theme only. No real photos of identifiable people, no third-party
   brand logos.
 - Steps:
-  1. Pick the single most shareable lead story from the brief (usually a top "Read now" item).
+  1. Use the brief's #1 Must-Know story as the poster story.
   2. Reframe it as marketing content — a short news headline + a one-line subhead with the key
      fact/number. Lead with the news, not a floating stat.
-  3. Generate the poster in the locked style, then append it as a new page to `DAHMpIU_j38`
-     via Canva `merge-designs`.
-  4. Export that page as a `pro` PNG and save it to `posters/YYYY-MM-DD-ai-brief.png`.
-  5. Append a row to `posters/index.md` (date, headline, Canva view link).
-- English only. If Canva hosts are not on the egress allowlist and the PNG download fails, still
-  append the Canva page and record the links in `posters/index.md`; do not fail the run.
+  3. Build the page by duplicating the locked template page and swapping headline/subhead/category/
+     image (Canva `copy-design` + editing transaction). Do NOT regenerate from scratch — it drifts
+     off-template.
+  4. Append the page to `DAHMpIU_j38` via Canva `merge-designs` (insert at end).
+  5. Export the page as a `pro` PNG to get its Canva export URL, and write that URL (one line) to
+     `posters/YYYY-MM-DD-ai-brief.png.url`.
+  6. Append a row to `posters/index.md` (date, headline, Canva view link).
+- English only. The `commit-poster.yml` workflow downloads the PNG on GitHub's network and commits
+  `posters/YYYY-MM-DD-ai-brief.png`, so the routine does NOT need Canva on its egress allowlist.
 
 After writing the files:
-- Commit only the article file, that day's poster PNG, and `posters/index.md`.
+- Commit the article file, the `posters/YYYY-MM-DD-ai-brief.png.url` pointer, and `posters/index.md`.
 - Push it to the repository.
 - Commit message:
   Add daily AI brief YYYY-MM-DD

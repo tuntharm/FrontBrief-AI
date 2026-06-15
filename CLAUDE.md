@@ -24,9 +24,10 @@ For each routine run:
 
 - Write exactly one article file:
   `articles/YYYY-MM-DD-ai-brief.md`
-- Build the matching daily social poster (see "Daily social poster" below) and save it to
-  `posters/YYYY-MM-DD-ai-brief.png`
-- Commit only the article file and that day's poster PNG (plus `posters/index.md`). Nothing else.
+- Build the matching daily social poster (see "Daily social poster" below). The PNG itself is
+  committed by the `commit-poster.yml` workflow; the routine commits the export-URL pointer
+  `posters/YYYY-MM-DD-ai-brief.png.url`.
+- Commit only the article file, that day's poster `.png.url` pointer, and `posters/index.md`.
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
 - After pushing to the session branch, also merge into `main` and push `main` to origin.
@@ -63,12 +64,16 @@ page (one day = one page) and exports that page as the committed PNG.
   1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
   2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the
      key fact/number (do not just drop a stat — lead with the news).
-  3. Generate the poster in the locked style, then append it as a new page to `DAHMpIU_j38`
-     (Canva `merge-designs`).
-  4. Export that page as a `pro`-quality PNG and save to `posters/YYYY-MM-DD-ai-brief.png`.
-  5. Append a row to `posters/index.md` (date, headline, Canva view link).
+  3. Build today's page by duplicating the locked template page and swapping the headline,
+     subhead, category pill and background image (Canva `copy-design` + editing transaction).
+     Do NOT regenerate from scratch — generation drifts off-template.
+  4. Append that page to the parent series `DAHMpIU_j38` (Canva `merge-designs`, insert at end).
+  5. Export the page as a `pro` PNG to get the Canva export URL, and write that URL into a pointer
+     file `posters/YYYY-MM-DD-ai-brief.png.url` (one line, the URL only).
+  6. Append a row to `posters/index.md` (date, headline, Canva view link).
+- Commit the article, the `posters/YYYY-MM-DD-ai-brief.png.url` pointer, and `posters/index.md`.
+  The `commit-poster.yml` GitHub Actions workflow downloads the PNG on GitHub's network and commits
+  `posters/YYYY-MM-DD-ai-brief.png` — so the routine does NOT need Canva hosts on its egress
+  allowlist. (If the routine container does have egress, it may download and commit the PNG itself
+  and skip the pointer.)
 - English only, matching the article.
-- Network note: exporting/downloading the PNG requires Canva hosts on the environment's egress
-  allowlist (`export-download.canva.com`, `design.canva.ai`, `*.canva.com`). If the download is
-  blocked, still append the Canva page and record the links in `posters/index.md`, but do not
-  fail the run over the missing binary.
