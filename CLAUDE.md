@@ -3,7 +3,7 @@
 This repository now uses this architecture:
 
 1. Claude Routine searches and writes the daily article.
-2. Claude Routine commits only `articles/YYYY-MM-DD-ai-brief.md`.
+2. Claude Routine commits `articles/YYYY-MM-DD-ai-brief.md` and the matching social poster `posters/YYYY-MM-DD-ai-brief.png`.
 3. GitHub Actions detects article pushes and sends the LINE digest.
 
 Do not rebuild the old implementation.
@@ -24,9 +24,38 @@ For each routine run:
 
 - Write exactly one article file:
   `articles/YYYY-MM-DD-ai-brief.md`
-- Commit only that article file.
+- Build the matching daily social poster (see "Daily social poster" below) and save it to
+  `posters/YYYY-MM-DD-ai-brief.png`
+- Commit only the article file and that day's poster PNG (plus `posters/index.md`). Nothing else.
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
-- After pushing the article to the session branch, also merge it into `main` and push `main` to origin.
+- After pushing to the session branch, also merge into `main` and push `main` to origin.
 - Do not send LINE from Claude Routine.
 - Do not add model API keys or secret credentials.
+
+## Daily social poster
+
+A single Canva "parent" file holds the whole poster series; each run appends one new
+page (one day = one page) and exports that page as the committed PNG.
+
+- Parent Canva design: **"Daily AI Brief — Poster Series"**, design ID `DAHMpIU_j38`
+  (edit: https://www.canva.com/d/bMWYO56xKFXmTz6 · view: https://www.canva.com/d/3cUi9X-xizO5rGJ).
+- Style (locked template): Instagram post, 1080×1350 portrait, editorial tech-news look —
+  full-bleed on-theme image; an "AI · [category]" pill top-left; a "DAILY AI BRIEF · DD MON YYYY"
+  mark top-right; a dark gradient scrim across the bottom with a bold news HEADLINE, a one-line
+  SUBHEAD, and a small kicker (`metric · Source`); an "AI Brief" button bottom-right.
+- Imagery: AI-generated, on-theme only. No real photos of identifiable people and no
+  third-party brand logos (licensing/likeness).
+- Steps each run:
+  1. Pick the single most shareable lead story from the brief (usually a top "Read now" item).
+  2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the
+     key fact/number (do not just drop a stat — lead with the news).
+  3. Generate the poster in the locked style, then append it as a new page to `DAHMpIU_j38`
+     (Canva `merge-designs`).
+  4. Export that page as a `pro`-quality PNG and save to `posters/YYYY-MM-DD-ai-brief.png`.
+  5. Append a row to `posters/index.md` (date, headline, Canva view link).
+- English only, matching the article.
+- Network note: exporting/downloading the PNG requires Canva hosts on the environment's egress
+  allowlist (`export-download.canva.com`, `design.canva.ai`, `*.canva.com`). If the download is
+  blocked, still append the Canva page and record the links in `posters/index.md`, but do not
+  fail the run over the missing binary.

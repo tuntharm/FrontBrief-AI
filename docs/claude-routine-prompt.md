@@ -9,7 +9,7 @@ Important repository rules:
 - Do not restore the old GitHub Actions + OpenAI API pipeline.
 - Do not create or edit `scripts/fetch_news.py`, `scripts/summarise.py`, `scripts/utils.py`, `config/sources.yml`, `config/scoring.yml`, or `routine/claude-daily-brief.md`.
 - Do not write the brief to `reports/`.
-- Only create or update one article file under `articles/`.
+- Create or update one article file under `articles/`, plus that day's poster under `posters/`.
 - GitHub Actions will handle LINE dispatch after the article is pushed.
 - Do not send LINE from Claude Routine.
 - Do not use OpenAI API, Anthropic API, or any model API key.
@@ -105,8 +105,32 @@ Style:
 - TL;DR is the strategic summary.
 - The five track sections are the clickable evidence trail with source links.
 
-After writing the file:
-- Commit only the article file.
+Daily social poster (after the article is written):
+
+A single Canva "parent" file holds the whole series; each run appends one new page (one day =
+one page) and exports that page as the committed PNG.
+
+- Parent Canva design: "Daily AI Brief — Poster Series", design ID `DAHMpIU_j38`
+  (edit: https://www.canva.com/d/bMWYO56xKFXmTz6).
+- Locked template style: Instagram post, 1080×1350 portrait, editorial tech-news look —
+  full-bleed on-theme image; "AI · [category]" pill top-left; "DAILY AI BRIEF · DD MON YYYY"
+  mark top-right; bottom gradient scrim with a bold news HEADLINE, one-line SUBHEAD, and a small
+  kicker (`metric · Source`); an "AI Brief" button bottom-right.
+- Imagery: AI-generated and on-theme only. No real photos of identifiable people, no third-party
+  brand logos.
+- Steps:
+  1. Pick the single most shareable lead story from the brief (usually a top "Read now" item).
+  2. Reframe it as marketing content — a short news headline + a one-line subhead with the key
+     fact/number. Lead with the news, not a floating stat.
+  3. Generate the poster in the locked style, then append it as a new page to `DAHMpIU_j38`
+     via Canva `merge-designs`.
+  4. Export that page as a `pro` PNG and save it to `posters/YYYY-MM-DD-ai-brief.png`.
+  5. Append a row to `posters/index.md` (date, headline, Canva view link).
+- English only. If Canva hosts are not on the egress allowlist and the PNG download fails, still
+  append the Canva page and record the links in `posters/index.md`; do not fail the run.
+
+After writing the files:
+- Commit only the article file, that day's poster PNG, and `posters/index.md`.
 - Push it to the repository.
 - Commit message:
   Add daily AI brief YYYY-MM-DD
