@@ -75,10 +75,12 @@ page (one day = one page) and exports that page as the committed PNG.
   a launch/keynote slide, the product, the exec on stage, the venue). A branded announcement visual
   or a real press/event photo of the actual people/company beats a generic AI/robot/office/circuit
   stock photo every time — even when the generic photo looks nice. Real photos of identifiable
-  people ARE allowed for editorial news use. Search for and choose the most story-specific image;
-  prefer official press-kit / the company's own announcement visual / Creative Commons /
-  properly-licensed sources, and credit where appropriate. A generic on-theme image is a LAST
-  resort, and an off-topic image (e.g. a generic office for a research story) is never acceptable.
+  people ARE allowed for editorial news use. Prefer official press-kit / the company's own
+  announcement visual / Creative Commons / properly-licensed sources, and credit where appropriate.
+  Image priority order: (1) story-specific/branded visual (announcement, keynote slide, product,
+  exec on stage); (2) if none, a clean LOGO-BASED brand shot — the company's logo on a phone/screen,
+  like the Anthropic poster — which is a strong fallback; (3) only then a generic on-theme image.
+  An off-topic image (e.g. a generic office for a research story) is never acceptable.
 - Subject company logo (optional, secondary): a small, tasteful logo of the company the story is
   about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
   logos of companies the story is NOT about, and never imply endorsement.

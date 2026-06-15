@@ -99,8 +99,10 @@ Daily social poster (after the article):
   AI/robot/office/circuit stock photo every time, even a nice-looking one. Real photos of
   identifiable people ARE allowed for editorial news use. Prefer official press-kit / the company's
   own announcement visual / Creative Commons / properly-licensed sources; credit where appropriate.
-  A generic on-theme image is a LAST resort; an off-topic image is never acceptable. Upload via
-  Canva upload-asset-from-url.
+  Image priority: (1) story-specific/branded visual (announcement, keynote slide, product, exec on
+  stage); (2) if none, a clean LOGO-BASED brand shot — the company's logo on a phone/screen, like
+  the Anthropic poster — a strong fallback; (3) only then a generic on-theme image. Off-topic is
+  never acceptable. Upload via Canva upload-asset-from-url.
 - COPY page 1 of the parent series (the master — the two FrontBrief.AI logos are already placed: FB
   monogram top-right, wordmark in the bottom-right pill). Change ONLY: category pill, headline,
   subhead, and background image (update_fill the background — it is now UNLOCKED, so the swap is
