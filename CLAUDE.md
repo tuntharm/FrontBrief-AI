@@ -77,9 +77,11 @@ page (one day = one page) and exports that page as the committed PNG.
   1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
   2. Reframe it as marketing content: a short news headline + a one-line subhead carrying the
      key fact/number (do not just drop a stat — lead with the news).
-  3. Build today's page by duplicating the locked template page and swapping the headline,
-     subhead, category pill and background image (Canva `copy-design` + editing transaction).
-     Do NOT regenerate from scratch — generation drifts off-template.
+  3. Build today's page by DUPLICATING page 1 of the parent series (the locked master, which
+     already has the two FrontBrief.AI logos placed — FB monogram top-right, wordmark in the
+     bottom-right pill). Then change ONLY four things: the category pill, the headline, the
+     subhead, and the background image. Do NOT move, swap, recolor, or re-place the logos — they
+     carry over automatically. Do NOT regenerate from scratch — generation drifts off-template.
   4. Append that page to the parent series `DAHMpIU_j38` (Canva `merge-designs`, insert at end).
   5. Export the page as a `pro` PNG to get the Canva export URL, and write that URL into a pointer
      file `posters/YYYY-MM-DD-ai-brief.png.url` (one line, the URL only).
