@@ -70,14 +70,15 @@ page (one day = one page) and exports that page as the committed PNG.
   SUBHEAD, and a small kicker (`metric · Source`); a "FrontBrief.AI" button bottom-right.
   Keep it clean and professional — NO decorative dot/circle patterns or other clutter over
   the image.
-- Imagery (most important — pick on merit): use the single most RELEVANT real editorial image of
-  the actual people / company / product / event in the lead story — e.g. the exec on stage, the
-  launch, the venue — like a press or event photo. Real photos of identifiable people ARE allowed
-  for editorial news use about that story. Search for the best on-topic image and choose it on
-  merit; prefer official press-kit, Creative Commons, or properly-licensed/reusable sources and
-  credit where appropriate. Use a generic/stock or AI-generated on-theme image ONLY as a fallback
-  when no suitable real image exists. Never use an off-topic image (e.g. a generic office or
-  circuit board for a person/company story).
+- Imagery (most important — pick for SPECIFICITY, not just "on theme"): the best image visually
+  ties to THIS exact story — it carries the company's identity or announcement context (its logo,
+  a launch/keynote slide, the product, the exec on stage, the venue). A branded announcement visual
+  or a real press/event photo of the actual people/company beats a generic AI/robot/office/circuit
+  stock photo every time — even when the generic photo looks nice. Real photos of identifiable
+  people ARE allowed for editorial news use. Search for and choose the most story-specific image;
+  prefer official press-kit / the company's own announcement visual / Creative Commons /
+  properly-licensed sources, and credit where appropriate. A generic on-theme image is a LAST
+  resort, and an off-topic image (e.g. a generic office for a research story) is never acceptable.
 - Subject company logo (optional, secondary): a small, tasteful logo of the company the story is
   about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
   logos of companies the story is NOT about, and never imply endorsement.

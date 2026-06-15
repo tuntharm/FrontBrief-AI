@@ -92,12 +92,14 @@ Daily social poster (after the article):
   DAHMpIU_j38 (edit: https://www.canva.com/d/bMWYO56xKFXmTz6).
 - AI-write the copy from the #1 Must-Know story: a short news HEADLINE (keep ~2 lines — long ones
   overflow into the subhead) + a one-line SUBHEAD with the key fact/number. Lead with the news.
-- AI-pick the image (most important): search for and choose the single most RELEVANT real photo of
-  the actual people / company / product / event in the story — e.g. the exec on stage, the launch,
-  the venue — like a press/event photo. Real photos of identifiable people ARE allowed for editorial
-  news use. Prefer official press-kit / Creative Commons / properly-licensed sources; credit where
-  appropriate. Generic/stock or AI-generated on-theme image ONLY as a fallback. NEVER use an
-  off-topic image (e.g. a generic office or circuit board for a person/company story). Upload via
+- AI-pick the image (most important — pick for SPECIFICITY, not just "on theme"): choose the image
+  that visually ties to THIS exact story — it should carry the company's identity or announcement
+  context (its logo, a launch/keynote slide, the product, the exec on stage, the venue). A branded
+  announcement visual or a real press/event photo of the actual people/company beats a generic
+  AI/robot/office/circuit stock photo every time, even a nice-looking one. Real photos of
+  identifiable people ARE allowed for editorial news use. Prefer official press-kit / the company's
+  own announcement visual / Creative Commons / properly-licensed sources; credit where appropriate.
+  A generic on-theme image is a LAST resort; an off-topic image is never acceptable. Upload via
   Canva upload-asset-from-url.
 - COPY page 1 of the parent series (the master — the two FrontBrief.AI logos are already placed: FB
   monogram top-right, wordmark in the bottom-right pill). Change ONLY: category pill, headline,
