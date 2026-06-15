@@ -1,5 +1,8 @@
 # Claude Repository Instructions
 
+> For the *why* behind these rules, Tharm's feedback history, and known gotchas, read
+> `docs/DECISIONS.md`. This file holds the authoritative *rules*; that log holds the *context*.
+
 ## Brand
 
 The product is **FrontBrief.AI** — slogan: *"A daily brief from the AI frontier."*
