@@ -9,5 +9,6 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-16 | Anthropic to rent Musk's xAI GPUs (~$1.25B/month for 300MW, ~220k GPUs) | [view](https://www.canva.com/d/odAZR17ULK5DzfG) | committed by workflow |
 | 2026-06-15 | Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order | [view](https://www.canva.com/d/od6Ua4xeuN6hvna) | committed by workflow |
 | 2026-06-15 (pipeline test) | Sakana AI's "AI Scientist" clears peer review in Nature | [view](https://www.canva.com/d/rwMPl1zbclx66KE) | `social/poster/2026-06-15-sakana-test.png.url` |
