@@ -84,6 +84,17 @@ page (one day = one page) and exports that page as the committed PNG.
   exec on stage); (2) if none, a clean LOGO-BASED brand shot — the company's logo on a phone/screen,
   like the Anthropic poster — which is a strong fallback; (3) only then a generic on-theme image.
   An off-topic image (e.g. a generic office for a research story) is never acceptable.
+- **Person-centric stories MUST use a real photo of that person.** If the #1 story is about a named
+  individual (e.g. "Bezos raises $12B", "Jensen Huang calls…"), the poster image must be a good,
+  recognisable photo of that person — NOT a generic on-theme image (a humanoid-robot stock photo for
+  a Bezos story is wrong). Prefer a clean, well-composed shot, ideally with company logo/context in
+  frame (e.g. Bezos in front of the Amazon logo). Crop it for the image area: the background fill is
+  the TOP region (1080×900, landscape-ish) and the bottom ~450px is hidden by the gradient scrim +
+  headline/subhead, so frame the face/subject in the UPPER part of the photo. Getting it into Canva:
+  Wikimedia direct URLs FAIL `upload-asset-from-url` (server-side fetch is blocked); use a
+  hotlinkable direct CDN image URL (no redirect). If no good licensed photo of the person can be
+  fetched server-side, place the image into the Canva page manually rather than shipping a generic
+  fallback.
 - Subject company logo (optional, secondary): a small, tasteful logo of the company the story is
   about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
   logos of companies the story is NOT about, and never imply endorsement.

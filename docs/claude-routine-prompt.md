@@ -103,6 +103,14 @@ Daily social poster (after the article):
   stage); (2) if none, a clean LOGO-BASED brand shot — the company's logo on a phone/screen, like
   the Anthropic poster — a strong fallback; (3) only then a generic on-theme image. Off-topic is
   never acceptable. Upload via Canva upload-asset-from-url.
+- PERSON-CENTRIC stories MUST use a real photo of that person (e.g. "Bezos raises $12B" → a good
+  Bezos photo, NOT a generic robot/office image). Prefer a clean, recognisable shot, ideally with
+  company logo/context in frame (e.g. Bezos before the Amazon logo). Crop for the image area: the
+  background fill is the TOP region (1080×900, landscape-ish) and the bottom ~450px is hidden by the
+  scrim + headline/subhead, so keep the face/subject in the UPPER part of the photo. Note: Wikimedia
+  direct URLs FAIL upload-asset-from-url (server-side fetch blocked) — use a hotlinkable direct CDN
+  URL (no redirect); if none can be fetched, place the person photo into the Canva page manually
+  rather than shipping a generic fallback.
 - COPY page 1 of the parent series (the master — the two FrontBrief.AI logos are already placed: FB
   monogram top-right, wordmark in the bottom-right pill). Change ONLY: category pill, headline,
   subhead, and background image (update_fill the background — it is now UNLOCKED, so the swap is

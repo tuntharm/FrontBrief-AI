@@ -45,6 +45,22 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 - Real photos of identifiable people ARE allowed for editorial news use (this REVERSED an earlier
   "no real people / no logos" rule). Prefer official press-kit / company announcement visuals /
   Creative Commons / licensed sources; credit where appropriate; subject company's logo is fine.
+- **Person-centric stories → use a real photo OF that person (Tharm, 2026-06-16).** When the #1
+  story is about a named individual (e.g. "Bezos raises $12B"), the poster image should be a good,
+  recognisable photo of that person, not a generic on-theme image (a humanoid-robot stock photo for
+  a Bezos story is wrong). Pick a clean, well-composed shot (ideally with a company logo/context in
+  frame, like the Bezos-at-Amazon photo Tharm sent) and crop it to fit the poster's image area: the
+  background fill is the top region (1080×900, landscape-ish), and the bottom ~450px is covered by
+  the gradient scrim + headline/subhead — so frame the face/subject in the UPPER portion so it isn't
+  hidden by the text. On 2026-06-16 the routine first shipped a generic robot image for the Bezos
+  story; Tharm re-edited the Canva by hand to a proper Bezos photo and asked us to make this a rule.
+- **Getting a person photo into Canva (gotcha):** Wikimedia Commons direct URLs FAIL Canva's
+  `upload-asset-from-url` (server-side fetch returns non-200 — likely a User-Agent/hotlink block),
+  so the MD5-path trick doesn't help. Pexels CDN (`images.pexels.com/photos/<id>/...jpeg`) is
+  reliably hotlinkable but is stock (no real named people). For a specific person, find a
+  hotlinkable direct CDN image URL (no redirect) of that person; if none can be fetched
+  server-side, place the image in Canva manually (as Tharm did) rather than settling for a generic
+  image.
 
 ## Instagram caption
 - File `social/caption/YYYY-MM-DD-ai-brief.txt`, posted verbatim by `post-instagram.yml`.
