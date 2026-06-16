@@ -1,5 +1,6 @@
-Rivals are renting GPUs to rivals: SpaceX's IPO filing reveals Anthropic will pay Elon Musk's xAI ~$1.25B a month to rent 300MW and ~220,000 idle GPUs.
-The takeaway: compute capacity — not model quality — is now the real moat, and single-source compute is a board-level risk.
+Jeff Bezos is back — as co-CEO of Project Prometheus, a "physical AI" lab building an "artificial general engineer" to design and make real products.
+The number: ~$12B raised at a ~$41B valuation, with ~120 people poached from OpenAI, DeepMind, Meta, xAI and Nvidia.
+The signal: physical AI is the new mega-funded frontier.
 Full brief in bio.
 
-#AI #Anthropic #xAI #AINews #FrontBriefAI
+#AI #Bezos #PhysicalAI #AINews #FrontBriefAI
