@@ -118,10 +118,14 @@ Daily social poster (after the article):
 - Locked style: IG 1080x1350 portrait; "AI · [category]" pill top-left; "FRONTBRIEF.AI · DD MON YYYY"
   mark top-right; bottom gradient scrim with bold HEADLINE + one-line SUBHEAD; FrontBrief.AI wordmark
   in the bottom-right pill. Clean and professional — NO decorative dot/circle patterns or clutter.
-- Balance check before finishing: view the page thumbnail and confirm it's balanced — headline ~2
-  lines, subhead concise (~2 lines) sitting just above the button (not sinking to the bottom), both
-  logos visible, nothing cramped or off-centre. Nudge element positions (e.g. subhead top) if needed.
-- Append the finished page to DAHMpIU_j38 (Canva merge-designs, insert at end).
+- Balance check before finishing (ALWAYS, every run): view the page thumbnail and confirm it's
+  balanced — headline ~2 lines; SUBHEAD AT MOST 2 LINES so its block stays level with / centered on
+  the FrontBrief.AI button (a 3rd line drops below the button and looks broken). If it runs 3 lines,
+  shorten the subhead copy to <=2 lines (keep it under ~70 chars; the subhead box is 482px wide), or
+  nudge it up. Confirm both logos visible, nothing cramped or off-centre.
+- Append the finished page to DAHMpIU_j38 (Canva merge-designs, insert at end). ALWAYS append every
+  poster you build to the parent series — never leave it as a standalone design, including ad-hoc
+  extras, redos, or "make me another poster" requests.
 - Export the page as a pro PNG to get the Canva export URL, and write that URL (one line) to
   social/poster/YYYY-MM-DD-ai-brief.png.url. Add a row to social/poster/index.md (date, headline, Canva view link).
   The commit-poster.yml workflow downloads the PNG on GitHub's network and commits the .png — the
@@ -135,6 +139,9 @@ Daily Instagram caption (after the poster):
   optional money/investment angle (signal, not advice). A light CTA is fine ("Full brief in bio").
 - Hashtags: AT MOST 5, on the last line, and the LAST one MUST be #FrontBriefAI.
   Example: #AI #Anthropic #AINews #TechNews #FrontBriefAI
+- Also post the caption as a comment on the Canva parent design DAHMpIU_j38 (comment-on-design),
+  with a header line ("IG caption — YYYY-MM-DD (<story>). Copy-paste:") then the exact caption text,
+  so it can be copied from Canva on mobile without opening GitHub.
 
 After writing the files:
 - Commit the article file, social/poster/YYYY-MM-DD-ai-brief.png.url, social/poster/index.md, and
