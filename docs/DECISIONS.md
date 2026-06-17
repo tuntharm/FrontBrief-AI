@@ -81,6 +81,11 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 - File `social/caption/YYYY-MM-DD-ai-brief.txt`, posted verbatim by `post-instagram.yml`.
 - Lead with a punchy hook → key fact/number → optional money angle → light CTA ("Full brief in bio").
 - Hashtags: AT MOST 5, last line, and the LAST one MUST be `#FrontBriefAI`.
+- **ALSO post the caption as a comment on the Canva parent design every run (Tharm, 2026-06-17).**
+  After writing the caption file, call `comment-on-design` on `DAHMpIU_j38` with a short header
+  (e.g. "📋 IG caption — YYYY-MM-DD (<story>). Copy-paste:") followed by the exact caption text.
+  Tharm posts from his phone in Canva and doesn't want to open GitHub to copy the caption. Comments
+  are design-level (no per-page anchor) and capped at 1000 chars — the caption fits easily.
 
 ## Gotchas / lessons learned
 - Canva background image can be **locked** → `update_fill`/delete refused ("locked element"). Fix:

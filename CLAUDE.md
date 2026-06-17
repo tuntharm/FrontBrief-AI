@@ -136,3 +136,7 @@ caption from the article.
   (signal, not advice). A light call to action is fine (e.g. "Full brief in bio").
 - Hashtags: **at most 5**, on the last line, and the **last one MUST be `#FrontBriefAI`**.
   Example: `#AI #Anthropic #AINews #TechNews #FrontBriefAI`
+- **Also post the caption as a comment on the Canva parent design** (`DAHMpIU_j38`) every run, via
+  `comment-on-design`, with a short header line (`📋 IG caption — YYYY-MM-DD (<story>). Copy-paste:`)
+  then the exact caption text. This lets the caption be copied straight from Canva on mobile without
+  opening GitHub.
