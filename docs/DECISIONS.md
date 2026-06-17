@@ -44,6 +44,13 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   no decorative dot/circle patterns (Thark had these removed).
 - Headline ~2 lines (3 lines overflow into the subhead). Subhead concise (~2 lines) sitting just
   above the button — Tharm nudged it up ~16px when it sank too low; do a balance check before export.
+- **ALWAYS view the page thumbnail and check the layout before finishing — every single time
+  (Tharm, 2026-06-17).** Specifically: the subhead MUST be at most 2 lines so its block stays
+  vertically centered on / level with the FrontBrief.AI button. A 3rd subhead line drops below the
+  button ("not at the same horizon as the FrontBrief logo") and looks broken — fix it by shortening
+  the subhead copy to ≤2 lines (preferred) or nudging it up. Subhead box is 482px wide; ~70 chars
+  ≈ 2 lines, so keep subheads under ~70 characters. Caught on 2026-06-17 with the Nvidia/SK-hynix
+  poster, whose "...secures memory for Vera Rubin through 2030" subhead ran 3 lines.
 
 ### Imagery priority (Tharm's strong preference — pick for SPECIFICITY, not just "on theme")
 1. Story-specific/branded visual: announcement, keynote slide, product, exec on stage/event.
