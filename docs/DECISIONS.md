@@ -32,6 +32,14 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   (asset `MAHMrGzahno`), FrontBrief.AI wordmark in the bottom-right pill (asset `MAHMrIzveUk`).
 - Daily flow: COPY page 1 → change ONLY category pill, headline, subhead, background image
   (`update_fill`) → balance-check → append to parent → export → `.png.url` pointer.
+- **ALWAYS append every finished poster to the parent series `DAHMpIU_j38` — never leave it as a
+  standalone design (Tharm, 2026-06-17).** This applies to EVERY poster, including ad-hoc extras,
+  redos, alternate-story posters, or any "make me another poster" request — even when Tharm says
+  he'll handle something manually, or has already added a different poster to the parent himself.
+  Do not skip the `merge-designs` append step or invent reasons to keep a poster separate; if a
+  poster is worth making, it goes into the parent. On 2026-06-17 the routine built an extra
+  Nvidia/SK-hynix poster as a standalone instead of appending it — wrong; it must always land in
+  the parent canvas.
 - **Never** move/recolor/re-place the logos; never regenerate from scratch (drifts off-template);
   no decorative dot/circle patterns (Thark had these removed).
 - Headline ~2 lines (3 lines overflow into the subhead). Subhead concise (~2 lines) sitting just
