@@ -59,6 +59,9 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
   would-be lead (or its poster) was already used in the last few days, pick the next genuinely
   fresh item instead. Never poster the same company/deal two runs in a row — lead with new 24–48h
   news, not a day-old repeat.
+- **Freshness window: 5 days max.** The poster's lead story must be genuinely recent — news from
+  the last 5 days at most (prefer the last 24–48h). Don't poster anything older than 5 days, and
+  never reuse a story already postered within that window.
 - The article H1 is `# FrontBrief.AI — YYYY-MM-DD`.
 - The article MUST contain a `## LINE Digest` section written as standalone, punchy plain text.
   GitHub Actions sends this section to LINE verbatim (via `scripts/extract_line_digest.py`), so
@@ -90,6 +93,13 @@ page (one day = one page) and exports that page as the committed PNG.
   exec on stage); (2) if none, a clean LOGO-BASED brand shot — the company's logo on a phone/screen,
   like the Anthropic poster — which is a strong fallback; (3) only then a generic on-theme image.
   An off-topic image (e.g. a generic office for a research story) is never acceptable.
+- **Never ship a bare logo as the full-frame background** (a flat vector/monochrome logo stretched
+  edge-to-edge looks cheap). A "logo-based brand shot" means the logo IN CONTEXT — a real photo of
+  the company's app on a phone/screen, an event/press photo, a product shot — or, if compositing,
+  a designed background (color/gradient/scene) with the logo placed in the MIDDLE (its transparency
+  letting the background show around it), not the logo filling the whole canvas. Prefer a real
+  branded photo (e.g. Pexels has no-attribution app-on-phone shots for many AI products —
+  `images.pexels.com/photos/<id>/...jpeg` is reliably fetchable by Canva) over a flat logo.
 - **Person-centric stories MUST use a real photo of that person.** If the #1 story is about a named
   individual (e.g. "Bezos raises $12B", "Jensen Huang calls…"), the poster image must be a good,
   recognisable photo of that person — NOT a generic on-theme image (a humanoid-robot stock photo for

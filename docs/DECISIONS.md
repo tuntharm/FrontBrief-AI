@@ -39,6 +39,20 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
      fresh item** instead. Same company/deal twice in a row on the poster = not allowed; lead with
      genuinely new news (a story from the last 24–48h that has not been covered).
 - The freshest item, not just the biggest, should lead when the biggest is a day-old repeat.
+- **Freshness window = 5 days max (Tharm, 2026-06-18).** The poster's lead story may be up to 5 days
+  old at most (prefer 24–48h). Don't poster news older than that, and don't reuse a story already
+  postered within that window.
+
+## Poster image: no bare logos (Tharm, 2026-06-18)
+- The first DeepSeek poster used the flat lobehub logo PNG stretched full-frame — Tharm said that's
+  "just a logo as the background"; he wants depth: a real branded photo, or a designed background
+  with the logo composed in the MIDDLE (transparency around it), like the app-on-phone / founder +
+  backers examples he sent.
+- **Rule:** never use a bare logo as the whole background. Prefer a real branded photo (the
+  company's app on a phone/screen, an event/press photo, a product shot). Pexels has free,
+  no-attribution AI-app photos that Canva can fetch — e.g. the DeepSeek app shots
+  `images.pexels.com/photos/30530404|30530422/...jpeg` (used for the fixed 2026-06-18 poster).
+  If compositing, place the logo centred over a designed background, not edge-to-edge.
 
 ## Poster (Canva)
 - Parent series design `DAHMpIU_j38` ("FrontBrief.AI — Poster Series"). One page per day, appended.
