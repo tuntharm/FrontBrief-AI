@@ -53,6 +53,12 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
 
 - Selection is interestingness-first, exactly 5 items. Lead with the single most "must-know"
   story; breadth across the five slots is a guide, not a quota. Do not pad with weak stories.
+- **No repeats (scan first).** Before locking the #1 / poster story, scan recent coverage:
+  read the last ~5–7 `articles/*.md` `### 1.` leads AND the recent poster headlines in the Canva
+  series via `get-design-content(DAHMpIU_j38, ["richtexts"], pages=[last several])`. If the
+  would-be lead (or its poster) was already used in the last few days, pick the next genuinely
+  fresh item instead. Never poster the same company/deal two runs in a row — lead with new 24–48h
+  news, not a day-old repeat.
 - The article H1 is `# FrontBrief.AI — YYYY-MM-DD`.
 - The article MUST contain a `## LINE Digest` section written as standalone, punchy plain text.
   GitHub Actions sends this section to LINE verbatim (via `scripts/extract_line_digest.py`), so
@@ -99,6 +105,10 @@ page (one day = one page) and exports that page as the committed PNG.
   about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
   logos of companies the story is NOT about, and never imply endorsement.
 - Steps each run:
+  0. Scan first (no repeats): read the recent poster headlines via
+     `get-design-content(DAHMpIU_j38, ["richtexts"], pages=[last several])`. If the #1 story was
+     already postered in the last few days, use the next fresh item for the poster instead — never
+     run the same company/deal as the poster two days in a row.
   1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
   2. AI-write the copy: a short news HEADLINE (keep it ~2 lines — long ones overflow into the
      subhead) and a one-line SUBHEAD carrying the key fact/number. Lead with the news, not a stat.
