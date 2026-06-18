@@ -40,7 +40,8 @@ For each routine run:
 - Write the matching Instagram caption (see "Daily Instagram caption" below):
   `social/caption/YYYY-MM-DD-ai-brief.txt`.
 - Commit only the article file, that day's poster `.png.url` pointer, `social/poster/index.md`,
-  and the caption file `social/caption/YYYY-MM-DD-ai-brief.txt`.
+  the editorial ledger `social/poster/ledger.json`, and the caption file
+  `social/caption/YYYY-MM-DD-ai-brief.txt`.
 - Use commit message:
   `Add daily AI brief YYYY-MM-DD`
 - After pushing to the session branch, also merge into `main` and push `main` to origin.
@@ -68,6 +69,31 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
   every sentence must stand alone — no "yesterday" references — and include each item's `Link:`.
 - Each item carries an `Investment angle` (directional signal, not financial advice; no live
   prices) and a `Tharm relevance` line. The brief closes with a `Money Map` paragraph.
+
+## Editorial workflow (multi-agent news desk)
+
+The 05:00 run is orchestrated like a small news startup's AI desk — see
+`docs/claude-routine-prompt.md` for the full spawn-by-spawn flow. Authoritative rules:
+
+- **You are the Managing Editor / orchestrator.** Spawn sub-agents (the Agent/Task tool) for research
+  and drafting; keep Canva + git in this session (never delegate them). Spend tokens freely for
+  breadth and quality.
+- **Pipeline:** (1) a research pod of 4 parallel beat reporters — Models/Products, Money/Markets,
+  Deeptech-Research-People, Buzz/Trending — each returning structured candidates; (2) an Assignment
+  Editor that dedupes + scores candidates on IMPORTANCE and ENGAGEMENT separately, outputting the
+  Brief Five + a Poster Shortlist; (3) an Audience/Social Editor that makes the final poster pick +
+  creative brief; (4) a Producer/Writer that writes article + LINE + caption; (5) you do final
+  tone/brand QA, build the poster, update the ledger, and ship.
+- **Two-track selection.** The article/LINE is importance-first (money rounds, launches, regulation
+  belong here). The **poster/IG feed is engagement-first and MAY differ from the article's #1** — pick
+  the most feed-worthy story (people & drama ≈ surprising > visually strong > already-talked-about).
+  Don't default the poster to "another $X raise."
+- **Hard gates (you enforce; no agent overrides):** freshness ≤ 5 days; no repeat STORY within 5 days;
+  no repeat poster SHAPE back-to-back; poster image is a real/branded/composited shot, never a bare
+  logo; brand voice + format compliance; every item has a direct public link.
+- **Ledger:** `social/poster/ledger.json` — append one entry per run (date, article_lead,
+  article_lead_shape, poster_story, poster_shape, poster_category) and read it to enforce the
+  no-repeat rules. Commit it with the daily files.
 
 ## Daily social poster
 
