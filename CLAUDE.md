@@ -145,7 +145,9 @@ page (one day = one page) and exports that page as the committed PNG.
      `get-design-content(DAHMpIU_j38, ["richtexts"], pages=[last several])`. If the #1 story was
      already postered in the last few days, use the next fresh item for the poster instead — never
      run the same company/deal as the poster two days in a row.
-  1. Use the brief's #1 Must-Know story (the lead item) as the poster story.
+  1. Use the Audience/Social Editor's engagement pick as the poster story — it is chosen on the
+     engagement rubric and MAY differ from the article's #1 (see "Editorial workflow"). Use that
+     story's creative brief for the copy and image.
   2. AI-write the copy: a short news HEADLINE (keep it ~2 lines — long ones overflow into the
      subhead) and a one-line SUBHEAD carrying the key fact/number. Lead with the news, not a stat.
   3. AI-pick the image: search for the single most relevant real photo of the people/company/event
@@ -172,12 +174,12 @@ page (one day = one page) and exports that page as the committed PNG.
 
 ## Daily Instagram caption
 
-After the poster, write the Instagram caption for the same #1 story to
-`social/caption/YYYY-MM-DD-ai-brief.txt`. The `post-instagram.yml` workflow posts this file
-verbatim with the day's poster; if it is missing, the posting script falls back to building a
-caption from the article.
+After the poster, write the Instagram caption for the **same story as the poster** (the engagement
+pick, which may differ from the article #1) to `social/caption/YYYY-MM-DD-ai-brief.txt`. The
+`post-instagram.yml` workflow posts this file verbatim with the day's poster; if it is missing, the
+posting script falls back to building a caption from the article.
 
-- Plain text, English, lead with the news hook (the same #1 Must-Know story as the poster).
+- Plain text, English, lead with the news hook (the same story as the poster).
 - 1–3 short lines: headline hook → the key fact/number → optional money/investment angle
   (signal, not advice). A light call to action is fine (e.g. "Full brief in bio").
 - Hashtags: **at most 5**, on the last line, and the **last one MUST be `#FrontBriefAI`**.
