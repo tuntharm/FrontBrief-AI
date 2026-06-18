@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-18 | SpaceX to buy AI coding startup Cursor (Anysphere) for $60B, folding it into Musk's xAI empire | [view](https://www.canva.com/d/9D1KI0TcZcdnxVh) | committed by workflow |
 | 2026-06-16 | Bezos raises $12B for "physical AI" lab Project Prometheus (~$41B valuation) | [view](https://www.canva.com/d/odAZR17ULK5DzfG) | committed by workflow |
 | 2026-06-15 | Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order | [view](https://www.canva.com/d/od6Ua4xeuN6hvna) | committed by workflow |
 | 2026-06-15 (pipeline test) | Sakana AI's "AI Scientist" clears peer review in Nature | [view](https://www.canva.com/d/rwMPl1zbclx66KE) | `social/poster/2026-06-15-sakana-test.png.url` |
