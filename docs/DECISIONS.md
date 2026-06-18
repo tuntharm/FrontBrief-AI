@@ -39,6 +39,20 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
      fresh item** instead. Same company/deal twice in a row on the poster = not allowed; lead with
      genuinely new news (a story from the last 24–48h that has not been covered).
 - The freshest item, not just the biggest, should lead when the biggest is a day-old repeat.
+- **Freshness window = 5 days max (Tharm, 2026-06-18).** The poster's lead story may be up to 5 days
+  old at most (prefer 24–48h). Don't poster news older than that, and don't reuse a story already
+  postered within that window.
+
+## Poster image: no bare logos (Tharm, 2026-06-18)
+- The first DeepSeek poster used the flat lobehub logo PNG stretched full-frame — Tharm said that's
+  "just a logo as the background"; he wants depth: a real branded photo, or a designed background
+  with the logo composed in the MIDDLE (transparency around it), like the app-on-phone / founder +
+  backers examples he sent.
+- **Rule:** never use a bare logo as the whole background. Prefer a real branded photo (the
+  company's app on a phone/screen, an event/press photo, a product shot). Pexels has free,
+  no-attribution AI-app photos that Canva can fetch — e.g. the DeepSeek app shots
+  `images.pexels.com/photos/30530404|30530422/...jpeg` (used for the fixed 2026-06-18 poster).
+  If compositing, place the logo centred over a designed background, not edge-to-edge.
 
 ## Poster (Canva)
 - Parent series design `DAHMpIU_j38` ("FrontBrief.AI — Poster Series"). One page per day, appended.
@@ -53,9 +67,11 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 
 ### Imagery priority (Tharm's strong preference — pick for SPECIFICITY, not just "on theme")
 1. Story-specific/branded visual: announcement, keynote slide, product, exec on stage/event.
-2. If none: a clean LOGO-BASED brand shot (company logo on a phone/screen, like the Anthropic poster).
+2. If none: a clean LOGO-BASED brand shot (logo IN CONTEXT — app on a phone/screen — NOT a bare
+   logo stretched full-frame).
 3. Last resort only: a generic on-theme image.
-4. Never: off-topic (e.g. a generic office/circuit board for a person/company story).
+4. Never: off-topic (e.g. a generic office/circuit board for a person/company story); never a bare
+   flat logo as the whole background.
 - Real photos of identifiable people ARE allowed for editorial news use (this REVERSED an earlier
   "no real people / no logos" rule). Prefer official press-kit / company announcement visuals /
   Creative Commons / licensed sources; credit where appropriate; subject company's logo is fine.
@@ -68,16 +84,12 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   the gradient scrim + headline/subhead — so frame the face/subject in the UPPER portion so it isn't
   hidden by the text. On 2026-06-16 the routine first shipped a generic robot image for the Bezos
   story; Tharm re-edited the Canva by hand to a proper Bezos photo and asked us to make this a rule.
-- **Getting a person photo into Canva (gotcha):** Wikimedia Commons direct URLs FAIL Canva's
-  `upload-asset-from-url` (server-side fetch returns non-200 — likely a User-Agent/hotlink block),
-  so the MD5-path trick doesn't help. Pexels CDN (`images.pexels.com/photos/<id>/...jpeg`) is
-  reliably hotlinkable but is stock (no real named people). For a specific person, find a
-  hotlinkable direct CDN image URL (no redirect) of that person; if none can be fetched
-  server-side, place the image in Canva manually (as Tharm did) rather than settling for a generic
-  image.
-- **Reliable brand-logo CDN (2026-06-18):** lobehub static icons via jsDelivr work with Canva's
-  server-side fetch — e.g. `https://cdn.jsdelivr.net/npm/@lobehub/icons-static-png@latest/dark/<slug>.png`
-  (used for the Cursor and DeepSeek whale marks). Clearbit/Wikimedia direct URLs failed.
+- **Getting a photo into Canva (gotcha):** Wikimedia Commons direct URLs FAIL Canva's
+  `upload-asset-from-url` (server-side fetch returns non-200 — likely a User-Agent/hotlink block).
+  Pexels CDN (`images.pexels.com/photos/<id>/...jpeg`) is reliably hotlinkable and has free
+  no-attribution AI-app shots (used for the DeepSeek poster). lobehub jsDelivr brand PNGs also fetch
+  but are bare logos — only use composited, not full-frame. For a specific person with no fetchable
+  photo, place the image in Canva manually rather than settling for a generic image.
 
 ## Instagram caption
 - File `social/caption/YYYY-MM-DD-ai-brief.txt`, posted verbatim by `post-instagram.yml`.
@@ -95,7 +107,7 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   repo or at a public URL.
 - **Pushing to `main` can 503 on the git transport** (2026-06-18): the routine's `git push` to
   `main` failed repeatedly with HTTP 503 while the session-branch push and the GitHub API both
-  worked. Fallback: push the files to `main` via the GitHub API (`push_files`) to update `main` and
+  worked. Fallback: push files to `main` via the GitHub API (`push_files`) to update `main` and
   fire the `line-dispatch` / `commit-poster` workflows.
 
 ## Open items / future
