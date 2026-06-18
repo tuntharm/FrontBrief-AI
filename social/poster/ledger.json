@@ -1,0 +1,29 @@
+{
+  "_README": "Editorial ledger for FrontBrief.AI. The routine APPENDS one entry per run (newest last) and READS it to enforce two rules: (1) no repeat STORY within 5 days, (2) no repeat poster SHAPE back-to-back. 'shape' vocabulary: model-launch, model-ban/policy, money, m&a, benchmark, person-drama, research, compute, product, regulation. The poster pick is engagement-first and MAY differ from the article lead.",
+  "entries": [
+    {
+      "date": "2026-06-15",
+      "article_lead": "US government forces Anthropic to suspend Claude Fable 5 & Mythos 5",
+      "article_lead_shape": "model-ban/policy",
+      "poster_story": "Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order",
+      "poster_shape": "model-ban/policy",
+      "poster_category": "Policy"
+    },
+    {
+      "date": "2026-06-16",
+      "article_lead": "Bezos returns as co-CEO of Project Prometheus, raising $12B at ~$41B",
+      "article_lead_shape": "money",
+      "poster_story": "Bezos raises $12B for 'physical AI' lab Project Prometheus (~$41B valuation)",
+      "poster_shape": "money",
+      "poster_category": "Physical AI"
+    },
+    {
+      "date": "2026-06-18",
+      "article_lead": "SpaceX to acquire Cursor (Anysphere) for ~$60B",
+      "article_lead_shape": "m&a",
+      "poster_story": "DeepSeek raises $7.4B at a $59B valuation (Tencent & CATL back it)",
+      "poster_shape": "money",
+      "poster_category": "Money/China"
+    }
+  ]
+}
