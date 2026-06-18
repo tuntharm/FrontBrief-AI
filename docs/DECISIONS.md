@@ -26,6 +26,20 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 - Each item: investment angle (signal, not advice; no live prices) + Tharm-relevance. Brief closes
   with Money Map. LINE Digest is a dedicated, standalone section (sent verbatim).
 
+## No repeats — scan before you write (Tharm, 2026-06-18)
+- **Hard rule: do not repeat a recent lead/poster story.** On 2026-06-18 the routine led with (and
+  postered) "SpaceX buys Cursor for $60B" — but that exact story had already been the poster lead on
+  the two prior runs (series pages 6 & 7), making it **three SpaceX/Cursor posters in a row**. Tharm
+  was (rightly) annoyed.
+- **Before selecting the #1 / poster story, SCAN recent coverage first:**
+  1. Read the last ~5–7 `articles/YYYY-MM-DD-ai-brief.md` `### 1.` leads.
+  2. Read the recent poster headlines from the Canva series via
+     `get-design-content(DAHMpIU_j38, content_types=["richtexts"], pages=[last several])`.
+  3. If your would-be #1 (or its poster) was already used in the last few days, **pick the next
+     fresh item** instead. Same company/deal twice in a row on the poster = not allowed; lead with
+     genuinely new news (a story from the last 24–48h that has not been covered).
+- The freshest item, not just the biggest, should lead when the biggest is a day-old repeat.
+
 ## Poster (Canva)
 - Parent series design `DAHMpIU_j38` ("FrontBrief.AI — Poster Series"). One page per day, appended.
 - **Page 1 is the locked master** with logos already placed: FB monogram top-right
