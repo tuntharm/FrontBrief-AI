@@ -24,6 +24,14 @@
       "poster_story": "DeepSeek raises $7.4B at a $59B valuation (Tencent & CATL back it)",
       "poster_shape": "money",
       "poster_category": "Money/China"
+    },
+    {
+      "date": "2026-06-19",
+      "article_lead": "GLM-5.2 (Z.ai) open-weights tops GPT-5.5 on long-horizon coding at ~1/6 the cost",
+      "article_lead_shape": "model-launch",
+      "poster_story": "Midjourney builds a full-body Ultrasonic CT scanner that claims MRI-grade scans at ~100x the speed",
+      "poster_shape": "product",
+      "poster_category": "Health"
     }
   ]
 }

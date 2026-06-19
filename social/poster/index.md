@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-19 | Midjourney builds a full-body scanner — its "Ultrasonic CT" claims MRI-grade scans at ~100x the speed (engagement pick; article #1 was GLM-5.2) | [view](https://www.canva.com/d/F5zLlMRWcZKC1hM) | committed by workflow |
 | 2026-06-18 | DeepSeek raises $7.4B at a $59B valuation — China's open-model champion's first outside round (Tencent & CATL back it) | [view](https://www.canva.com/d/nVeVJSCHoY_zYjG) | committed by workflow |
 | 2026-06-16 | Bezos raises $12B for "physical AI" lab Project Prometheus (~$41B valuation) | [view](https://www.canva.com/d/odAZR17ULK5DzfG) | committed by workflow |
 | 2026-06-15 | Anthropic pulls its top models (Fable 5 & Mythos 5) on US export order | [view](https://www.canva.com/d/od6Ua4xeuN6hvna) | committed by workflow |
