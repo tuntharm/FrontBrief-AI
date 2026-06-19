@@ -137,6 +137,16 @@ page (one day = one page) and exports that page as the committed PNG.
   hotlinkable direct CDN image URL (no redirect). If no good licensed photo of the person can be
   fetched server-side, place the image into the Canva page manually rather than shipping a generic
   fallback.
+- **Sci-fi / futuristic stories → prefer a GENERATED conceptual image (Tharm, 2026-06-19).** When the
+  story is about something that doesn't physically exist yet (e.g. Midjourney's "Ultrasonic CT" body
+  scanner, "physical AI," novel robotics), the priority FLIPS: a too-literal stock photo (a real
+  hospital MRI tube for the scanner) reads as today's tech, not the sci-fi thing — Tharm replaced one
+  by hand with a generated image of a person in a glowing scan pod. There is NO text-to-image MCP tool
+  (Canva `generate-design` drifts off-template), so this is a MANUAL Canva Magic Media step: the
+  routine should AUTO-DRAFT the image-gen prompt in the daily output (editorial, photoreal, subject
+  framed in the UPPER region so the scrim/headline doesn't cover it) for the marketing team to paste.
+  Keep the subject company's logo (tastefully placed) when it fits. For grounded stories (a named
+  person, a real product/event) the real-photo / branded-visual priority above still wins.
 - Subject company logo (optional, secondary): a small, tasteful logo of the company the story is
   about is fine (editorial/nominative use) — but the real photo above is the priority. Never use
   logos of companies the story is NOT about, and never imply endorsement.
