@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ============================================================
+   FrontBrief.AI — dark navy theme keyed to the logo.
+   ============================================================ */
+:root {
+  --navy: #0a0e1a;
+  --navy-deep: #070a14;
+  --surface: #0d1424;
+  --surface-2: #111a30;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --ink: #ffffff;
+  --muted: #aab2c5;
+  --faint: #5b6478;
+  --accent: #2563eb;
+  --accent-bright: #3b82f6;
+  --accent-tint: rgba(37, 99, 235, 0.1);
+  --accent-line: rgba(37, 99, 235, 0.32);
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-line: var(--accent-line);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--navy);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern", "liga", "calt";
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* Monospace eyebrow / metadata label */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+}
+
+/* Subtle engineering grid for the hero band */
+.navy-grid {
+  background-image:
+    linear-gradient(to right, rgba(96, 165, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 0%, #000 25%, transparent 80%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 0%, #000 25%, transparent 80%);
+}
+
+.accent-glow {
+  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(37, 99, 235, 0.22), transparent 70%);
+}
+
+/* ----- Rendered article body ----- */
+.prose-brief {
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 1.02rem;
+}
+.prose-brief > :first-child {
+  margin-top: 0;
+}
+.prose-brief p {
+  margin: 1.1rem 0;
+}
+.prose-brief h2 {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-bright);
+  margin: 2.6rem 0 1rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--line);
+}
+.prose-brief h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 2rem 0 0.5rem;
+}
+.prose-brief ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+.prose-brief ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin: 0.55rem 0;
+}
+.prose-brief ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  background: var(--accent-bright);
+  border-radius: 1px;
+}
+.prose-brief ol {
+  margin: 1rem 0;
+  padding-left: 1.3rem;
+}
+.prose-brief ol li {
+  margin: 0.55rem 0;
+}
+.prose-brief strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.prose-brief a {
+  color: var(--accent-bright);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.prose-brief a:hover {
+  color: #93c5fd;
+}
+.prose-brief hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
+}
+.prose-brief table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.92rem;
+}
+.prose-brief th,
+.prose-brief td {
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+}
+.prose-brief th {
+  color: var(--ink);
+  font-weight: 500;
+  background: var(--surface-2);
+}
