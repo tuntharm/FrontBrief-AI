@@ -191,6 +191,7 @@ posting script falls back to building a caption from the article.
 
 - Plain text, English, lead with the news hook (the same story as the poster).
 - 1–3 short lines: headline hook → the key fact/number → optional money/investment angle
-  (signal, not advice). A light call to action is fine (e.g. "Full brief in bio").
+  (signal, not advice). **No "Full brief in bio" / "link in bio" CTA** — there is no website yet
+  (Tharm, 2026-06-19). Skip the CTA entirely until a public site exists; end on the signal line.
 - Hashtags: **at most 5**, on the last line, and the **last one MUST be `#FrontBriefAI`**.
   Example: `#AI #Anthropic #AINews #TechNews #FrontBriefAI`
