@@ -22,9 +22,8 @@ yarn-debug.log*
 # env files
 .env*
 
-# assets synced from the repo at build time (sources live in ../assets and ../social)
+# brand art synced from ../assets at build time (source stays canonical)
 /public/brand/
-/public/posters/
 
 # vercel
 .vercel

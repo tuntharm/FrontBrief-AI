@@ -15,7 +15,6 @@ import remarkGfm from "remark-gfm";
 import remarkHtml from "remark-html";
 
 const ARTICLES_DIR = join(process.cwd(), "..", "articles");
-const POSTER_DIR = join(process.cwd(), "..", "social", "poster");
 const FILE_RE = /^(\d{4}-\d{2}-\d{2})-ai-brief\.md$/;
 
 export type BriefMeta = {
@@ -23,7 +22,7 @@ export type BriefMeta = {
   date: string; // YYYY-MM-DD
   headline: string; // the day's lead story
   summary: string; // short hook (first TL;DR line)
-  posterSrc: string | null;
+  topHeadlines: string[]; // the day's top story headlines (for digest excerpts)
 };
 
 export type Brief = BriefMeta & {
@@ -64,9 +63,16 @@ function plain(text: string): string {
 }
 
 function deriveHeadline(md: string): string {
-  const line = md.split("\n").find((l) => /^###\s+/.test(l));
-  if (!line) return "Daily AI brief";
-  return plain(line.replace(/^###\s+/, ""));
+  return deriveTopHeadlines(md, 1)[0] ?? "Daily AI brief";
+}
+
+function deriveTopHeadlines(md: string, n: number): string[] {
+  return md
+    .split("\n")
+    .filter((l) => /^###\s+/.test(l))
+    .map((l) => plain(l.replace(/^###\s+/, "")))
+    .filter(Boolean)
+    .slice(0, n);
 }
 
 function deriveTldr(md: string): string[] {
@@ -93,10 +99,6 @@ function findRawByDate(): { slug: string; date: string; raw: string }[] {
     .sort((a, b) => (a.date < b.date ? 1 : -1)); // newest first
 }
 
-function posterFor(slug: string): string | null {
-  return existsSync(join(POSTER_DIR, `${slug}.png`)) ? `/posters/${slug}.png` : null;
-}
-
 function toMeta({ slug, date, raw }: { slug: string; date: string; raw: string }): BriefMeta {
   const md = stripFrontmatter(raw);
   const tldr = deriveTldr(md);
@@ -105,7 +107,7 @@ function toMeta({ slug, date, raw }: { slug: string; date: string; raw: string }
     date,
     headline: deriveHeadline(md),
     summary: tldr[0] ?? site_fallback_summary,
-    posterSrc: posterFor(slug),
+    topHeadlines: deriveTopHeadlines(md, 4),
   };
 }
 

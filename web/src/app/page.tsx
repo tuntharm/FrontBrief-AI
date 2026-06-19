@@ -1,18 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { getAllBriefs, getBrief, formatDate } from "@/lib/briefs";
-import { Poster } from "@/components/Poster";
-import { BriefCard } from "@/components/BriefCard";
+import { getAllBriefs, formatDateLong } from "@/lib/briefs";
+import { BriefRow } from "@/components/BriefRow";
 
-export default async function Home() {
+export default function Home() {
   const all = getAllBriefs();
-  const latest = all[0] ? await getBrief(all[0].slug) : null;
-  const recent = all.slice(1, 7);
+  const latest = all[0];
+  const rest = all.slice(1, 9);
 
   if (!latest) {
     return (
-      <div className="mx-auto max-w-5xl px-5 py-24 text-center sm:px-8">
+      <div className="mx-auto max-w-6xl px-5 py-24 text-center sm:px-8">
         <p className="text-muted">No briefs published yet. Check back soon.</p>
       </div>
     );
@@ -20,96 +19,105 @@ export default async function Home() {
 
   return (
     <div>
-      {/* Today's Brief hero */}
-      <section className="relative overflow-hidden border-b border-line">
-        <div className="absolute inset-0 navy-grid" aria-hidden />
-        <div className="absolute inset-0 accent-glow" aria-hidden />
-        <div className="relative mx-auto w-full max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-          <span className="label-mono">Today&apos;s Brief · {formatDate(latest.date)}</span>
-          <div className="mt-5 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-            <div className="max-w-2xl">
-              <h1 className="text-3xl font-medium leading-[1.15] tracking-tight text-ink sm:text-[2.6rem]">
-                {latest.headline}
+      {/* Hero banner */}
+      <section className="bg-navy">
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+          <div className="flex flex-col items-center gap-6 py-10 sm:flex-row sm:justify-between sm:py-12">
+            <div className="order-2 max-w-xl text-center sm:order-1 sm:text-left">
+              <span className="font-mono text-[0.72rem] uppercase tracking-[0.15em] text-owl-blue">
+                Today&apos;s Edition
+              </span>
+              <h1 className="mt-3 font-display text-3xl leading-[1.05] text-navy-text sm:text-5xl">
+                AI Brief — {formatDateLong(latest.date)}
               </h1>
-              <p className="mt-5 max-w-xl text-[1.05rem] leading-relaxed text-muted">
-                {latest.summary}
+              <p className="mx-auto mt-4 max-w-md text-[0.98rem] leading-relaxed text-navy-muted sm:mx-0">
+                Five must-know signals from the AI frontier — models, money, and deeptech, read and
+                ranked before you wake.
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href={`/brief/${latest.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-bright"
-                >
-                  Read full brief <ArrowRight size={15} />
-                </Link>
-                <Link
-                  href="/archive"
-                  className="inline-flex items-center rounded-md border border-line-strong px-4 py-2.5 text-sm text-muted transition-colors hover:text-ink"
-                >
-                  View archive
-                </Link>
+              <Link
+                href={`/brief/${latest.slug}`}
+                className="mt-6 inline-flex items-center gap-1.5 rounded-md bg-white px-5 py-2.5 text-sm font-medium text-navy transition-colors hover:bg-accent hover:text-white"
+              >
+                Read the full brief <ArrowRight size={15} />
+              </Link>
+            </div>
+
+            <div className="order-1 shrink-0 sm:order-2">
+              <div className="flex h-44 w-44 items-center justify-center rounded-full bg-white ring-4 ring-accent/40 sm:h-60 sm:w-60">
+                <Image
+                  src="/mascot/brief-owl.png"
+                  alt="Brief Owl mascot"
+                  width={260}
+                  height={260}
+                  priority
+                  className="h-36 w-36 object-contain sm:h-52 sm:w-52"
+                />
               </div>
             </div>
+          </div>
+        </div>
 
+        {/* Top-story ticker */}
+        <Link href={`/brief/${latest.slug}`} className="block bg-accent">
+          <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-5 py-2.5 sm:px-8">
+            <span className="shrink-0 rounded-sm bg-white px-2 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wide text-accent">
+              Top story
+            </span>
+            <span className="truncate text-sm text-white">{latest.headline}</span>
+          </div>
+        </Link>
+      </section>
+
+      {/* Latest briefs feed */}
+      <section className="mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
+        <div className="mb-2 flex items-end justify-between">
+          <h2 className="font-display text-2xl text-accent">Latest Briefs</h2>
+          <Link href="/archive" className="text-sm text-muted hover:text-accent">
+            View archive →
+          </Link>
+        </div>
+        <div>
+          {rest.length > 0 ? (
+            rest.map((brief) => <BriefRow key={brief.slug} brief={brief} />)
+          ) : (
+            <p className="py-8 text-muted">More briefs coming soon.</p>
+          )}
+        </div>
+      </section>
+
+      {/* About strip */}
+      <section className="mx-auto w-full max-w-6xl px-5 pb-14 sm:px-8">
+        <div className="flex flex-col overflow-hidden rounded-xl border border-line sm:flex-row">
+          <div className="flex items-center justify-center bg-accent-soft px-8 py-8 sm:w-56 sm:shrink-0">
+            <Image
+              src="/mascot/brief-owl.png"
+              alt="Brief Owl mascot"
+              width={140}
+              height={140}
+              className="h-28 w-28 object-contain sm:h-36 sm:w-36"
+            />
+          </div>
+          <div className="p-6 sm:p-8">
+            <span className="rounded-sm bg-accent px-2 py-0.5 text-[0.62rem] font-semibold uppercase tracking-wide text-white">
+              About
+            </span>
+            <h3 className="mt-3 font-display text-2xl leading-tight text-accent">
+              Quality AI signal, every morning
+            </h3>
+            <p className="mt-3 max-w-xl text-[0.95rem] leading-relaxed text-muted">
+              Meet Brief Owl. It works the night shift — reading, ranking, and writing the day&apos;s
+              five signals across frontier models, infrastructure, markets, adoption, and deeptech,
+              so the brief is ready before you wake. Interestingness-first, signal not advice.
+            </p>
             <Link
-              href={`/brief/${latest.slug}`}
-              className="w-full shrink-0 md:w-[220px]"
-              aria-label="Read today's brief"
+              href="/about"
+              className="mt-4 inline-flex items-center gap-1 text-[0.85rem] font-medium text-accent hover:text-accent-dark"
             >
-              <Poster
-                src={latest.posterSrc}
-                alt={`FrontBrief.AI poster — ${formatDate(latest.date)}`}
-                className="aspect-[4/5] w-full"
-              />
+              More about FrontBrief.AI <ArrowRight size={14} />
             </Link>
           </div>
-
-          {/* TL;DR */}
-          {latest.tldr.length > 0 ? (
-            <div className="mt-10 rounded-xl border border-accent-line bg-accent-tint p-5 sm:p-6">
-              <span className="label-mono">TL;DR — the {latest.tldr.length} that matter</span>
-              <ol className="mt-3 space-y-2.5">
-                {latest.tldr.map((item, i) => (
-                  <li key={i} className="flex gap-3 text-[0.95rem] leading-relaxed text-muted">
-                    <span className="font-mono text-sm text-accent-bright">{i + 1}</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          ) : null}
         </div>
       </section>
-
-      {/* Brief Owl welcome strip */}
-      <section className="mx-auto w-full max-w-5xl px-5 sm:px-8">
-        <div className="mt-10 flex items-center gap-4 rounded-2xl border border-line bg-surface p-4 sm:p-5">
-          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl border border-accent-line bg-white sm:h-16 sm:w-16">
-            <Image src="/mascot/brief-owl.png" alt="Brief Owl mascot" fill className="object-contain p-1" />
-          </div>
-          <p className="text-sm leading-relaxed text-muted sm:text-[0.95rem]">
-            <span className="font-medium text-ink">Brief Owl clocked in for the night shift.</span>{" "}
-            Five signals from the AI frontier, read and ranked before you wake.
-          </p>
-        </div>
-      </section>
-
-      {/* Recent briefs */}
-      {recent.length > 0 ? (
-        <section className="mx-auto w-full max-w-5xl px-5 py-12 sm:px-8 sm:py-16">
-          <div className="mb-6 flex items-center gap-3">
-            <span className="label-mono">Recent briefs</span>
-            <span className="h-px flex-1 bg-line" aria-hidden />
-            <Link href="/archive" className="text-xs text-muted hover:text-ink">
-              All briefs →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
-            {recent.map((brief) => (
-              <BriefCard key={brief.slug} brief={brief} />
-            ))}
-          </div>
-        </section>
-      ) : null}
     </div>
   );
 }

@@ -1,7 +1,8 @@
-// Copies brand art and daily posters from the automation repo (siblings of web/)
-// into web/public so Next.js can serve them. Sources stay the single source of
-// truth; these copies are gitignored and regenerated on every dev/build run
-// (including on Vercel, where the whole repo is checked out before building).
+// Copies brand art from the automation repo (sibling of web/) into web/public so
+// Next.js can serve it. The source stays the single source of truth; these copies
+// are gitignored and regenerated on every dev/build run (including on Vercel,
+// where the whole repo is checked out before building). Posters are intentionally
+// NOT synced — they live on Instagram only, not the website.
 import { cp, mkdir, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -12,7 +13,6 @@ const repoRoot = dirname(webRoot);
 
 const jobs = [
   { from: join(repoRoot, "assets", "brand"), to: join(webRoot, "public", "brand") },
-  { from: join(repoRoot, "social", "poster"), to: join(webRoot, "public", "posters") },
 ];
 
 async function copyPngs({ from, to }) {

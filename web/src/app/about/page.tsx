@@ -25,23 +25,24 @@ const principles = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
-      <span className="label-mono">About</span>
-      <h1 className="mt-3 text-2xl font-medium tracking-tight text-ink sm:text-3xl">
-        {site.tagline}
-      </h1>
+    <div className="mx-auto w-full max-w-3xl px-5 py-10 sm:px-8 sm:py-12">
+      <h1 className="font-display text-3xl text-accent sm:text-4xl">{site.tagline}</h1>
       <p className="mt-5 text-[1.05rem] leading-relaxed text-muted">
         FrontBrief.AI distills the AI world into a handful of must-know signals every day —
         for builders, founders, investors, and the AI-curious who want to know what matters
         across frontier models, infrastructure, research, startups, adoption, and deeptech.
       </p>
 
-      <div className="mt-10 flex items-center gap-4 rounded-2xl border border-line bg-surface p-5">
-        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-accent-line bg-white">
-          <Image src="/mascot/brief-owl.png" alt="Brief Owl mascot" fill className="object-contain p-1" />
-        </div>
-        <p className="text-sm leading-relaxed text-muted">
-          <span className="font-medium text-ink">Meet Brief Owl.</span> It works the night
+      <div className="mt-10 flex flex-col items-center gap-6 rounded-xl border border-line bg-accent-soft p-6 sm:flex-row sm:p-8">
+        <Image
+          src="/mascot/brief-owl.png"
+          alt="Brief Owl mascot"
+          width={160}
+          height={160}
+          className="h-32 w-32 shrink-0 object-contain sm:h-40 sm:w-40"
+        />
+        <p className="text-[0.975rem] leading-relaxed text-muted">
+          <span className="font-semibold text-ink">Meet Brief Owl.</span> It works the night
           shift — reading, ranking, and writing the brief so it&apos;s ready before you wake.
         </p>
       </div>
@@ -49,7 +50,7 @@ export default function AboutPage() {
       <div className="mt-10 space-y-6">
         {principles.map((p) => (
           <div key={p.title}>
-            <h2 className="text-base font-medium text-ink">{p.title}</h2>
+            <h2 className="font-display text-lg text-ink">{p.title}</h2>
             <p className="mt-1.5 text-[0.975rem] leading-relaxed text-muted">{p.body}</p>
           </div>
         ))}
@@ -58,11 +59,11 @@ export default function AboutPage() {
       <div className="mt-12 border-t border-line pt-6">
         <p className="text-sm text-muted">
           Read it daily on{" "}
-          <a href={social.instagram} target="_blank" rel="noreferrer" className="text-accent-bright hover:underline">
+          <a href={social.instagram} target="_blank" rel="noreferrer" className="font-medium text-accent hover:text-accent-dark">
             Instagram
           </a>
           , or browse the{" "}
-          <Link href="/archive" className="text-accent-bright hover:underline">
+          <Link href="/archive" className="font-medium text-accent hover:text-accent-dark">
             full archive
           </Link>
           .
