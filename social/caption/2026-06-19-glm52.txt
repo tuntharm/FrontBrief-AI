@@ -1,0 +1,5 @@
+An open-weights Chinese model just leapfrogged GPT-5.5 on coding. Z.ai's GLM-5.2 — MIT-licensed, 753B params, 1M-token context — tops GPT-5.5 on long-horizon coding benchmarks at roughly 1/6 the cost.
+
+Signal: the cost-per-capability floor for frontier coding is collapsing, and open weights are squeezing closed-model margins from below. Full brief in bio.
+
+#AI #GLM #OpenSource #AINews #FrontBriefAI
