@@ -91,6 +91,29 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   but are bare logos — only use composited, not full-frame. For a specific person with no fetchable
   photo, place the image in Canva manually rather than settling for a generic image.
 
+### Sci-fi / futuristic stories → GENERATED conceptual image (Tharm, 2026-06-19)
+- On 2026-06-19 the poster story was **Midjourney's full-body "Ultrasonic CT" scanner** — a futuristic
+  product that *doesn't physically exist yet* (a person lowered into a pool/pod of light, ~8,960
+  transducers, "MRI at ~100x speed"). The routine shipped a **real stock MRI photo** (Pexels
+  `7088479`, a patient in a hospital MRI tube). It satisfied "on-theme / real photo," but Tharm felt
+  it was too **literal and clinical** — it read as today's MRI, not the sci-fi thing the story is about.
+- Tharm re-did it by hand with a **generated (Canva Magic Media) conceptual image**: a person standing
+  in a glowing scan **cylinder** with golden scan rings, in a sleek futurist clinic, with the
+  **Midjourney sailboat logo** (the subject company — allowed) placed tastefully top-right. Far more
+  feed-worthy than the stock MRI.
+- **Rule:** when the lead/poster story is **futuristic / sci-fi / a product or capability that doesn't
+  physically exist yet** (this scanner, "physical AI," novel robotics, brain-computer, etc.), the
+  image priority **flips** — prefer a **generated conceptual image** over a too-literal stock photo.
+  (For grounded stories — a named person, a real company event/product — the existing "real photo /
+  branded visual" priority still wins. This exception is only for not-yet-real subjects.)
+- **Capability gotcha:** there is **no DALL·E-style text-to-image MCP tool** wired into the routine.
+  Canva `generate-design` exists but produces a whole new *design candidate* (drifts off-template) —
+  not a clean background asset for the locked master. So generating the image is currently a **manual
+  Magic Media step** in the Canva editor (what Tharm did). Until a real image-gen tool exists, the
+  routine should **auto-draft the image-gen prompt** in the daily output (editorial, photoreal, framed
+  for the upper region so the scrim/headline doesn't cover the subject) so the marketing team can
+  paste it straight into Magic Media. Keep the subject company's logo (tastefully placed) when fitting.
+
 ## Instagram caption
 - File `social/caption/YYYY-MM-DD-ai-brief.txt`, posted verbatim by `post-instagram.yml`.
 - Lead with a punchy hook → key fact/number → optional money angle → light CTA ("Full brief in bio").
