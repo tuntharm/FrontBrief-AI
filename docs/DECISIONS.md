@@ -116,10 +116,11 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 
 ## Instagram caption
 - File `social/caption/YYYY-MM-DD-ai-brief.txt`, posted verbatim by `post-instagram.yml`.
-- Lead with a punchy hook → key fact/number → optional money angle. End on the signal line.
-- **No "Full brief in bio" / "link in bio" CTA (Tharm, 2026-06-19).** There is no website yet, so
-  pointing people to a non-existent bio link is wrong. Drop the CTA entirely until a public site
-  (GitHub Pages / `frontbrief.ai`) exists; revisit this once there's a real link to send people to.
+- Lead with a punchy hook → key fact/number → optional money angle, then the CTA.
+- **End with a "Full brief in bio" CTA (Tharm, 2026-06-20).** The public site is now live at
+  https://frontbrief-ai.vercel.app (Next.js app in `web/`, auto-deployed from `main` via Vercel),
+  and the Instagram bio links to it. This reverses the earlier 2026-06-19 "no CTA, no website yet"
+  rule — there is now a real link to send people to.
 - Hashtags: AT MOST 5, last line, and the LAST one MUST be `#FrontBriefAI`.
 
 ## Gotchas / lessons learned
