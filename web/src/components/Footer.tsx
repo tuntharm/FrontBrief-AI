@@ -21,8 +21,8 @@ export function Footer() {
           <a href={social.instagram} target="_blank" rel="noreferrer" className="hover:text-accent">
             Instagram
           </a>
-          <a href={social.github} target="_blank" rel="noreferrer" className="hover:text-accent">
-            GitHub
+          <a href={`mailto:${social.email}`} className="hover:text-accent">
+            {social.email}
           </a>
         </div>
       </div>

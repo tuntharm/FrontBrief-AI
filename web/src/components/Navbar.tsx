@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Search, Rss } from "lucide-react";
-import { InstagramIcon, GithubIcon } from "@/components/BrandIcons";
+import { Search, Rss, Mail } from "lucide-react";
+import { InstagramIcon } from "@/components/BrandIcons";
 import { nav, social } from "@/content/site";
 
 export function Navbar() {
@@ -42,7 +42,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[13px] font-medium text-white/85 transition-colors hover:text-white"
+                className="text-[15px] font-medium text-white/85 transition-colors hover:text-white sm:text-base"
               >
                 {item.label}
               </Link>
@@ -50,16 +50,16 @@ export function Navbar() {
           </nav>
           <div className="flex items-center gap-3.5 text-white/85">
             <Link href="/archive" aria-label="Search briefs" className="transition-colors hover:text-white">
-              <Search size={16} />
+              <Search size={17} />
             </Link>
             <a href={social.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="transition-colors hover:text-white">
-              <InstagramIcon size={16} />
+              <InstagramIcon size={17} />
             </a>
-            <a href={social.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-white">
-              <GithubIcon size={16} />
+            <a href={`mailto:${social.email}`} aria-label="Email" className="transition-colors hover:text-white">
+              <Mail size={17} />
             </a>
             <span className="text-white/85" aria-hidden>
-              <Rss size={16} />
+              <Rss size={17} />
             </span>
           </div>
         </div>

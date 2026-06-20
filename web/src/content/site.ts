@@ -19,5 +19,5 @@ export const nav = [
 
 export const social = {
   instagram: "https://www.instagram.com/frontbrief.ai/",
-  github: "https://github.com/tuntharm/FrontBrief-AI",
+  email: "contact@tharmlab.com",
 };

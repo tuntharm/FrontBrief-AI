@@ -62,10 +62,14 @@ export default function AboutPage() {
           <a href={social.instagram} target="_blank" rel="noreferrer" className="font-medium text-accent hover:text-accent-dark">
             Instagram
           </a>
-          , or browse the{" "}
+          , browse the{" "}
           <Link href="/archive" className="font-medium text-accent hover:text-accent-dark">
             full archive
           </Link>
+          , or get in touch at{" "}
+          <a href={`mailto:${social.email}`} className="font-medium text-accent hover:text-accent-dark">
+            {social.email}
+          </a>
           .
         </p>
       </div>
