@@ -32,6 +32,14 @@
       "poster_story": "Midjourney builds a full-body Ultrasonic CT scanner that claims MRI-grade scans at ~100x the speed",
       "poster_shape": "product",
       "poster_category": "Health"
+    },
+    {
+      "date": "2026-06-20",
+      "article_lead": "OpenAI's GPT-5.4 ran a near-autonomous wet-lab and improved a real Chan–Lam coupling reaction",
+      "article_lead_shape": "research",
+      "poster_story": "AI cracks rare-disease mysteries — OpenAI's o3 confirmed 18 of 376 unsolved pediatric cases (Boston Children's, NEJM AI)",
+      "poster_shape": "research",
+      "poster_category": "Health"
     }
   ]
 }

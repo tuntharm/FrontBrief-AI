@@ -1,0 +1,3 @@
+AI just cracked rare-disease cases that stumped the specialists. In a Boston Children's Hospital + Harvard study in NEJM AI, an OpenAI o3 "Deep Research" workflow found confirmed diagnoses in 18 of 376 previously unsolved pediatric cases — an ~4.8% diagnostic lift on patients doctors had already given up on.
+The signal: durable clinical value is forming in validated, peer-reviewed medical-reasoning workflows — not consumer health chatbots.
+#AI #OpenAI #HealthAI #RareDisease #FrontBriefAI
