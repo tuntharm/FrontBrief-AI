@@ -69,6 +69,27 @@ See `docs/claude-routine-prompt.md` for the full template. Key points:
   every sentence must stand alone — no "yesterday" references — and include each item's `Link:`.
 - Each item carries an `Investment angle` (directional signal, not financial advice; no live
   prices) and a `Tharm relevance` line. The brief closes with a `Money Map` paragraph.
+- The article MUST also contain a `## Web Edition` section (placed LAST) — the public,
+  journalist-voice narrative the website publishes. See "Web Edition (public article)" below.
+  `Tharm relevance` and `Action` are internal-only: they stay in the file but the website hides
+  them (it renders the `## Web Edition` when present, else strips those fields).
+
+## Web Edition (public article)
+
+The public site (https://frontbrief-ai.vercel.app) renders the `## Web Edition` section of each
+article — a self-contained, reader-facing blog post, NOT the internal bullet brief. Write it as a
+top journalist would:
+
+- A short **standfirst** intro paragraph (what today's brief is about, the through-line).
+- Each story as **flowing prose** under its own `### ` subhead (a real headline, no "1./2." numbers),
+  with the source linked inline as markdown `[text](url)`.
+- A closing **money-view + what-to-watch** paragraph.
+- Public voice only: NO `Tharm relevance`, NO `Action: Read/Track/Ignore`, no internal triage. Keep
+  "signal, not advice; no live prices." English only.
+
+The section is placed last so the internal `## Top 5` (the evidence trail, which keeps `Tharm
+relevance`) still precedes it and drives the site's headline/feed. The Producer/Writer writes this
+in the same pass as the brief — no extra agent.
 
 ## Editorial workflow (multi-agent news desk)
 

@@ -75,7 +75,11 @@ Acting as the audience-POV manager + marketing voice, from the Poster Shortlist 
 
 ### Stage 4 — Producer / Writer (spawn 1 agent)
 From the editors' decisions, writes the full article (Top 5, LINE Digest, TL;DR, Money Map,
-Watchlist) and the IG caption, in brand voice, including every `Link:`.
+Watchlist) and the IG caption, in brand voice, including every `Link:`. In the SAME pass it also
+writes the **`## Web Edition`** — the public, journalist-voice narrative the website publishes
+(standfirst intro → each story as flowing prose under a `### ` subhead with inline source links →
+closing money/watch paragraph; NO `Tharm relevance`, NO `Action`). See the ARTICLE template. No new
+agent — this is the Producer's job.
 
 ### Stage 5 — EIC final pass (YOU, the orchestrator — do not delegate)
 - QA tone / brand / accuracy and **re-check every gate**; fix or bounce back if any fails.
@@ -180,9 +184,20 @@ One tight paragraph — where capital + pricing momentum moved + names/themes to
 ## Watchlist
 Three catalysts to monitor next.
 
+## Web Edition
+The PUBLIC article the website renders (https://frontbrief-ai.vercel.app). Self-contained
+journalist-voice blog post — NOT the bullet brief. Placed LAST in the file.
+- Standfirst: one short intro paragraph (today's through-line).
+- Each story as flowing prose under its own `### [real headline]` (no "1./2." numbers), with the
+  source linked inline as `[text](url)`.
+- Close with a money-view + what-to-watch paragraph.
+- Public voice only: NO `Tharm relevance`, NO `Action`. Signal, not advice; no live prices; English.
+(`Tharm relevance` / `Action` live in `## Top 5` for Tharm; the website hides them — it renders this
+`## Web Edition` when present, otherwise strips those fields from the brief.)
+
 Style: English only. Sharp, concise, no hype, no filler. Interestingness-first. Investment framing
 is signal, not advice (no price targets/buy-sell calls/live prices). LINE Digest is the send
-surface; Top 5 is the full evidence trail with links.
+surface; Top 5 is the full evidence trail with links; Web Edition is the public read.
 
 ================================================================================
 ## DAILY SOCIAL POSTER (engagement pick — may differ from the article #1)

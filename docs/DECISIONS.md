@@ -123,6 +123,20 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   rule — there is now a real link to send people to.
 - Hashtags: AT MOST 5, last line, and the LAST one MUST be `#FrontBriefAI`.
 
+## Public website
+- **Live at https://frontbrief-ai.vercel.app** — Next.js app in `web/`, auto-deployed from `main` by
+  Vercel (Root Directory = `web`, "include files outside root" ON so it can read `../articles`). Every
+  daily routine commit triggers a rebuild, so the brief self-publishes.
+- **Public article = a narrative `## Web Edition` (Tharm, 2026-06-20).** The website renders the
+  `## Web Edition` section — a journalist-voice blog post (standfirst + per-story prose under `### `
+  subheads + inline links + money/watch close), NOT the internal bullet brief. The Producer (Stage 4)
+  writes it in the same pass; the team stays at 7 agents (no new "web" agent — dedup is already the
+  Assignment Editor's job, publishing is already automatic via Vercel).
+- **`Tharm relevance` + `Action` are internal-only, hidden on the web.** They stay in `## Top 5`
+  (for Tharm / archive / evidence), but the site never shows them: it renders `## Web Edition` when
+  present, otherwise strips `Tharm relevance:` / `Action:` lines (and the LINE Digest) from the brief.
+  Supersedes the earlier implicit "web = raw brief" behaviour.
+
 ## Gotchas / lessons learned
 - Canva background image can be **locked** → `update_fill`/delete refused ("locked element"). Fix:
   unlock the image on the master in Canva. (In the Sakana test the swap worked, so page 1 is unlocked.)
@@ -139,7 +153,8 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
 
 ## Open items / future
 - Paste the latest `docs/claude-routine-prompt.md` into the routine config (the config is what runs).
-- GitHub Pages for a free "link in bio" site; later buy `frontbrief.ai` and point it at Pages.
+- Public site is live on Vercel (see "Public website" above); later buy `frontbrief.ai` and point
+  it at the Vercel project, then set `NEXT_PUBLIC_SITE_URL` for correct OG/canonical links.
 - Instagram: create Meta app, add `INSTAGRAM_USER_ID` + `INSTAGRAM_ACCESS_TOKEN` secrets; consider a
   monthly token auto-refresh workflow (60-day token expiry).
 - Confirm the `@frontbrief` handle before going public.

@@ -122,14 +122,32 @@ export function getLatestBrief(): BriefMeta | null {
   return getAllBriefs()[0] ?? null;
 }
 
+/** Strip internal-only triage fields (kept in the file for Tharm, hidden on the web). */
+function stripInternalFields(md: string): string {
+  return md
+    .split("\n")
+    .filter((l) => !/^\s*[-*]\s*(Tharm relevance|Action)\b/i.test(l))
+    .join("\n");
+}
+
 export async function getBrief(slug: string): Promise<Brief | null> {
   const entry = findRawByDate().find((e) => e.slug === slug);
   if (!entry) return null;
 
   const md = stripFrontmatter(entry.raw);
-  // Drop the H1 (we render our own header) and the channel-specific LINE Digest.
-  let body = md.replace(/^#\s+.*\n/, "");
-  body = removeSection(body, "LINE Digest").trim();
+
+  // Prefer the journalist-written public edition when the routine has produced one.
+  // Older briefs have no "## Web Edition" → fall back to the brief with the LINE
+  // Digest and internal triage fields (Tharm relevance / Action) stripped.
+  const webEdition = getSection(md, "Web Edition");
+  let body: string;
+  if (webEdition) {
+    body = webEdition;
+  } else {
+    body = md.replace(/^#\s+.*\n/, ""); // drop the H1 (we render our own header)
+    body = removeSection(body, "LINE Digest");
+    body = stripInternalFields(body).trim();
+  }
 
   const bodyHtml = String(await remark().use(remarkGfm).use(remarkHtml, { sanitize: false }).process(body));
 
