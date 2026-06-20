@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Search, Rss } from "lucide-react";
 import { InstagramIcon, GithubIcon } from "@/components/BrandIcons";
 import { nav, social } from "@/content/site";
@@ -7,9 +8,18 @@ export function Navbar() {
   return (
     <header>
       {/* Masthead */}
-      <div className="mx-auto flex w-full max-w-6xl items-end gap-4 px-5 py-6 sm:px-8 sm:py-8">
-        <Link href="/" className="font-display text-4xl leading-none text-ink sm:text-6xl">
-          FrontBrief<span className="text-accent">.AI</span>
+      <div className="mx-auto flex w-full max-w-6xl items-end gap-3 px-5 py-6 sm:gap-4 sm:px-8 sm:py-8">
+        <Link href="/" className="flex items-end gap-3">
+          <Image
+            src="/fb-black.png"
+            alt=""
+            width={56}
+            height={56}
+            className="h-10 w-10 sm:h-14 sm:w-14"
+          />
+          <span className="font-display text-4xl leading-none text-ink sm:text-6xl">
+            FrontBrief<span className="text-accent">.AI</span>
+          </span>
         </Link>
         <span className="mb-1 hidden h-10 w-px bg-line-strong sm:block sm:h-12" aria-hidden />
         <span className="mb-1 hidden text-[0.78rem] font-medium leading-tight text-ink sm:block">
@@ -25,12 +35,8 @@ export function Navbar() {
       <div className="sticky top-0 z-40 bg-accent">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-2.5 sm:px-8">
           <nav className="flex items-center gap-4 sm:gap-7">
-            <Link
-              href="/"
-              className="flex h-6 w-6 items-center justify-center rounded-[5px] bg-white/20 text-[11px] font-medium text-white"
-              aria-label="FrontBrief.AI home"
-            >
-              FB
+            <Link href="/" aria-label="FrontBrief.AI home" className="flex items-center">
+              <Image src="/fb-white.png" alt="FrontBrief.AI" width={28} height={28} className="h-7 w-7" />
             </Link>
             {nav.map((item) => (
               <Link

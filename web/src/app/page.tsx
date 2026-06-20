@@ -7,7 +7,13 @@ import { BriefRow } from "@/components/BriefRow";
 export default function Home() {
   const all = getAllBriefs();
   const latest = all[0];
-  const rest = all.slice(1, 9);
+
+  // "Today" shows only the last 7 days, anchored to the latest brief's date.
+  const cutoff = latest ? new Date(`${latest.date}T00:00:00Z`) : new Date();
+  cutoff.setUTCDate(cutoff.getUTCDate() - 6);
+  const rest = all
+    .slice(1)
+    .filter((b) => new Date(`${b.date}T00:00:00Z`) >= cutoff);
 
   if (!latest) {
     return (
@@ -42,17 +48,19 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="order-1 shrink-0 sm:order-2">
-              <div className="flex h-44 w-44 items-center justify-center rounded-full bg-white ring-4 ring-accent/40 sm:h-60 sm:w-60">
-                <Image
-                  src="/mascot/brief-owl.png"
-                  alt="Brief Owl mascot"
-                  width={260}
-                  height={260}
-                  priority
-                  className="h-36 w-36 object-contain sm:h-52 sm:w-52"
-                />
-              </div>
+            <div className="relative order-1 shrink-0 sm:order-2">
+              <div
+                className="absolute inset-0 -z-0 rounded-full bg-[radial-gradient(circle,rgba(43,70,201,0.55),transparent_68%)] blur-2xl"
+                aria-hidden
+              />
+              <Image
+                src="/mascot/owl-flying.png"
+                alt="Brief Owl mascot"
+                width={340}
+                height={306}
+                priority
+                className="relative h-52 w-auto object-contain sm:h-72"
+              />
             </div>
           </div>
         </div>
@@ -88,13 +96,13 @@ export default function Home() {
       {/* About strip */}
       <section className="mx-auto w-full max-w-6xl px-5 pb-14 sm:px-8">
         <div className="flex flex-col overflow-hidden rounded-xl border border-line sm:flex-row">
-          <div className="flex items-center justify-center bg-accent-soft px-8 py-8 sm:w-56 sm:shrink-0">
+          <div className="flex items-center justify-center bg-accent-soft px-8 py-8 sm:w-64 sm:shrink-0">
             <Image
-              src="/mascot/brief-owl.png"
+              src="/mascot/owl-standing.png"
               alt="Brief Owl mascot"
-              width={140}
-              height={140}
-              className="h-28 w-28 object-contain sm:h-36 sm:w-36"
+              width={200}
+              height={280}
+              className="h-40 w-auto object-contain sm:h-52"
             />
           </div>
           <div className="p-6 sm:p-8">

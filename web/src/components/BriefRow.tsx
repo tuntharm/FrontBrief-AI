@@ -20,15 +20,13 @@ export function BriefRow({ brief }: { brief: BriefMeta }) {
         className="relative flex h-[104px] w-[130px] shrink-0 flex-col items-center justify-center overflow-hidden rounded-md bg-navy sm:h-[120px] sm:w-[170px]"
         aria-label={`AI Brief — ${formatDateLong(brief.date)}`}
       >
-        <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white sm:h-12 sm:w-12">
-          <Image
-            src="/mascot/brief-owl.png"
-            alt=""
-            width={44}
-            height={44}
-            className="h-8 w-8 object-contain sm:h-9 sm:w-9"
-          />
-        </div>
+        <Image
+          src="/fb-white.png"
+          alt=""
+          width={40}
+          height={40}
+          className="h-8 w-8 sm:h-9 sm:w-9"
+        />
         <span className="mt-2 font-mono text-[0.6rem] tracking-[0.15em] text-owl-blue">
           AI BRIEF
         </span>

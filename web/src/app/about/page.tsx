@@ -35,11 +35,11 @@ export default function AboutPage() {
 
       <div className="mt-10 flex flex-col items-center gap-6 rounded-xl border border-line bg-accent-soft p-6 sm:flex-row sm:p-8">
         <Image
-          src="/mascot/brief-owl.png"
+          src="/mascot/owl-standing.png"
           alt="Brief Owl mascot"
-          width={160}
-          height={160}
-          className="h-32 w-32 shrink-0 object-contain sm:h-40 sm:w-40"
+          width={200}
+          height={280}
+          className="h-44 w-auto shrink-0 object-contain sm:h-56"
         />
         <p className="text-[0.975rem] leading-relaxed text-muted">
           <span className="font-semibold text-ink">Meet Brief Owl.</span> It works the night

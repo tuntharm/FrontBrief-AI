@@ -5,11 +5,11 @@ export default function NotFound() {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col items-center px-5 py-24 text-center sm:px-8">
       <Image
-        src="/mascot/brief-owl.png"
+        src="/mascot/owl-zoom.png"
         alt="Brief Owl mascot"
-        width={180}
-        height={180}
-        className="h-40 w-40 object-contain"
+        width={240}
+        height={208}
+        className="h-44 w-auto object-contain"
       />
       <h1 className="mt-6 font-display text-3xl text-ink">Nothing here on this shift</h1>
       <p className="mt-2 text-muted">Brief Owl couldn&apos;t find that page.</p>
