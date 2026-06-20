@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-20 | AI cracks rare-disease mysteries — OpenAI's o3 confirmed 18 of 376 unsolved pediatric cases (Boston Children's × NEJM AI) (engagement pick; article #1 was GPT-5.4's autonomous wet-lab) | [view](https://www.canva.com/d/8X4M4RgZBrmJwsu) | committed by workflow |
 | 2026-06-19 (extra) | GLM-5.2 (Z.ai) open-weights tops GPT-5.5 on long-horizon coding at ~1/6 the cost (user-requested poster of the article #1) | [view](https://www.canva.com/d/rPuitkxLs8L-YtH) | committed by workflow |
 | 2026-06-19 | Midjourney builds a full-body scanner — its "Ultrasonic CT" claims MRI-grade scans at ~100x the speed (engagement pick; article #1 was GLM-5.2) | [view](https://www.canva.com/d/F5zLlMRWcZKC1hM) | committed by workflow |
 | 2026-06-18 | DeepSeek raises $7.4B at a $59B valuation — China's open-model champion's first outside round (Tencent & CATL back it) | [view](https://www.canva.com/d/nVeVJSCHoY_zYjG) | committed by workflow |
