@@ -40,6 +40,14 @@
       "poster_story": "AI cracks rare-disease mysteries — OpenAI's o3 confirmed 18 of 376 unsolved pediatric cases (Boston Children's, NEJM AI)",
       "poster_shape": "research",
       "poster_category": "Health"
+    },
+    {
+      "date": "2026-06-21",
+      "article_lead": "Nobel laureate John Jumper (AlphaFold) leaves Google DeepMind for Anthropic",
+      "article_lead_shape": "person-drama",
+      "poster_story": "AI megacaps shed ~$2 trillion in a month as AI-bubble fears bite (the 'Magnificent Seven' fell ~10% while the broader market rose)",
+      "poster_shape": "money",
+      "poster_category": "Markets"
     }
   ]
 }
