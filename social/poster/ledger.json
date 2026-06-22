@@ -48,6 +48,14 @@
       "poster_story": "AI megacaps shed ~$2 trillion in a month as AI-bubble fears bite (the 'Magnificent Seven' fell ~10% while the broader market rose)",
       "poster_shape": "money",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-06-22",
+      "article_lead": "Nvidia raises $25B in its largest-ever bond sale, betting on a decade of AI",
+      "article_lead_shape": "money",
+      "poster_story": "China now builds ~90% of the world's humanoid robots — Unitree & AgiBot lead and Chinese models top real-robot benchmarks",
+      "poster_shape": "research",
+      "poster_category": "Robotics"
     }
   ]
 }
