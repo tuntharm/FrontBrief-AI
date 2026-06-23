@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-23 (extra) | SpaceX sheds ~$600B in three days — a surprise $20B bond sale days after its record IPO spooked investors over cash burn (SPCX down ~23% from its ~$225 peak) (user-requested extra poster) | [view](https://www.canva.com/d/LJuYl2XTVyyzC95) | committed by workflow |
 | 2026-06-23 | AI brain drain wipes ~$250B off Google — Alphabet fell ~7% (its worst day in a year) as back-to-back AI-star defections got priced in (poster = article #1; both the importance and engagement pick) | [view](https://www.canva.com/d/7cLYaT2xR8IVGOm) | committed by workflow |
 | 2026-06-22 | China now builds ~90% of the world's humanoid robots — Unitree & AgiBot lead and Chinese models top real-robot benchmarks (engagement pick; article #1 was Nvidia's record $25B bond) | [view](https://www.canva.com/d/FkqZHwzgif6GeTM) | committed by workflow |
 | 2026-06-21 | AI megacaps shed ~$2 trillion in a month as AI-bubble fears bite (the "Magnificent Seven" fell ~10% while the broader market rose) (engagement pick; article #1 was Nobel laureate John Jumper leaving DeepMind for Anthropic) | [view](https://www.canva.com/d/Fjjt-F6xEGUUcne) | committed by workflow |
