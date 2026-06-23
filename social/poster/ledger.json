@@ -56,6 +56,14 @@
       "poster_story": "China now builds ~90% of the world's humanoid robots — Unitree & AgiBot lead and Chinese models top real-robot benchmarks",
       "poster_shape": "research",
       "poster_category": "Robotics"
+    },
+    {
+      "date": "2026-06-23",
+      "article_lead": "Alphabet sheds ~$250B in a day as an AI-talent exodus triggers investor panic",
+      "article_lead_shape": "person-drama",
+      "poster_story": "AI brain drain wipes ~$250B off Google — Alphabet fell ~7% as back-to-back AI-star defections got priced in",
+      "poster_shape": "person-drama",
+      "poster_category": "Markets"
     }
   ]
 }
