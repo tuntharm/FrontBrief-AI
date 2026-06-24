@@ -64,6 +64,14 @@
       "poster_story": "AI brain drain wipes ~$250B off Google — Alphabet fell ~7% as back-to-back AI-star defections got priced in",
       "poster_shape": "person-drama",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-06-24",
+      "article_lead": "Cerebras lands a $20B+ OpenAI deal for 750MW of wafer-scale inference compute",
+      "article_lead_shape": "compute",
+      "poster_story": "Cerebras lands a $20B OpenAI deal — OpenAI to deploy ~750MW of its wafer-scale compute, a bet beyond the GPU",
+      "poster_shape": "compute",
+      "poster_category": "Compute"
     }
   ]
 }

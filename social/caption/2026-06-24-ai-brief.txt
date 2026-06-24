@@ -1,0 +1,5 @@
+Cerebras just booked OpenAI as a $20B+ customer.
+OpenAI will deploy ~750MW of Cerebras' wafer-scale inference compute over the next few years — a giant bet on serving models cheaply, and routing around the GPU.
+The money in AI is moving downstream: from training the models to running them.
+Full brief in bio.
+#AI #Cerebras #OpenAI #AIChips #FrontBriefAI
