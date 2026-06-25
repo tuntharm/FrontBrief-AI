@@ -72,6 +72,14 @@
       "poster_story": "Cerebras lands a $20B OpenAI deal — OpenAI to deploy ~750MW of its wafer-scale compute, a bet beyond the GPU",
       "poster_shape": "compute",
       "poster_category": "Compute"
+    },
+    {
+      "date": "2026-06-25",
+      "article_lead": "SpaceX turns its Memphis 'Colossus 2' into a cloud — $6.3B compute lease to Reflection AI",
+      "article_lead_shape": "compute",
+      "poster_story": "Getty Photos Land in ChatGPT — the image giant that once sued AI now licenses 400M+ images to OpenAI",
+      "poster_shape": "product",
+      "poster_category": "Media"
     }
   ]
 }

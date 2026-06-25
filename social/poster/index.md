@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-25 | Getty Photos Land in ChatGPT — the image giant that once sued AI now licenses 400M+ images to OpenAI for ChatGPT search (engagement pick; article #1 was SpaceX's $6.3B Colossus compute lease to Reflection AI) | [view](https://www.canva.com/d/bs-sbIeRvIE6l63) | committed by workflow |
 | 2026-06-24 | Cerebras lands a $20B+ OpenAI deal — OpenAI will deploy ~750MW of its wafer-scale inference compute, a big bet beyond the GPU (poster = article #1; the engagement pick on a striking, surprising chip-deal hook) | [view](https://www.canva.com/d/Entn3KIDwUjTH84) | committed by workflow |
 | 2026-06-23 (extra) | SpaceX sheds ~$600B in three days — a surprise $20B bond sale days after its record IPO spooked investors over cash burn (SPCX down ~23% from its ~$225 peak) (user-requested extra poster) | [view](https://www.canva.com/d/LJuYl2XTVyyzC95) | committed by workflow |
 | 2026-06-23 | AI brain drain wipes ~$250B off Google — Alphabet fell ~7% (its worst day in a year) as back-to-back AI-star defections got priced in (poster = article #1; both the importance and engagement pick) | [view](https://www.canva.com/d/7cLYaT2xR8IVGOm) | committed by workflow |
