@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-26 | Europe Hands Out Its First AI Fines — the EU's first-ever AI Act fines (~€42M + an 18-month ban) over illegal facial-recognition surveillance (engagement pick; article #1 was Micron's record quarter / the AI-memory supercycle) | [view](https://www.canva.com/d/XI1n_pcdfA49YBK) | committed by workflow |
 | 2026-06-25 | Getty Photos Land in ChatGPT — the image giant that once sued AI now licenses 400M+ images to OpenAI for ChatGPT search (engagement pick; article #1 was SpaceX's $6.3B Colossus compute lease to Reflection AI) | [view](https://www.canva.com/d/bs-sbIeRvIE6l63) | committed by workflow |
 | 2026-06-24 | Cerebras lands a $20B+ OpenAI deal — OpenAI will deploy ~750MW of its wafer-scale inference compute, a big bet beyond the GPU (poster = article #1; the engagement pick on a striking, surprising chip-deal hook) | [view](https://www.canva.com/d/Entn3KIDwUjTH84) | committed by workflow |
 | 2026-06-23 (extra) | SpaceX sheds ~$600B in three days — a surprise $20B bond sale days after its record IPO spooked investors over cash burn (SPCX down ~23% from its ~$225 peak) (user-requested extra poster) | [view](https://www.canva.com/d/LJuYl2XTVyyzC95) | committed by workflow |

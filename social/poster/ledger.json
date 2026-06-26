@@ -80,6 +80,14 @@
       "poster_story": "Getty Photos Land in ChatGPT — the image giant that once sued AI now licenses 400M+ images to OpenAI",
       "poster_shape": "product",
       "poster_category": "Media"
+    },
+    {
+      "date": "2026-06-26",
+      "article_lead": "Micron posts its biggest quarter ever — ~$42B revenue, 81% margins, 2026 HBM supply sold out",
+      "article_lead_shape": "money",
+      "poster_story": "EU issues its first-ever AI Act fines — ~€42M and an 18-month ban over illegal facial-recognition surveillance",
+      "poster_shape": "regulation",
+      "poster_category": "Policy"
     }
   ]
 }
