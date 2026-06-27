@@ -88,6 +88,14 @@
       "poster_story": "EU issues its first-ever AI Act fines — ~€42M and an 18-month ban over illegal facial-recognition surveillance",
       "poster_shape": "regulation",
       "poster_category": "Policy"
+    },
+    {
+      "date": "2026-06-27",
+      "article_lead": "OpenAI unveils 'Jalapeño,' its first custom AI chip — a reticle-sized inference ASIC co-designed with Broadcom, claimed ~50% cheaper than Nvidia GPUs",
+      "article_lead_shape": "compute",
+      "poster_story": "OpenAI builds its own AI chip — 'Jalapeño,' co-designed with Broadcom, claims to run LLMs ~50% cheaper than Nvidia GPUs in a ~9-month build",
+      "poster_shape": "compute",
+      "poster_category": "Silicon"
     }
   ]
 }

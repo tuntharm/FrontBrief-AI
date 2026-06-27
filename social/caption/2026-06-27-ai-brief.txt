@@ -1,0 +1,5 @@
+OpenAI just built its own AI chip. Meet "Jalapeño."
+The reticle-sized inference ASIC — co-designed with Broadcom — claims to run LLMs ~50% cheaper than Nvidia GPUs, and OpenAI shipped it in a ~9-month cycle using its own models to help design it.
+The signal: a credible second source of inference compute, and real pressure on Nvidia's pricing power (signal, not advice).
+Full brief in bio: https://frontbrief-ai.vercel.app
+#AI #OpenAI #Broadcom #Nvidia #FrontBriefAI
