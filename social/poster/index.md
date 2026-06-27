@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-27 | OpenAI Builds Its Own AI Chip — "Jalapeño," co-designed with Broadcom, claims to run LLMs ~50% cheaper than Nvidia GPUs in a ~9-month build (poster = article #1; the engagement picks SZA and A24 were both blocked by the image-sourcing gate, so the two tracks coincide today) | [view](https://www.canva.com/d/sSGR8b24WkMMGqA) | committed by workflow |
 | 2026-06-26 | Europe Hands Out Its First AI Fines — the EU's first-ever AI Act fines (~€42M + an 18-month ban) over illegal facial-recognition surveillance (engagement pick; article #1 was Micron's record quarter / the AI-memory supercycle) | [view](https://www.canva.com/d/XI1n_pcdfA49YBK) | committed by workflow |
 | 2026-06-25 | Getty Photos Land in ChatGPT — the image giant that once sued AI now licenses 400M+ images to OpenAI for ChatGPT search (engagement pick; article #1 was SpaceX's $6.3B Colossus compute lease to Reflection AI) | [view](https://www.canva.com/d/bs-sbIeRvIE6l63) | committed by workflow |
 | 2026-06-24 | Cerebras lands a $20B+ OpenAI deal — OpenAI will deploy ~750MW of its wafer-scale inference compute, a big bet beyond the GPU (poster = article #1; the engagement pick on a striking, surprising chip-deal hook) | [view](https://www.canva.com/d/Entn3KIDwUjTH84) | committed by workflow |
