@@ -96,6 +96,14 @@
       "poster_story": "OpenAI builds its own AI chip — 'Jalapeño,' co-designed with Broadcom, claims to run LLMs ~50% cheaper than Nvidia GPUs in a ~9-month build",
       "poster_shape": "compute",
       "poster_category": "Silicon"
+    },
+    {
+      "date": "2026-06-28",
+      "article_lead": "Anthropic accuses Alibaba's Qwen of the 'largest known distillation attack' on Claude (~25,000 fake accounts, 28.8M exchanges); Senate moves to sanction",
+      "article_lead_shape": "person-drama",
+      "poster_story": "Video games now train real robots — General Intuition raises $320M at a $2.3B valuation to train embodied AI on billions of gameplay clips (Bezos & Schmidt back it)",
+      "poster_shape": "robotics",
+      "poster_category": "Robotics"
     }
   ]
 }
