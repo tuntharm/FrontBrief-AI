@@ -104,6 +104,14 @@
       "poster_story": "Video games now train real robots — General Intuition raises $320M at a $2.3B valuation to train embodied AI on billions of gameplay clips (Bezos & Schmidt back it)",
       "poster_shape": "robotics",
       "poster_category": "Robotics"
+    },
+    {
+      "date": "2026-06-29",
+      "article_lead": "OpenAI previews GPT-5.6 (Sol/Terra/Luna), gated to ~20 orgs under a US export order — the first frontier model launched behind Washington's gate",
+      "article_lead_shape": "model-launch",
+      "poster_story": "OpenAI's GPT-5.6 lands as 'Sol, Terra, Luna' — gated to ~20 orgs under a US export order, and its crypto-ticker names went viral",
+      "poster_shape": "model-launch",
+      "poster_category": "Models"
     }
   ]
 }

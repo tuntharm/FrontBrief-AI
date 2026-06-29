@@ -9,6 +9,7 @@ scratch (regeneration drifts off-template).
 
 | Date | Lead story | Canva poster | PNG |
 |------|-----------|--------------|-----|
+| 2026-06-29 | OpenAI's GPT-5.6 Lands as "Sol, Terra, Luna" — the new frontier family ships gated to ~20 orgs under a US export order, and its crypto-ticker names went viral (poster = article #1; both the importance and engagement pick this cycle) | [view](https://www.canva.com/d/oWeunjy_OENBdHY) | pointer: social/poster/2026-06-29-ai-brief.png.url |
 | 2026-06-28 | Video Games Now Train Real Robots — General Intuition raises $320M at a $2.3B valuation to train embodied AI on billions of gameplay clips, backed by Bezos & Schmidt (engagement pick; article #1 was Anthropic's "largest known distillation attack" claim against Alibaba's Qwen) | [view](https://www.canva.com/d/XL75j3l1U-QHl6p) | pointer: social/poster/2026-06-28-ai-brief.png.url |
 | 2026-06-27 | OpenAI Builds Its Own AI Chip — "Jalapeño," co-designed with Broadcom, claims to run LLMs ~50% cheaper than Nvidia GPUs in a ~9-month build (poster = article #1; the engagement picks SZA and A24 were both blocked by the image-sourcing gate, so the two tracks coincide today) | [view](https://www.canva.com/d/sSGR8b24WkMMGqA) | committed by workflow |
 | 2026-06-26 | Europe Hands Out Its First AI Fines — the EU's first-ever AI Act fines (~€42M + an 18-month ban) over illegal facial-recognition surveillance (engagement pick; article #1 was Micron's record quarter / the AI-memory supercycle) | [view](https://www.canva.com/d/XI1n_pcdfA49YBK) | committed by workflow |

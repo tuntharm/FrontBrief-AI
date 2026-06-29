@@ -1,0 +1,5 @@
+OpenAI just previewed GPT-5.6 — three tiers named Sol, Terra and Luna — and it's the first frontier model shipped behind Washington's new export gate.
+Access is limited to roughly 20 vetted organisations, not the public, with Terra pitched at frontier-level performance for about half the cost.
+The signal: gated access concentrates near-term value in the vetted few and the compute behind them — watch who makes the list. Signal, not advice.
+Full brief in bio → https://frontbrief-ai.vercel.app
+#AI #OpenAI #GPT5 #AINews #FrontBriefAI
