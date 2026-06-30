@@ -112,6 +112,14 @@
       "poster_story": "OpenAI's GPT-5.6 lands as 'Sol, Terra, Luna' — gated to ~20 orgs under a US export order, and its crypto-ticker names went viral",
       "poster_shape": "model-launch",
       "poster_category": "Models"
+    },
+    {
+      "date": "2026-06-30",
+      "article_lead": "Alphabet joins the Dow as the index tops 52,000 — AI's capture of the index economy made literal",
+      "article_lead_shape": "money",
+      "poster_story": "Goodbye Claude, Hello DeepSeek — startup Lindy moved 100% of its traffic to China's DeepSeek V4 at over 4x lower cost and says performance rose",
+      "poster_shape": "money",
+      "poster_category": "Markets"
     }
   ]
 }
