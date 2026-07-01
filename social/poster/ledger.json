@@ -120,6 +120,14 @@
       "poster_story": "Goodbye Claude, Hello DeepSeek — startup Lindy moved 100% of its traffic to China's DeepSeek V4 at over 4x lower cost and says performance rose",
       "poster_shape": "money",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-07-01",
+      "article_lead": "Anthropic launches Claude Sonnet 5 — near-Opus agentic power at a mid-tier price, now the default model on claude.ai and live across Claude Code, Cursor, VS Code and GitHub Copilot",
+      "article_lead_shape": "model-launch",
+      "poster_story": "China's 'Ultra-Bionic' Humanoid — UBTECH's UWORLD U1, billed as the world's first mass-produced lifelike home-companion humanoid, from ~$16.7K with 13,000+ orders",
+      "poster_shape": "product",
+      "poster_category": "Robotics"
     }
   ]
 }
