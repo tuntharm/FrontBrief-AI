@@ -64,6 +64,13 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   no decorative dot/circle patterns (Thark had these removed).
 - Headline ~2 lines (3 lines overflow into the subhead). Subhead concise (~2 lines) sitting just
   above the button — Tharm nudged it up ~16px when it sank too low; do a balance check before export.
+- **HARD RULE — subhead must be ≤2 lines and vertically aligned with the FrontBrief.AI button
+  (Tharm, 2026-07-01).** The FrontBrief.AI button (bottom-right) is centred on a TWO-line subhead;
+  a 3-line subhead drops its 3rd line BELOW the button and breaks the symmetry (Tharm has had to fix
+  this by hand repeatedly). So: if the subhead wraps to 3 lines, SHORTEN THE COPY until it's 2 lines —
+  do not ship a 3-line subhead. **Always** pull the page thumbnail and eyeball the symmetry (headline
+  ≤2 lines, subhead ≤2 lines and level with the button, both logos placed, nothing sinking to the very
+  bottom) BEFORE committing/exporting/submitting — every poster, every time, no exceptions.
 
 ### Imagery priority (Tharm's strong preference — pick for SPECIFICITY, not just "on theme")
 1. Story-specific/branded visual: announcement, keynote slide, product, exec on stage/event.
