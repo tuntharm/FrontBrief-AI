@@ -1,0 +1,5 @@
+Two Harvard dropouts just took their chip startup to a $5B valuation — and they're gunning straight for Nvidia.
+Etched has already booked $1B in orders for Sohu, a chip built to run only transformer AI models.
+The bet: specialize the silicon, and one server does the work of a rack of GPUs. Compute is the trade to watch.
+Full brief in bio.
+#AI #Etched #Nvidia #AIChips #FrontBriefAI
