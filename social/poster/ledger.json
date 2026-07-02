@@ -128,6 +128,14 @@
       "poster_story": "China's 'Ultra-Bionic' Humanoid — UBTECH's UWORLD U1, billed as the world's first mass-produced lifelike home-companion humanoid, from ~$16.7K with 13,000+ orders",
       "poster_shape": "product",
       "poster_category": "Robotics"
+    },
+    {
+      "date": "2026-07-02",
+      "article_lead": "China's customs bars Nvidia's H200 imports days after the US cleared the chip for sale with a 25% surcharge, reopening the export standoff and nudging NVDA lower",
+      "article_lead_shape": "regulation",
+      "poster_story": "Harvard Dropouts' Chip Hits $5B — Etched books over $1B in orders for Sohu, its transformer-only inference chip aimed at Nvidia",
+      "poster_shape": "money",
+      "poster_category": "Silicon"
     }
   ]
 }
