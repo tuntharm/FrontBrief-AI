@@ -1,0 +1,5 @@
+A food-delivery giant just shipped a top open AI coder.
+China's Meituan open-sourced LongCat-2.0, a 1.6T agentic coding model that reportedly beats GPT-5.5 — and was trained on ~50,000 home-grown Chinese chips.
+The signal: near-frontier open models are now being trained outside the Nvidia ecosystem.
+Full brief in bio.
+#AI #China #OpenSource #AINews #FrontBriefAI
