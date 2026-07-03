@@ -136,6 +136,14 @@
       "poster_story": "Harvard Dropouts' Chip Hits $5B — Etched books over $1B in orders for Sohu, its transformer-only inference chip aimed at Nvidia",
       "poster_shape": "money",
       "poster_category": "Silicon"
+    },
+    {
+      "date": "2026-07-03",
+      "article_lead": "Meta's Superintelligence Lab poaches Apple's AI chief Ruoming Pang and top Gemini researchers on nine-figure packages as the talent war escalates",
+      "article_lead_shape": "person-drama",
+      "poster_story": "China's Meituan open-sources LongCat-2.0 — a 1.6T agentic coding model that beats GPT-5.5 on SWE-bench Pro, trained on ~50,000 home-grown Chinese chips",
+      "poster_shape": "model-launch",
+      "poster_category": "Open Source"
     }
   ]
 }
