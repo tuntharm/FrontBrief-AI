@@ -144,6 +144,14 @@
       "poster_story": "China's Meituan open-sources LongCat-2.0 — a 1.6T agentic coding model that beats GPT-5.5 on SWE-bench Pro, trained on ~50,000 home-grown Chinese chips",
       "poster_shape": "model-launch",
       "poster_category": "Open Source"
+    },
+    {
+      "date": "2026-07-04",
+      "article_lead": "OpenAI proposes handing the US government a ~5% equity stake (~$42B) via a sovereign-wealth-style fund, contingent on rivals matching, as Altman pushes a 'US-led AI order'",
+      "article_lead_shape": "regulation",
+      "poster_story": "OpenAI Offers Washington 5% — Altman floats donating ~5% of OpenAI's equity (~$42B) to a US sovereign-wealth-style fund, if Google, Anthropic, Meta and xAI each contribute too",
+      "poster_shape": "regulation",
+      "poster_category": "Policy"
     }
   ]
 }
