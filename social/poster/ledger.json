@@ -152,6 +152,14 @@
       "poster_story": "OpenAI Offers Washington 5% — Altman floats donating ~5% of OpenAI's equity (~$42B) to a US sovereign-wealth-style fund, if Google, Anthropic, Meta and xAI each contribute too",
       "poster_shape": "regulation",
       "poster_category": "Policy"
+    },
+    {
+      "date": "2026-07-05",
+      "article_lead": "Meta builds 'Meta Compute,' a cloud business to sell its excess AI capacity — turning a ~$125-145B capex bill into a revenue engine; the stock jumped ~9%",
+      "article_lead_shape": "compute",
+      "poster_story": "AI Drone Maker Raises $1.2B — Germany's Quantum Systems hits an $8B valuation in Europe's biggest defense-tech round of the year (Blackstone-led, Airbus & Advent in; AI recon drones flew 19,000+ Ukraine missions)",
+      "poster_shape": "money",
+      "poster_category": "Defense"
     }
   ]
 }
