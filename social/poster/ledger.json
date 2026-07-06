@@ -160,6 +160,14 @@
       "poster_story": "AI Drone Maker Raises $1.2B — Germany's Quantum Systems hits an $8B valuation in Europe's biggest defense-tech round of the year (Blackstone-led, Airbus & Advent in; AI recon drones flew 19,000+ Ukraine missions)",
       "poster_shape": "money",
       "poster_category": "Defense"
+    },
+    {
+      "date": "2026-07-06",
+      "article_lead": "Together AI raises $800M Series C at an $8.3B valuation — led by Saudi Aramco's Aramco Ventures with Nvidia participating and bookings past ~$1.15B, as enterprise inference spend shifts to open-weight 'neocloud' infrastructure",
+      "article_lead_shape": "money",
+      "poster_story": "A Robot Played the World Cup — Boston Dynamics' Atlas humanoid (via Hyundai) did goal celebrations and handed the match ball to the referee at the Brazil v. Norway Round of 16, the first robotics activation in World Cup history",
+      "poster_shape": "product",
+      "poster_category": "Robotics"
     }
   ]
 }
