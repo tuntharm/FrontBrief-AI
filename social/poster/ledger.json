@@ -168,6 +168,14 @@
       "poster_story": "A Robot Played the World Cup — Boston Dynamics' Atlas humanoid (via Hyundai) did goal celebrations and handed the match ball to the referee at the Brazil v. Norway Round of 16, the first robotics activation in World Cup history",
       "poster_shape": "product",
       "poster_category": "Robotics"
+    },
+    {
+      "date": "2026-07-07",
+      "article_lead": "Microsoft launches 'Frontier,' a $2.5B, ~6,000-engineer AI-deployment company that embeds staff inside customers to make enterprise AI pay off — as Amazon mirrors with a ~$1B push",
+      "article_lead_shape": "product",
+      "poster_story": "Nvidia: The Chip Rally's Black Sheep — the AI bellwether is up just ~3% in 2026 (≈$4.7T market cap) while AMD has soared ~171% and Micron ~305% as custom AI chips and memory reshape the trade",
+      "poster_shape": "compute",
+      "poster_category": "Markets"
     }
   ]
 }
