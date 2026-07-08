@@ -176,6 +176,14 @@
       "poster_story": "Nvidia: The Chip Rally's Black Sheep — the AI bellwether is up just ~3% in 2026 (≈$4.7T market cap) while AMD has soared ~171% and Micron ~305% as custom AI chips and memory reshape the trade",
       "poster_shape": "compute",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-07-08",
+      "article_lead": "OpenAI's GPT-5.6 'Sol' moves to broad public release this week after a US Commerce sign-off ended its government-gated preview — a top agentic-coding model at roughly half Fable 5's price",
+      "article_lead_shape": "model-launch",
+      "poster_story": "AI 'Actor' Lands a Starring Role — Tilly Norwood, the AI-generated 'actress' SAG-AFTRA said 'is not an actor,' is cast to headline the feature film 'Misaligned,' reigniting the union backlash",
+      "poster_shape": "person-drama",
+      "poster_category": "Culture"
     }
   ]
 }
