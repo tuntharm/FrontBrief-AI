@@ -184,6 +184,14 @@
       "poster_story": "AI 'Actor' Lands a Starring Role — Tilly Norwood, the AI-generated 'actress' SAG-AFTRA said 'is not an actor,' is cast to headline the feature film 'Misaligned,' reigniting the union backlash",
       "poster_shape": "person-drama",
       "poster_category": "Culture"
+    },
+    {
+      "date": "2026-07-09",
+      "article_lead": "SpaceXAI ships Grok 4.5, an Opus-class frontier model co-built with Cursor and priced at ~1/4 Anthropic's Opus output price (~4x fewer output tokens on SWE-Bench Pro), as SpaceX's agreed ~$60B all-stock Cursor acquisition vertically integrates compute, model and IDE distribution",
+      "article_lead_shape": "model-launch",
+      "poster_story": "Robotics' 'ChatGPT Moment' Arrives — General Intuition's game-footage-trained foundation model pilots a real robot after ~8 minutes of fine-tuning (~$320M raised at ~$2.3B; Bezos, Eric Schmidt, Nico Rosberg and Khosla backing)",
+      "poster_shape": "research",
+      "poster_category": "Robotics"
     }
   ]
 }

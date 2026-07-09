@@ -1,0 +1,5 @@
+Robotics may have just had its "ChatGPT moment." General Intuition built a foundation model trained on video-game footage that plays games for hours AND pilots a real quadruped robot after just ~8 minutes of fine-tuning.
+The startup has raised ~$320M at a ~$2.3B valuation, backed by Bezos, Eric Schmidt, Nico Rosberg and Khosla.
+The signal: game data may be the cheap, scalable path to general-purpose robotics — a space worth watching (not advice).
+Full brief in bio: https://frontbrief-ai.vercel.app
+#AI #Robotics #GeneralIntuition #TechNews #FrontBriefAI
