@@ -1,0 +1,9 @@
+The chips coming for Nvidia are getting funded — fast.
+
+SambaNova just drew $1B at an $11B valuation with JPMorganChase deploying its inference chips on-prem, while Positron (up to $5B) and Etched ($5B, $1B booked) pull billions more. The pitch isn't out-training Nvidia — it's perf-per-watt and enterprise deployment.
+
+The signal: a financeable challenger stack to Nvidia inference is forming. Watch perf-per-watt, on-prem wins, and named enterprise customers.
+
+Full brief in bio → https://frontbrief-ai.vercel.app
+
+#AI #Nvidia #AIChips #SambaNova #FrontBriefAI

@@ -200,6 +200,14 @@
       "poster_story": "ChatGPT Talks and Listens at Once — OpenAI's new full-duplex 'GPT-Live' voice listens and speaks simultaneously (back-channel cues, natural interruptions), default for paid users with a free mini",
       "poster_shape": "product",
       "poster_category": "Voice"
+    },
+    {
+      "date": "2026-07-11",
+      "article_lead": "OpenAI folds Codex into 'ChatGPT Work,' shipping a single free-on-every-plan desktop super-app (Chat + agentic Work + Codex, with inline diff editing and PR review) and retiring its standalone Atlas browser — the quarter's biggest platform repositioning",
+      "article_lead_shape": "product",
+      "poster_story": "The Chips Coming for Nvidia — SambaNova draws $1B at an $11B valuation with JPMorganChase deploying its inference chips on-prem, as Positron (up to $5B) and Etched ($5B, $1B booked) pull billions more into the anti-Nvidia inference-silicon trade (engagement pick; article #1 was OpenAI's free ChatGPT Work super-app, which was ineligible for the poster as a repeat product shape)",
+      "poster_shape": "money",
+      "poster_category": "Chips"
     }
   ]
 }
