@@ -33,7 +33,7 @@ writes a sharp 5-item brief, designs a social poster, and ships it to
 <table>
 <tr>
 <td width="42%" align="center">
-<img src="web/public/mascot/owl-flying.png" alt="The FrontBrief.AI owl mascot" width="320" />
+<img src="web/public/mascot/owl-hero.png" alt="The FrontBrief.AI owl mascot" width="320" />
 </td>
 <td width="58%">
 

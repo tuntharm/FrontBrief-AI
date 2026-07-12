@@ -54,10 +54,10 @@ export default function Home() {
                 aria-hidden
               />
               <Image
-                src="/mascot/owl-flying.png"
+                src="/mascot/owl-hero.png"
                 alt="Brief Owl mascot"
                 width={340}
-                height={306}
+                height={340}
                 priority
                 className="relative h-52 w-auto object-contain sm:h-72"
               />
