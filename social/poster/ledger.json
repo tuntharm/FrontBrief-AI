@@ -208,6 +208,14 @@
       "poster_story": "The Chips Coming for Nvidia — SambaNova draws $1B at an $11B valuation with JPMorganChase deploying its inference chips on-prem, as Positron (up to $5B) and Etched ($5B, $1B booked) pull billions more into the anti-Nvidia inference-silicon trade (engagement pick; article #1 was OpenAI's free ChatGPT Work super-app, which was ineligible for the poster as a repeat product shape)",
       "poster_shape": "money",
       "poster_category": "Chips"
+    },
+    {
+      "date": "2026-07-12",
+      "article_lead": "SK Hynix raises $26.5B in the biggest foreign IPO in US history — its Nasdaq debut (priced ~$149, +13% pop) tops Alibaba's 2014 listing and puts a public price on the HBM AI-memory supercycle feeding Nvidia's GPUs",
+      "article_lead_shape": "m&a",
+      "poster_story": "Apple Sues OpenAI Over Its Secret AI Device — Apple's N.D. Cal. suit alleges OpenAI stole trade secrets 'at every level' and poached 10+ Apple engineers (hardware chief Tang Tan is ex-Apple) to build its ~$6.4B Jony Ive 'io' device (engagement pick; article #1 was SK Hynix's IPO, a money shape ineligible for the poster the day after a money poster)",
+      "poster_shape": "person-drama",
+      "poster_category": "Legal"
     }
   ]
 }

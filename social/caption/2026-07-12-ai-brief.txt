@@ -1,0 +1,9 @@
+Apple just sued OpenAI over its secret AI device.
+
+Apple's lawsuit claims OpenAI stole trade secrets "at every level" — poaching 10+ Apple engineers and lifting unreleased hardware secrets to build its ~$6.4B Jony Ive-designed device. OpenAI's hardware chief is a former Apple iPhone/Watch VP.
+
+The AI-hardware race is now a courtroom fight — and litigation is the kind of friction that can slow a device roadmap as much as any engineering problem. Signal, not advice.
+
+Full brief in bio → https://frontbrief-ai.vercel.app
+
+#AI #Apple #OpenAI #TechNews #FrontBriefAI
