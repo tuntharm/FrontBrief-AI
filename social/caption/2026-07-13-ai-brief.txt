@@ -1,0 +1,7 @@
+Mistral just taught a robot to find its way with nothing but a camera and a sentence.
+
+Robostral Navigate — the French lab's first robotics model — pilots a robot through rooms it's never seen from a single ordinary camera, following plain-English directions like "walk through the corridor and stop at the second shelf." No LiDAR, no map. Trained entirely in simulation, and landing as Mistral's valuation nears $23B.
+
+The next AI frontier isn't a chatbot — it's the physical world. Full brief in bio.
+
+#AI #Mistral #Robotics #AINews #FrontBriefAI

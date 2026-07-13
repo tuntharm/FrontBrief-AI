@@ -216,6 +216,14 @@
       "poster_story": "Apple Sues OpenAI Over Its Secret AI Device — Apple's N.D. Cal. suit alleges OpenAI stole trade secrets 'at every level' and poached 10+ Apple engineers (hardware chief Tang Tan is ex-Apple) to build its ~$6.4B Jony Ive 'io' device (engagement pick; article #1 was SK Hynix's IPO, a money shape ineligible for the poster the day after a money poster)",
       "poster_shape": "person-drama",
       "poster_category": "Legal"
+    },
+    {
+      "date": "2026-07-13",
+      "article_lead": "Apple commits more than $30B to Broadcom to produce 15 billion-plus US-made custom-silicon and wireless chips (a $1.5B expansion of the Fort Collins, Colorado fab) — its largest domestic-manufacturing pledge, inside a $600B four-year US program",
+      "article_lead_shape": "compute",
+      "poster_story": "Mistral's Robot Finds Its Own Way — Robostral Navigate, Mistral's first robotics model, crosses rooms it has never seen from a single ordinary camera and a plain-English command (8B params, 76.6% R2R-CE), as the French lab's valuation nears $23B",
+      "poster_shape": "research",
+      "poster_category": "Robotics"
     }
   ]
 }
