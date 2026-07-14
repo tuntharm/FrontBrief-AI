@@ -224,6 +224,14 @@
       "poster_story": "Mistral's Robot Finds Its Own Way — Robostral Navigate, Mistral's first robotics model, crosses rooms it has never seen from a single ordinary camera and a plain-English command (8B params, 76.6% R2R-CE), as the French lab's valuation nears $23B",
       "poster_shape": "research",
       "poster_category": "Robotics"
+    },
+    {
+      "date": "2026-07-14",
+      "article_lead": "TSMC posts its biggest month ever — June sales +68% YoY to ~$13.8B — making its July 16 earnings the market's live test of AI's spending ceiling",
+      "article_lead_shape": "compute",
+      "poster_story": "Samsung Health's Data Ultimatum — Samsung Health tells users to consent to AI training on their health data (steps, sleep, cycle, medication records) or the app deletes and stops syncing it, topping Hacker News amid a mass privacy backlash (engagement pick; article #1 was TSMC's record month, a compute story ineligible as the engagement lead; the Musk–Altman feud was the top engagement pick but was pivoted off the poster because a compliant person-centric two-face poster needs real Canva-fetchable photos of both men, which could not be sourced this run)",
+      "poster_shape": "regulation",
+      "poster_category": "Privacy"
     }
   ]
 }
