@@ -232,6 +232,14 @@
       "poster_story": "Samsung Health's Data Ultimatum — Samsung Health tells users to consent to AI training on their health data (steps, sleep, cycle, medication records) or the app deletes and stops syncing it, topping Hacker News amid a mass privacy backlash (engagement pick; article #1 was TSMC's record month, a compute story ineligible as the engagement lead; the Musk–Altman feud was the top engagement pick but was pivoted off the poster because a compliant person-centric two-face poster needs real Canva-fetchable photos of both men, which could not be sourced this run)",
       "poster_shape": "regulation",
       "poster_category": "Privacy"
+    },
+    {
+      "date": "2026-07-15",
+      "article_lead": "DeepSeek in talks to raise ~$1.5B at a $71B valuation, prepping a blockbuster IPO — China's breakout AI lab up ~42% in six weeks (from ~$50–59B), lining up one of the year's most anticipated AI IPOs and a public-market challenge to the closed US frontier",
+      "article_lead_shape": "money",
+      "poster_story": "DeepSeek Preps a Blockbuster AI IPO — China's breakout AI lab is in talks to raise ~$1.5B at a $71B valuation (up ~42% in six weeks), prepping one of the year's most anticipated AI IPOs (poster = article #1; the top pure-engagement pick, OpenAI's 5% government-stake pitch, was disqualified as stale — its real news moment was July 2 and it was already article #1 + poster on 2026-07-04; OpenAI's safety exodus was the next engagement option but was passed over to avoid a third straight OpenAI poster and for lack of a strong single-face image)",
+      "poster_shape": "money",
+      "poster_category": "Markets"
     }
   ]
 }
