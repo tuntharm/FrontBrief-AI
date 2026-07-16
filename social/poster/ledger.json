@@ -240,6 +240,14 @@
       "poster_story": "DeepSeek Preps a Blockbuster AI IPO — China's breakout AI lab is in talks to raise ~$1.5B at a $71B valuation (up ~42% in six weeks), prepping one of the year's most anticipated AI IPOs (poster = article #1; the top pure-engagement pick, OpenAI's 5% government-stake pitch, was disqualified as stale — its real news moment was July 2 and it was already article #1 + poster on 2026-07-04; OpenAI's safety exodus was the next engagement option but was passed over to avoid a third straight OpenAI poster and for lack of a strong single-face image)",
       "poster_shape": "money",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-07-16",
+      "article_lead": "Anthropic schedules IPO investor meetings, targeting a listing as soon as October at a ~$965B valuation with Goldman Sachs, Morgan Stanley and JPMorgan leading — moving to beat OpenAI (which slipped its own listing toward 2027) and give the market its first fully-disclosed look at frontier-lab economics",
+      "article_lead_shape": "money",
+      "poster_story": "Meta Sued Over Its AI Layoff List — 26 employees allege Meta used internal AI systems, activity/keystroke monitoring, token-usage dashboards and algorithmic performance rankings to select ~8,000 layoffs, disproportionately hitting staff on protected medical/parental leave (FMLA/ADA); Meta denies it, saying 'decisions were made by people, not AI' (engagement pick; article #1 was Anthropic's IPO roadshow, a money shape ineligible for the poster the day after a money poster; poster uses a real F8-keynote photo of Mark Zuckerberg with a 'Data Privacy' backdrop that reinforces the surveillance angle)",
+      "poster_shape": "person-drama",
+      "poster_category": "Workplace"
     }
   ]
 }

@@ -1,0 +1,5 @@
+Meta didn't just lay off 8,000 people — 26 of them say an algorithm picked the list.
+A new federal lawsuit claims Meta used internal AI, keystroke monitoring and token-usage dashboards to choose who got cut, hitting staff on medical and parental leave hardest. Meta says "decisions were made by people, not AI."
+The signal: algorithmic management is becoming a real legal and cost line for every AI-heavy employer.
+Full brief in bio: https://frontbrief-ai.vercel.app
+#AI #Meta #AILayoffs #TechNews #FrontBriefAI
