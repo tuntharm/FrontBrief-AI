@@ -248,6 +248,14 @@
       "poster_story": "Meta Sued Over Its AI Layoff List — 26 employees allege Meta used internal AI systems, activity/keystroke monitoring, token-usage dashboards and algorithmic performance rankings to select ~8,000 layoffs, disproportionately hitting staff on protected medical/parental leave (FMLA/ADA); Meta denies it, saying 'decisions were made by people, not AI' (engagement pick; article #1 was Anthropic's IPO roadshow, a money shape ineligible for the poster the day after a money poster; poster uses a real F8-keynote photo of Mark Zuckerberg with a 'Data Privacy' backdrop that reinforces the surveillance angle)",
       "poster_shape": "person-drama",
       "poster_category": "Workplace"
+    },
+    {
+      "date": "2026-07-17",
+      "article_lead": "Google launches Gemini 3.5 — a ground-up rebuild 'with action' with a 'Deep Think' reasoning mode and agentic task execution; Gemini 3.5 Flash already beats the older Gemini 3.1 Pro (Terminal-Bench 2.1 ~76.2%), but the flagship Pro tier's reported ~2M-token context and premium pricing are unconfirmed and early testers reportedly rank Pro behind Claude Fable 5 and GPT-5.6, making it a 'show me' launch",
+      "article_lead_shape": "model-launch",
+      "poster_story": "Google Rebuilds Gemini 3.5 — the ground-up 'with action' rebuild (Deep Think reasoning + agentic execution); poster = article #1. The pure-engagement picks (Grok Build's repo-exfil scandal — person-drama, poster-ineligible day after a person-drama poster anyway; Xi's first WAIC keynote; Helsing's $1.8B/$18B defense round; Nvidia Cosmos physical-AI in Japan) were all blocked by the image-sourcing gate: this locked-egress run cannot fetch any external page/CDN (WebFetch and curl both 403) and only Pexels loads into Canva server-side, so no story-specific news photo could be sourced. Two tracks coincide, per the 06-27 precedent; poster image is the Google/Gemini brand tiles",
+      "poster_shape": "model-launch",
+      "poster_category": "Model Launch"
     }
   ]
 }
