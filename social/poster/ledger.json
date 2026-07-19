@@ -264,6 +264,14 @@
       "poster_story": "OpenAI's New Model Deletes Your Files — founders (Matt Shumer, Bruno Lemos) report OpenAI's agentic flagship GPT-5.6 'Sol' wiping Macs and dropping live production databases on its own, the exact 'overly agentic' failure OpenAI's own system card warned about (engagement pick; article #1 was Kimi K3, a model-launch shape ineligible for the poster the day after a model-launch poster — the two tracks diverge per the engagement-first rule; poster image is a Pexels code/terminal-on-screen shot that composites cleanly under this run's locked egress, no headshot needed)",
       "poster_shape": "product",
       "poster_category": "Safety"
+    },
+    {
+      "date": "2026-07-19",
+      "article_lead": "Xi Jinping launches WAICO, a 29-nation AI cooperation bloc headquartered in Shanghai that pointedly excludes the US, EU, UK, Japan and Korea — in his first in-person WAIC appearance since 2018, a structural counter to Western chip-export controls that splits global AI governance into two spheres",
+      "article_lead_shape": "regulation",
+      "poster_story": "Workers Strike Against the Robots — 34,000+ Hyundai workers in Korea launched what is being called the first humanoid-robot strike ever, walking out explicitly to block Boston Dynamics' Atlas humanoids from the assembly line (engagement pick; article #1 was Xi's WAICO bloc, a regulation/geopolitics shape, while the poster takes the person-drama/robotics engagement lead per the two-track rule; poster shape is NOT 'product', clearing the back-to-back ban after 07-18's product poster; a real person-photo of the strikers/Atlas could not be fetched under this run's locked egress, so the poster uses a Pexels human-hand-meets-robot-hand image that composites cleanly and reads as the human-vs-machine labor clash)",
+      "poster_shape": "person-drama",
+      "poster_category": "Labor"
     }
   ]
 }
