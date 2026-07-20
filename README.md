@@ -8,8 +8,9 @@
 
 <p>
 An autonomous AI news desk that researches the day's most important AI stories,
-writes a sharp 5-item brief, designs a social poster, and ships it to
-<strong>the web, LINE, and Instagram</strong> — every morning, hands-free.
+writes a sharp 5-item brief, designs a social poster, and publishes the web edition.
+It also includes GitHub Actions delivery paths for <strong>LINE and Instagram</strong>
+when their secrets are configured and their workflows complete successfully.
 </p>
 
 <p>
@@ -21,7 +22,7 @@ writes a sharp 5-item brief, designs a social poster, and ships it to
 <img src="https://img.shields.io/badge/desk-multi--agent-1a3aff" alt="Multi-agent" />
 <img src="https://img.shields.io/badge/built%20with-Claude-8a5cf6" alt="Built with Claude" />
 <img src="https://img.shields.io/badge/site-Next.js%2016-000000" alt="Next.js" />
-<img src="https://img.shields.io/badge/delivery-Web%20%C2%B7%20LINE%20%C2%B7%20Instagram-16a34a" alt="Delivery channels" />
+<img src="https://img.shields.io/badge/delivery%20paths-Web%20%C2%B7%20LINE%20%C2%B7%20Instagram-16a34a" alt="Delivery paths" />
 </p>
 
 </div>
@@ -53,13 +54,13 @@ plain-English "why it matters."
 
 ## What it is
 
-**FrontBrief.AI** is a fully automated, end-to-end AI newsroom built around a daily **Claude
+**FrontBrief.AI** is an automated AI newsroom built around a daily **Claude
 Routine**. Once a day it runs like a small news startup's AI desk:
 
 - 🔎 **Researches** the last 24–48h of high-quality AI sources across four beats
 - 🗞️ **Writes** a 5-item brief — importance-first, with an investment angle and a Money Map
 - 🎨 **Designs** a matching social poster in Canva, picking the most feed-worthy story
-- 📤 **Publishes** to a live website, LINE, and Instagram — automatically
+- 📤 **Publishes** the web edition; GitHub Actions can deliver the configured LINE digest and Instagram post after their required secrets are set and their workflows succeed
 
 It's built for people who want a concise, high-signal view of the AI world: frontier models,
 infrastructure, research, startups, adoption, policy, and selected deeptech angles.
@@ -106,15 +107,22 @@ GitHub Actions
   ├─ commit-poster.yml    .png.url push  → downloads + commits the poster PNG
   └─ post-instagram.yml   after poster   → posts the poster + caption to Instagram
 
-Delivery
+Configured delivery paths
   ├─ Website   frontbrief-ai.vercel.app renders the public "Web Edition" of each brief
-  ├─ LINE      Official Account delivers the digest to LINE_TO
-  └─ Instagram posts the poster with its caption
+  ├─ LINE      sends the digest to LINE_TO when its workflow and secrets succeed
+  └─ Instagram posts the poster and caption when its workflow and secrets succeed
 ```
 
 **Claude Routine** handles research, editorial judgement, writing, the poster, the caption, and
-committing. **GitHub Actions** handles LINE delivery, the poster PNG commit, and Instagram posting.
+committing. **GitHub Actions** provides the LINE, poster-commit, and Instagram delivery paths.
 The **Next.js website** (in [`web/`](web/)) renders the reader-facing "Web Edition" of every article.
+
+### Operational status and verification
+
+Committed articles and poster assets are the repository's evidence that the daily generation path
+is producing output. They do not by themselves verify that LINE messages or Instagram posts were
+delivered. After configuring the required secrets, verify each delivery path in GitHub Actions and
+confirm receipt in the destination channel before describing it as live.
 
 ### Two-track selection
 
@@ -209,6 +217,15 @@ The public site lives in [`web/`](web/) (Next.js 16, deployed on Vercel). It ren
 cd web
 npm install
 npm run dev        # http://localhost:3000
+```
+
+For a local website check that does not publish anything:
+
+```bash
+cd web
+npm ci
+npm run lint
+npm run build
 ```
 
 ---
