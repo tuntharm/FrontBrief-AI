@@ -272,6 +272,14 @@
       "poster_story": "Workers Strike Against the Robots — 34,000+ Hyundai workers in Korea launched what is being called the first humanoid-robot strike ever, walking out explicitly to block Boston Dynamics' Atlas humanoids from the assembly line (engagement pick; article #1 was Xi's WAICO bloc, a regulation/geopolitics shape, while the poster takes the person-drama/robotics engagement lead per the two-track rule; poster shape is NOT 'product', clearing the back-to-back ban after 07-18's product poster; a real person-photo of the strikers/Atlas could not be fetched under this run's locked egress, so the poster uses a Pexels human-hand-meets-robot-hand image that composites cleanly and reads as the human-vs-machine labor clash)",
       "poster_shape": "person-drama",
       "poster_category": "Labor"
+    },
+    {
+      "date": "2026-07-20",
+      "article_lead": "The week's AI trade cracked — the Nasdaq fell 1.4% Friday (2026-07-18) and the S&P 500 posted its first losing week in three on fears that AI valuations and 'unsustainable' memory/compute demand can't hold, beginning to unwind a ~$1.8T Asian-chipmaker rally (TSMC, SK Hynix, Samsung), even as private AI-infra money kept marking up (Databricks at $188B)",
+      "article_lead_shape": "money",
+      "poster_story": "AI Cracks a 30-Year Math Problem — OpenAI's GPT-5.6 reportedly produced a novel proof to a convex-optimization problem open since the 1990s from a single prompt (~148 min of reasoning), with two independent groups confirming the key lemma and the proof compiling in Lean 4, though mathematicians still debate its novelty (engagement pick; article #1 was the AI/chip stock sell-off, a money/markets shape, while the poster takes the day's highest-engagement awe hook per the two-track rule; poster shape is 'research', clearing the back-to-back ban after 07-19's person-drama poster and maximizing shape diversity — research hasn't run since 07-13; a Pexels dark-blackboard-equations shot composites cleanly under this run's locked egress with no specific face/logo required)",
+      "poster_shape": "research",
+      "poster_category": "Research"
     }
   ]
 }

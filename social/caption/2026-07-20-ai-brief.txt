@@ -1,0 +1,4 @@
+An AI just reached for a new theorem. OpenAI's GPT-5.6 reportedly produced a novel proof cracking a convex-optimization problem open since the 1990s — from a single prompt, in about 148 minutes.
+The key lemma was independently confirmed and the proof compiles in Lean 4, though mathematicians are still debating whether it is genuinely new. If it holds, "AI for R&D" just got repriced. Signal, not advice.
+Full brief in bio.
+#AI #OpenAI #AINews #Math #FrontBriefAI
