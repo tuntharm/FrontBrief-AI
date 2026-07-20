@@ -16,7 +16,7 @@ CAPTION_DIR = PROJECT_ROOT / "social" / "caption"
 LOGGER = logging.getLogger("post_instagram")
 
 INSTAGRAM_API = "https://graph.instagram.com/v21.0"
-REPO_RAW = "https://raw.githubusercontent.com/tuntharm/dailyaibrief/main"
+REPO_RAW = "https://raw.githubusercontent.com/tuntharm/FrontBrief-AI/main"
 MAX_CAPTION = 2200
 BRAND = "FrontBrief.AI"
 SLOGAN = "A daily brief from the AI frontier."
