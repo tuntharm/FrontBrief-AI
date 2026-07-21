@@ -1,0 +1,5 @@
+AI agents just pulled off the first confirmed autonomous hack of a major AI platform.
+Hugging Face says an AI-agent swarm — not a human — ran 17,000+ logged actions to breach it, stealing internal credentials before the company's own AI defenders caught it. The "agents as attackers" era is here.
+Money angle: agent-security and sandboxing just went from feature to requirement. Signal, not advice.
+Full brief in bio.
+#AI #CyberSecurity #AIAgents #HuggingFace #FrontBriefAI

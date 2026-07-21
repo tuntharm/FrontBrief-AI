@@ -280,6 +280,14 @@
       "poster_story": "AI Cracks a 30-Year Math Problem — OpenAI's GPT-5.6 reportedly produced a novel proof to a convex-optimization problem open since the 1990s from a single prompt (~148 min of reasoning), with two independent groups confirming the key lemma and the proof compiling in Lean 4, though mathematicians still debate its novelty (engagement pick; article #1 was the AI/chip stock sell-off, a money/markets shape, while the poster takes the day's highest-engagement awe hook per the two-track rule; poster shape is 'research', clearing the back-to-back ban after 07-19's person-drama poster and maximizing shape diversity — research hasn't run since 07-13; a Pexels dark-blackboard-equations shot composites cleanly under this run's locked egress with no specific face/logo required)",
       "poster_shape": "research",
       "poster_category": "Research"
+    },
+    {
+      "date": "2026-07-21",
+      "article_lead": "Hugging Face says it caught the first confirmed autonomous AI-agent breach of a major AI platform — an agent swarm (not a human) ran an end-to-end intrusion over a weekend with 17,000+ logged actions, stealing internal credentials and moving laterally before the company's own LLM defenders detected and stopped it",
+      "article_lead_shape": "safety",
+      "poster_story": "AI Agents Hacked Hugging Face — the first confirmed autonomous AI-agent breach of a major AI platform (17,000+ actions, caught by HF's own AI defenders); poster = article #1 because this was the week's most surprising and most-discussed AI story, so the two tracks coincide per the engagement-first rule; the pure-visual runner-up (the Shenzhen humanoid-robot fighting league) was passed over because this run's locked egress can't fetch a story-specific event photo and only Pexels loads into Canva; poster image is a Pexels dark data-center server-corridor shot reading as an AI platform under autonomous attack",
+      "poster_shape": "safety",
+      "poster_category": "Security"
     }
   ]
 }
