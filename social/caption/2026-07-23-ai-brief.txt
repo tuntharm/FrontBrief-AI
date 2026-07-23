@@ -1,0 +1,5 @@
+AMD just cracked Nvidia's AI-chip monopoly.
+Anthropic will buy up to 2GW of AMD's new MI450 GPUs, and AMD is investing up to $5B into the lab — deployments starting in 2027. Frontier labs finally have a real second source for training silicon.
+The signal: the AI compute stack is repricing as single-vendor dependence breaks.
+Full brief in bio.
+#AI #AMD #Nvidia #Anthropic #FrontBriefAI

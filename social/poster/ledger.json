@@ -296,6 +296,14 @@
       "poster_story": "AI Deepfakes Hijack the World Cup — the 2026 World Cup has become the first mega-event overrun by synthetic media (a doctored Mbappé clip shared ~1.2M times before flagging, scam ads using star players' faces up ~1,700%, FIFA admitting detection lags); engagement pick that differs from the article #1 (OpenAI's sandbox-escape, a safety shape that would have repeated 07-21's safety poster) per the two-track engagement-first rule; unlike recent locked-egress runs, this run had working web egress and the poster uses a Pexels packed-stadium-crowd shot evoking the huge live audience being flooded with fakes",
       "poster_shape": "media/deepfakes",
       "poster_category": "Media"
+    },
+    {
+      "date": "2026-07-23",
+      "article_lead": "AMD lands Anthropic — AMD will invest up to $5B into Anthropic while Anthropic commits to buy up to 2 gigawatts of AMD Instinct MI450 GPUs (tens of billions of dollars of compute, deployments from H1 2027), announced around AMD's 'Advancing AI 2026' event with CEO Lisa Su; the most concrete second-source commitment a frontier lab has made and framed as cracking Nvidia's training-chip monopoly, adding AMD to an Anthropic compute stack that already spans Nvidia, Google TPUs and Amazon Trainium",
+      "article_lead_shape": "compute",
+      "poster_story": "AMD Cracks Nvidia's Chip Monopoly — AMD lands Anthropic ($5B investment + up to 2GW of MI450 GPUs); poster = article #1 because the AMD-Anthropic deal was the day's single most important AND most engagement-worthy story (Lisa Su on stage, the 'Nvidia's grip slips' hook), so the two tracks coincide per the engagement-first rule. The pure person-drama runners-up (Olivia Rodrigo's viral 'AI prompt man' pile-on; Vitalik Buterin's viral AGI definition; the third-straight CAISI chief resignation) were all blocked by the image-sourcing gate: this run's locked egress can't fetch a story-specific person photo (curl 403 on every host) and only Pexels loads into Canva server-side, so no recognisable headshot could be sourced. Poster image is a premium blue-lit Pexels data-center server-rack shot that composites cleanly and reads as the 2GW of GPU compute at the heart of the deal",
+      "poster_shape": "compute",
+      "poster_category": "Compute"
     }
   ]
 }
