@@ -304,6 +304,14 @@
       "poster_story": "AMD Cracks Nvidia's Chip Monopoly — AMD lands Anthropic ($5B investment + up to 2GW of MI450 GPUs); poster = article #1 because the AMD-Anthropic deal was the day's single most important AND most engagement-worthy story (Lisa Su on stage, the 'Nvidia's grip slips' hook), so the two tracks coincide per the engagement-first rule. The pure person-drama runners-up (Olivia Rodrigo's viral 'AI prompt man' pile-on; Vitalik Buterin's viral AGI definition; the third-straight CAISI chief resignation) were all blocked by the image-sourcing gate: this run's locked egress can't fetch a story-specific person photo (curl 403 on every host) and only Pexels loads into Canva server-side, so no recognisable headshot could be sourced. Poster image is a premium blue-lit Pexels data-center server-rack shot that composites cleanly and reads as the 2GW of GPU compute at the heart of the deal",
       "poster_shape": "compute",
       "poster_category": "Compute"
+    },
+    {
+      "date": "2026-07-24",
+      "article_lead": "The White House accuses Chinese lab Moonshot AI of covertly, 'industrial-scale' distilling Anthropic's frontier 'Fable' model to build its Kimi K3 open-weights release, and Treasury Secretary Bessent threatened Entity List sanctions ('Open source is not open season on American IP' went viral) — even as experts publicly dispute that a ~15-day window (Fable only public since ~July 1) could explain Kimi K3's quality; a precedent-setting fight over open-weights, distillation, and US-China AI IP",
+      "article_lead_shape": "regulation",
+      "poster_story": "AI Claims a Perfect Olympiad Score — two Chinese labs (Huawei 'Celia' and RedNote 'dots-note-3.0') claim the first-ever flawless 42/42 across all six problems at the 2026 International Math Olympiad in Shanghai (only 7 of 666 humans matched it), and Fields Medalist Terence Tao plus IMO president Gregor Dolinar dispute the compute, human involvement, reproducibility and best-of-n self-grading, so the result can't currently be officially validated (engagement pick; article #1 was the White House/Moonshot distillation-sanctions story, a regulation/geopolitics shape, while the poster takes the day's most surprising, broadly shareable hook per the two-track engagement-first rule; the person-centric runners-up — Travis Kalanick's $1.7B Atoms comeback and the Florida pastor suing OpenAI — were passed over because this run's locked egress can't fetch a recognisable face server-side and only Pexels loads into Canva; poster shape is 'research', clearing the back-to-back ban after 07-23's compute poster, and deliberately avoids 07-20's dark-blackboard visual by using a Pexels gold-medal-and-trophy shot that reads as a 'perfect winning score')",
+      "poster_shape": "research",
+      "poster_category": "Research"
     }
   ]
 }

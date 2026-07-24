@@ -1,0 +1,5 @@
+Two Chinese AI labs just claimed the first-ever PERFECT score at the International Math Olympiad — 42/42 across all six problems, a mark only 7 of 666 humans hit.
+Then Fields Medalist Terence Tao and the IMO president disputed it: the compute, the human involvement, and the reproducibility can't be officially validated.
+Landmark reasoning claim, or benchmark theater? The eval-rigor fight is the real story.
+Full brief in bio.
+#AI #MathOlympiad #AINews #Research #FrontBriefAI
