@@ -1,0 +1,5 @@
+Black Forest Labs just dropped FLUX 3 — and it's not just an image model anymore.
+One set of weights generates images, 20-second video with native synced audio (dialogue + SFX), AND predicts robot manipulation actions. A direct shot at Veo and Sora, collapsing media-gen and embodied AI into a single model.
+The signal: frontier multimodal is racing past standalone video tools — watch how it benchmarks once access widens.
+Full brief in bio.
+#AI #FLUX3 #GenAI #AINews #FrontBriefAI

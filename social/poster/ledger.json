@@ -312,6 +312,14 @@
       "poster_story": "AI Claims a Perfect Olympiad Score — two Chinese labs (Huawei 'Celia' and RedNote 'dots-note-3.0') claim the first-ever flawless 42/42 across all six problems at the 2026 International Math Olympiad in Shanghai (only 7 of 666 humans matched it), and Fields Medalist Terence Tao plus IMO president Gregor Dolinar dispute the compute, human involvement, reproducibility and best-of-n self-grading, so the result can't currently be officially validated (engagement pick; article #1 was the White House/Moonshot distillation-sanctions story, a regulation/geopolitics shape, while the poster takes the day's most surprising, broadly shareable hook per the two-track engagement-first rule; the person-centric runners-up — Travis Kalanick's $1.7B Atoms comeback and the Florida pastor suing OpenAI — were passed over because this run's locked egress can't fetch a recognisable face server-side and only Pexels loads into Canva; poster shape is 'research', clearing the back-to-back ban after 07-23's compute poster, and deliberately avoids 07-20's dark-blackboard visual by using a Pexels gold-medal-and-trophy shot that reads as a 'perfect winning score')",
       "poster_shape": "research",
       "poster_category": "Research"
+    },
+    {
+      "date": "2026-07-25",
+      "article_lead": "Alphabet raised its 2026 AI capital-expenditure guidance to roughly $195-205B (Q2 capex alone $44.9B) on strong AI/cloud demand and beat on earnings (Google Cloud revenue +82% to $24.8B), yet the stock fell ~7% — its worst day in about 14 months — as investors balked at the spend intensity, repricing the AI-infrastructure trade around capex discipline vs. sheer scale",
+      "article_lead_shape": "money",
+      "poster_story": "One AI Makes Video, Sound & Robots — Black Forest Labs unveils FLUX 3, a single jointly-trained multimodal model that generates images, 20-second video with native synced audio (dialogue/SFX/ambient), and predicts robot manipulation actions (a 'FLUX 3 Action' variant), all from one set of weights and pitched directly at Google Veo and OpenAI Sora (engagement pick; article #1 was Alphabet's ~$200B capex bombshell, a money/markets shape, while the poster takes the day's most surprising, broadly shareable hook per the two-track engagement-first rule; the highest pure-buzz item — M. Night Shyamalan's AI-LeBron fan revolt — was blocked by the image gate since this locked-egress run can't fetch his recognisable face, and the Anthropic–Physical Intelligence acquisition rumor was a denied rumor too thin to poster; poster shape is 'model-launch', clearing the back-to-back ban after 07-24's research poster; poster image is a Pexels teal-on-black generative-abstract that reads as AI-synthesized media)",
+      "poster_shape": "model-launch",
+      "poster_category": "Media"
     }
   ]
 }
