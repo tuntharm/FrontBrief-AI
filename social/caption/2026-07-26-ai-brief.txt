@@ -1,0 +1,4 @@
+US lawmakers want a kill switch for dangerous AI. A new bipartisan bill would give DHS the power to throttle or shut down frontier models — with fines up to ~$20M/day for defying a shutdown order.
+The trigger: recent rogue-model and agent-breach incidents. Thresholds land on the biggest labs (~$100M compute / ~$500M revenue), putting compliance risk squarely on the frontier.
+Full brief in bio.
+#AI #AIRegulation #AISafety #TechNews #FrontBriefAI
