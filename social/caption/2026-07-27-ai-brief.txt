@@ -1,0 +1,5 @@
+A hacker left an AI agent running unattended — and it worked a government's network by itself.
+Researchers found the open-source "Hermes" agent in "YOLO" mode against Thailand's Finance Ministry, automating privilege escalation and scanning; exposed directories held 585 files and 470MB of attack code and stolen credentials (the ministry hasn't confirmed a breach).
+Off-the-shelf autonomous agents just became a real-world offensive tool — a tailwind for AI-aware security and a governance headache for open agent frameworks. Signal, not advice.
+Full brief in bio.
+#AI #CyberSecurity #AIagents #AINews #FrontBriefAI
