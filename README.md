@@ -20,7 +20,7 @@ when their secrets are configured and their workflows complete successfully.
 <p>
 <img src="https://img.shields.io/badge/schedule-daily%2005%3A00%20London-0b1a4a" alt="Daily 05:00 London" />
 <img src="https://img.shields.io/badge/desk-multi--agent-1a3aff" alt="Multi-agent" />
-<img src="https://img.shields.io/badge/built%20with-Claude-8a5cf6" alt="Built with Claude" />
+<img src="https://img.shields.io/badge/operated%20by-Codex-1a3aff" alt="Operated by Codex" />
 <img src="https://img.shields.io/badge/site-Next.js%2016-000000" alt="Next.js" />
 <img src="https://img.shields.io/badge/delivery%20paths-Web%20%C2%B7%20LINE%20%C2%B7%20Instagram-16a34a" alt="Delivery paths" />
 </p>
@@ -59,7 +59,7 @@ automation**. Once a day it operates like a small news startup's AI desk:
 
 - 🔎 **Researches** the last 24–48h of high-quality AI sources across four beats
 - 🗞️ **Writes** a 5-item brief — importance-first, with an investment angle and a Money Map
-- 🎨 **Renders** a brand-locked social poster, picking the most feed-worthy story
+- 🎨 **Duplicates** the locked Canva parent poster, preserving its typography and brand system
 - 📤 **Publishes** the web edition; GitHub Actions can deliver the configured LINE digest and Instagram post after their required secrets are set and their workflows succeed
 
 It's built for people who want a concise, high-signal view of the AI world: frontier models,
@@ -97,14 +97,15 @@ Codex automation — daily 05:00 Europe/London (the Editor-in-Chief)
   ├─ Stage 2  Assignment Editor — dedupes + scores on IMPORTANCE and ENGAGEMENT separately
   ├─ Stage 3  Audience/Social Editor — picks the engagement-first poster story + creative brief
   ├─ Stage 4  Producer/Writer — writes the article, LINE digest, and IG caption
-  └─ Stage 5  EIC final pass — QA, validates the poster spec, updates the ledger, ships
+  └─ Stage 5  EIC final pass — QA, duplicates/edits/exports the Canva parent, updates the ledger, ships
                  ├─ articles/YYYY-MM-DD-ai-brief.md          (brief + LINE digest + web edition)
-                 ├─ social/poster/YYYY-MM-DD-ai-brief.poster.json (validated render spec)
+                 ├─ social/poster/YYYY-MM-DD-ai-brief.poster.json (validated editorial metadata)
+                 ├─ social/poster/YYYY-MM-DD-ai-brief.png     (Canva-exported production poster)
                  └─ social/caption/YYYY-MM-DD-ai-brief.txt    (Instagram caption)
 
 GitHub Actions
   ├─ line-dispatch.yml    new article push → validates + sends the LINE digest
-  ├─ commit-poster.yml    poster spec push → renders + commits the poster PNG
+  ├─ commit-poster.yml    historical .png.url compatibility only
   └─ post-instagram.yml   new poster PNG   → posts the poster + caption to Instagram
 
 Configured delivery paths
@@ -113,9 +114,9 @@ Configured delivery paths
   └─ Instagram posts the poster and caption when its workflow and secrets succeed
 ```
 
-**Codex** handles research, editorial judgement, writing, the poster spec, the caption, and
-committing. **GitHub Actions** provides deterministic validation, rendering, LINE, and Instagram
-delivery paths.
+**Codex** handles research, editorial judgement, writing, Canva parent-page production, the poster
+metadata, the caption, and the atomic commit. **GitHub Actions** provides deterministic LINE and
+Instagram delivery paths.
 The **Next.js website** (in [`web/`](web/)) renders the reader-facing "Web Edition" of every article.
 
 ### Operational status and verification
@@ -161,7 +162,7 @@ shape within the window.
 
 ```text
 .github/workflows/line-dispatch.yml      # sends the LINE digest on article push
-.github/workflows/commit-poster.yml       # renders and commits a poster PNG from its JSON spec
+.github/workflows/commit-poster.yml       # historical .png.url compatibility workflow
 .github/workflows/post-instagram.yml      # posts poster + caption to Instagram
 articles/                                 # daily briefs (+ sample-ai-brief.md)
 social/poster/                            # daily posters (PNG + .poster.json + index.md + ledger.json)
@@ -172,7 +173,7 @@ assets/brand/                             # logo + footer brand assets
 docs/codex-routine-prompt.md              # active Codex newsroom and publishing procedure
 docs/claude-routine-prompt.md             # historical Claude routine prompt
 scripts/validate_newsroom.py              # deterministic freshness/dedup/channel gates
-scripts/render_poster.py                   # locked 1080x1350 poster renderer
+scripts/render_poster.py                   # non-production renderer retained for tests/fallback development
 scripts/extract_line_digest.py            # pulls the ## LINE Digest section verbatim
 scripts/send_line.py                      # sends one LINE message
 scripts/post_instagram.py                 # posts the poster + caption

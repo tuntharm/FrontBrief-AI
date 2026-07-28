@@ -80,16 +80,26 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Validate and print delivery metadata without contacting LINE.",
     )
+    parser.add_argument(
+        "--text",
+        help="Send this explicit text instead of reports/latest_line_digest.txt.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     configure_logging()
-    digest = load_digest(REPORTS_DIR / "latest_line_digest.txt")
+    digest = (
+        graceful_truncate(args.text, LINE_MAX_CHARS, "\n\n[Truncated to fit LINE.]")
+        if args.text is not None
+        else load_digest(REPORTS_DIR / "latest_line_digest.txt")
+    )
+    if not digest.strip():
+        raise RuntimeError("LINE message is empty")
     if args.dry_run:
         LOGGER.info(
-            "DRY RUN: LINE digest is valid (%d chars); no message sent",
+            "DRY RUN: LINE message is valid (%d chars); no message sent",
             len(digest),
         )
         return 0

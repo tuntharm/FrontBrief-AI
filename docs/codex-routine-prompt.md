@@ -17,8 +17,9 @@ story #1.
    `social/poster/ledger.json` before researching.
 5. Never overwrite a dated article or poster artifact.
 6. Confirm the scheduled runtime can reach at least one current public news source, fetch the
-   GitHub remote, import the poster renderer dependencies, and write only inside this checkout.
-   Fail closed with the exact missing capability before starting research.
+   GitHub remote, open the authenticated Canva parent, control its editor, capture a file download,
+   and write only inside this checkout. Fail closed with the exact missing capability before
+   starting research.
 
 This gate exists so Claude and Codex cannot both publish the same date during cutover. A modified
 existing article is also not a new edition; GitHub Actions only dispatches newly added dated files.
@@ -85,7 +86,7 @@ Write:
 - TL;DR, Money Map, and Watchlist
 - the public journalist-voice Web Edition
 - the Instagram caption for the poster story
-- the poster JSON spec
+- the poster JSON metadata used by the deterministic editorial validator
 
 The LINE digest must end with:
 
@@ -137,7 +138,7 @@ Public standfirst, five flowing story sections with inline links, and a closing 
 paragraph. Do not expose “Tharm relevance” or “Action” here.
 ```
 
-## Poster-spec contract
+## Poster-metadata contract
 
 Write `social/poster/YYYY-MM-DD-ai-brief.poster.json`:
 
@@ -168,7 +169,8 @@ Write `social/poster/YYYY-MM-DD-ai-brief.poster.json`:
 ```
 
 `brief_stories` must contain exactly five records in article order. `focus_x` and `focus_y` are
-optional 0–1 crop anchors.
+optional 0–1 crop anchors. This file records the editorial decision and supports deterministic
+validation; it is not a production rendering instruction.
 
 ## Deterministic EIC gate
 
@@ -185,17 +187,31 @@ The validator enforces article structure, five direct sources, LINE/caption limi
 freshness, recent story duplication, consecutive poster-shape rotation, image provenance fields,
 and the no-bare-logo rule. A failure stops publication.
 
-Then render a local preview:
+## Canva production poster
 
-```bash
-python scripts/render_poster.py \
-  --spec social/poster/YYYY-MM-DD-ai-brief.poster.json \
-  --output test-output/YYYY-MM-DD/poster-preview.png
-```
+Canva design `DAHMpIU_j38` (`FrontBrief.AI — Poster Series`) is the production parent. Never
+regenerate its layout and never use `scripts/render_poster.py` for a production poster.
 
-Inspect the preview before publishing. Confirm 1080×1350, subject visible in the upper image,
-headline no more than three lines, subhead no more than two lines, both brand marks visible, and no
-overlap.
+1. Read the parent metadata and recent page text. Record the current page count.
+2. Open the authenticated parent editor in the in-app browser and jump to the final page.
+3. Duplicate that final page inside the same parent. Verify the parent page count increased by
+   exactly one and that the new final page is selected.
+4. Upload the chosen direct public image URL into Canva.
+5. Inspect every image asset on the duplicated page. Identify the 1080×900 story fill and preserve
+   the two FrontBrief logo assets.
+6. Through the authenticated Canva editor, change only the category, headline, subhead, and
+   story-image fill. Preserve the inherited font family, sizes, spacing, black panel, both logos,
+   and all element positions. Do not start an API editing transaction that would require an
+   unattended run to wait for interactive commit approval.
+7. Inspect the full-page preview. Confirm the headline is about two lines, the subhead is concise,
+   both brand marks are visible, the image is story-specific, and nothing overlaps.
+8. Ensure Canva reports all changes saved.
+9. In Canva Download, keep PNG selected, choose only the current final page, bind the browser
+   download event before clicking Download, and capture the returned local path.
+10. Copy that file to `social/poster/YYYY-MM-DD-ai-brief.png`. Verify it is an RGB 1080×1350 PNG.
+
+If duplication, editing, saving, preview inspection, or export cannot be verified, stop before git.
+Do not fall back to code rendering or create a separate Canva design.
 
 ## Files and publishing
 
@@ -203,10 +219,9 @@ After EIC approval:
 
 1. Append the ledger entry with date, article lead, lead shape, poster story, poster shape, and
    poster category.
-2. Append one poster-index row. The renderer replaces Canva as the production source; use
-   `code-rendered` in the poster/source column until a stable public asset URL exists.
+2. Append one poster-index row with the Canva parent link as the poster source.
 3. Write the matching caption.
-4. Re-run the validator after the ledger update.
+4. Re-run the validator after the ledger update and re-check the exported PNG dimensions.
 5. Run `git fetch origin main` again. Abort if `HEAD` no longer equals `origin/main`, if any dated
    artifact for this run now exists on the remote, or if any file outside the daily allowlist has
    changed. Do not merge or retry blindly.
@@ -214,6 +229,7 @@ After EIC approval:
    - `articles/YYYY-MM-DD-ai-brief.md`
    - `social/caption/YYYY-MM-DD-ai-brief.txt`
    - `social/poster/YYYY-MM-DD-ai-brief.poster.json`
+   - `social/poster/YYYY-MM-DD-ai-brief.png`
    - `social/poster/index.md`
    - `social/poster/ledger.json`
 7. Push `main` once. A non-fast-forward is a failed run, not a reason to force-push.
@@ -221,7 +237,6 @@ After EIC approval:
 GitHub Actions then:
 
 - validates and sends LINE only for a newly added article;
-- validates, renders, and commits the PNG from the poster spec;
 - posts Instagram only for a newly added PNG and only when both Instagram secrets exist;
 - triggers the Vercel production deployment from `main`.
 

@@ -1,15 +1,13 @@
 name: Commit Poster
 
-# Codex commits a validated *.poster.json spec. GitHub renders the locked
-# 1080x1350 layout on its network and commits the PNG. Legacy Canva .png.url
-# pointers remain supported during migration.
+# Production Codex runs now commit the Canva-exported PNG directly. This
+# compatibility workflow remains only for historical Canva .png.url pointers.
 
 on:
   push:
     branches:
       - main
     paths:
-      - "social/poster/**/*.poster.json"
       - "social/poster/**/*.png.url"
   workflow_dispatch: {}
 
@@ -29,36 +27,10 @@ jobs:
         with:
           ref: main
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-
-      - name: Install renderer dependencies
-        run: pip install -r requirements.txt
-
-      - name: Render validated Codex poster specs
-        run: |
-          shopt -s nullglob
-          changed=0
-          for spec in social/poster/*.poster.json; do
-            png="${spec%.poster.json}.png"
-            if [[ -f "$png" ]]; then
-              continue
-            fi
-            stem="$(basename "${spec%.poster.json}")"
-            python scripts/validate_newsroom.py \
-              --article "articles/$stem.md" \
-              --caption "social/caption/$stem.txt" \
-              --poster-spec "$spec"
-            python scripts/render_poster.py --spec "$spec" --output "$png"
-            changed=1
-          done
-          echo "changed=$changed" >> "$GITHUB_ENV"
-
       - name: Download legacy Canva pointers
         run: |
           shopt -s nullglob
+          changed=0
           for f in social/poster/*.png.url; do
             png="${f%.url}"
             url="$(tr -d '\r\n' < "$f")"

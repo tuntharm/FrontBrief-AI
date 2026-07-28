@@ -34,6 +34,19 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   prompt is `docs/codex-routine-prompt.md`.
 - Historical Claude instructions are retained for context but are no longer active.
 
+### Canva-parent correction (2026-07-28)
+
+- Tharm rejected the code-rendered poster because its font and styling did not match the established
+  Canva series. The Canva parent is restored as the production source of truth.
+- Production flow: duplicate the latest page inside parent `DAHMpIU_j38`; change only category,
+  headline, subhead, and the 1080×900 story image; preserve inherited typography, spacing, black
+  panel, monogram, and wordmark; download only the new page as a 1080×1350 RGB PNG.
+- The `.poster.json` file remains deterministic editorial metadata for freshness, source,
+  duplicate, and rotation checks. It is not rendered in production.
+- The Canva-exported PNG is committed in the same atomic push as the article and caption.
+  `commit-poster.yml` remains only for historical `.png.url` pointers.
+- A successful manual proof created page 53 in the parent and captured a verified 1080×1350 export.
+
 ## Content / selection
 - **Interestingness-first, exactly 5 items.** Lead with the single most must-know story. Breadth
   is a guide, NOT a quota. Tharm disliked niche/quota-filled briefs (dry capex forecasts, procedural

@@ -17,6 +17,11 @@ on:
         required: true
         default: true
         type: boolean
+      connection_test:
+        description: "Send a fixed Codex cutover test instead of an article"
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -45,12 +50,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Test LINE connection
+        if: github.event_name == 'workflow_dispatch' && inputs.connection_test
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_TO: ${{ secrets.LINE_TO }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          args=(--text "FrontBrief.AI Codex cutover test — LINE delivery is connected.")
+          if [[ "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+          python scripts/send_line.py "${args[@]}"
+
       - name: Resolve publish target
         id: target
         env:
           BEFORE_SHA: ${{ github.event.before }}
           REQUESTED_ARTICLE: ${{ inputs.article }}
+          CONNECTION_TEST: ${{ inputs.connection_test }}
         run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && "$CONNECTION_TEST" == "true" ]]; then
+            echo "should_send=false" >> "$GITHUB_OUTPUT"
+            echo "Connection test handled separately; skipping article delivery."
+            exit 0
+          fi
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
             article="$REQUESTED_ARTICLE"
             if [[ -z "$article" ]]; then

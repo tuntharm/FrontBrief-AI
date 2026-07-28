@@ -19,11 +19,13 @@ Hard operational rules:
   `main`.
 - Before committing, run `scripts/validate_newsroom.py` against the article, caption, poster spec,
   ledger, and archive.
-- The daily poster input is `social/poster/YYYY-MM-DD-ai-brief.poster.json`. GitHub Actions renders
-  and commits the locked 1080×1350 PNG with `scripts/render_poster.py`.
-- Canva design `DAHMpIU_j38` is a historical archive/reference. It is not a production dependency
-  because the connected Canva API cannot append and export a new series page reliably.
-- Commit only the day’s article, caption, poster spec, poster index update, and ledger update.
+- Canva design `DAHMpIU_j38` is the production poster parent. Duplicate its latest page, change only
+  category/headline/subhead/background, preserve both logos and all typography/layout, then export
+  only the new page as a 1080×1350 RGB PNG.
+- `social/poster/YYYY-MM-DD-ai-brief.poster.json` is deterministic editorial metadata only. Never
+  use `scripts/render_poster.py` for a production poster.
+- Commit only the day’s article, caption, poster metadata, Canva-exported PNG, poster index update,
+  and ledger update.
   Preserve unrelated local changes and never commit credentials.
 - Treat any missing source, stale story, duplicate, failed validation, unavailable visual, dirty
   checkout, or push failure as a failed run. Do not publish a partial edition.
