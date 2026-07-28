@@ -19,6 +19,21 @@ authoritative *rules*. Append to this file as new decisions are made; don't rewr
   `post-instagram.yml` (posts poster + caption once IG secrets exist).
 - Schedule: **05:00 Europe/London** (moved from 07:00 for token-budget reasons). Model: Opus 4.8.
 
+### Codex cutover (2026-07-28)
+
+- Codex replaces Claude as the active 05:00 Europe/London Editor-in-Chief.
+- The existing Canva parent remains a historical/reference archive. The connected Codex Canva API
+  can read and edit it but cannot reliably append a page and export the PNG URL used by the old
+  routine.
+- The production poster input is now a validated `.poster.json` file. GitHub Actions renders the
+  locked 1080×1350 layout and commits the PNG.
+- LINE dispatch is idempotent for newly added dated articles; historical edits do not resend the
+  newest edition.
+- Instagram dispatch is idempotent for newly added PNGs. Manual dispatch defaults to dry-run.
+- Deterministic pre-publication checks live in `scripts/validate_newsroom.py`; the active operating
+  prompt is `docs/codex-routine-prompt.md`.
+- Historical Claude instructions are retained for context but are no longer active.
+
 ## Content / selection
 - **Interestingness-first, exactly 5 items.** Lead with the single most must-know story. Breadth
   is a guide, NOT a quota. Tharm disliked niche/quota-filled briefs (dry capex forecasts, procedural

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import logging
 import os
 import re
@@ -135,13 +136,33 @@ def publish_container(user_id: str, token: str, container_id: str) -> str:
     return post_id
 
 
-def main() -> int:
-    configure_logging()
-    user_id = required_env("INSTAGRAM_USER_ID")
-    token = required_env("INSTAGRAM_ACCESS_TOKEN")
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Publish the newest FrontBrief.AI poster.")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate the article, poster URL, and caption without contacting Instagram.",
+    )
+    parser.add_argument(
+        "--article",
+        type=Path,
+        help="Article matching the new poster. Defaults to the newest dated article.",
+    )
+    return parser.parse_args()
 
-    article = newest_article()
+
+def main() -> int:
+    args = parse_args()
+    configure_logging()
+    article = args.article or newest_article()
+    if not article.is_absolute():
+        article = PROJECT_ROOT / article
+    if not article.exists():
+        raise FileNotFoundError(f"Article not found: {article}")
     image_url = poster_url_for(article)
+    poster_path = POSTER_DIR / f"{article.stem}.png"
+    if not poster_path.exists():
+        raise FileNotFoundError(f"Poster not found: {poster_path}")
 
     LOGGER.info("Posting poster: %s", image_url)
     caption = load_caption(article)
@@ -151,7 +172,16 @@ def main() -> int:
         LOGGER.info("No caption file found; building caption from the article")
         caption = build_caption(article.read_text(encoding="utf-8"))
     LOGGER.info("Caption (%d chars):\n%s", len(caption), caption)
+    if len(caption) > MAX_CAPTION:
+        raise RuntimeError(f"Instagram caption exceeds {MAX_CAPTION} characters")
+    if args.dry_run:
+        LOGGER.info(
+            "DRY RUN: article, poster, URL, and caption are valid; no Instagram API call made"
+        )
+        return 0
 
+    user_id = required_env("INSTAGRAM_USER_ID")
+    token = required_env("INSTAGRAM_ACCESS_TOKEN")
     container_id = create_container(user_id, token, image_url, caption)
     wait_for_container(token, container_id)
     publish_container(user_id, token, container_id)

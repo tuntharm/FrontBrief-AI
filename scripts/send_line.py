@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import logging
 import os
 from pathlib import Path
@@ -72,11 +73,29 @@ def push_line_message(token: str, recipient: str, text: str) -> requests.Respons
     return requests.post(LINE_PUSH_ENDPOINT, headers=headers, json=payload, timeout=20)
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Send the prepared FrontBrief.AI LINE digest.")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate and print delivery metadata without contacting LINE.",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
+    args = parse_args()
     configure_logging()
+    digest = load_digest(REPORTS_DIR / "latest_line_digest.txt")
+    if args.dry_run:
+        LOGGER.info(
+            "DRY RUN: LINE digest is valid (%d chars); no message sent",
+            len(digest),
+        )
+        return 0
+
     token = required_env("LINE_CHANNEL_ACCESS_TOKEN")
     recipient = required_env("LINE_TO")
-    digest = load_digest(REPORTS_DIR / "latest_line_digest.txt")
 
     LOGGER.info("Sending one LINE text message to configured recipient")
     response = push_line_message(token, recipient, digest)

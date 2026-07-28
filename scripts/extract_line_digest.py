@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -160,12 +161,8 @@ def graceful_truncate(text: str, max_chars: int = MAX_LINE_CHARS) -> str:
     return cut + suffix
 
 
-def display_article_path(article_path: Path) -> str:
-    resolved = article_path.resolve()
-    try:
-        return resolved.relative_to(PROJECT_ROOT).as_posix()
-    except ValueError:
-        return article_path.as_posix()
+def public_article_url(article_path: Path) -> str:
+    return f"https://frontbrief-ai.vercel.app/brief/{article_path.stem}"
 
 
 def build_digest(article_path: Path, text: str) -> str:
@@ -196,14 +193,29 @@ def build_digest(article_path: Path, text: str) -> str:
             founder_takeaway,
             "",
             "Full report:",
-            display_article_path(article_path),
+            public_article_url(article_path),
         ]
     )
     return graceful_truncate(digest)
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Extract a FrontBrief.AI LINE digest.")
+    parser.add_argument(
+        "--article",
+        type=Path,
+        help="Article to extract. Defaults to the newest dated article.",
+    )
+    return parser.parse_args()
+
+
 def main() -> int:
-    article_path = newest_article()
+    args = parse_args()
+    article_path = args.article or newest_article()
+    if not article_path.is_absolute():
+        article_path = PROJECT_ROOT / article_path
+    if not article_path.exists():
+        raise FileNotFoundError(f"Article not found: {article_path}")
     article_text = article_path.read_text(encoding="utf-8")
     digest_section = extract_line_digest_section(article_text)
     if digest_section:

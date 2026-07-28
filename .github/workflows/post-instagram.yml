@@ -1,15 +1,20 @@
 name: Post to Instagram
 
-# Fires after the Commit Poster workflow completes successfully on main.
-# The PNG is already committed by then, so we serve it via GitHub's raw URL —
-# no extra hosting required.
+# Fires only when a new PNG is added to main. This removes the former
+# workflow-run coupling that could repost after a no-op or rerun.
 
 on:
-  workflow_run:
-    workflows: ["Commit Poster"]
-    types: [completed]
+  push:
     branches: [main]
-  workflow_dispatch: {}
+    paths:
+      - "social/poster/**/*.png"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Validate the newest article/poster/caption without publishing"
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -20,27 +25,65 @@ concurrency:
 
 jobs:
   post-instagram:
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
+          fetch-depth: 2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install -r requirements.txt
 
-      - name: Post to Instagram
+      - name: Confirm a new poster was added
+        id: target
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "should_post=true" >> "$GITHUB_OUTPUT"
+            article="$(find articles -maxdepth 1 -type f -name '????-??-??-ai-brief.md' | sort | tail -1)"
+            echo "article=$article" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          poster="$(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$GITHUB_SHA" -- 'social/poster/*.png' | tail -1)"
+          if [[ -z "$poster" ]]; then
+            echo "should_post=false" >> "$GITHUB_OUTPUT"
+            echo "No newly added poster; skipping Instagram."
+          else
+            echo "should_post=true" >> "$GITHUB_OUTPUT"
+            echo "poster=$poster" >> "$GITHUB_OUTPUT"
+            stem="$(basename "${poster%.png}")"
+            echo "article=articles/$stem.md" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate Instagram credentials
+        if: steps.target.outputs.should_post == 'true' && !(github.event_name == 'workflow_dispatch' && inputs.dry_run)
         env:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-        run: python scripts/post_instagram.py
+        run: |
+          if [[ -z "$INSTAGRAM_USER_ID" || -z "$INSTAGRAM_ACCESS_TOKEN" ]]; then
+            echo "::error::Instagram is not configured. Add INSTAGRAM_USER_ID and INSTAGRAM_ACCESS_TOKEN repository secrets."
+            exit 1
+          fi
+
+      - name: Validate or post to Instagram
+        if: steps.target.outputs.should_post == 'true'
+        env:
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" && "$DRY_RUN" == "true" ]]; then
+            python scripts/post_instagram.py --dry-run --article "${{ steps.target.outputs.article }}"
+          else
+            python scripts/post_instagram.py --article "${{ steps.target.outputs.article }}"
+          fi

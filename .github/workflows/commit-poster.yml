@@ -1,16 +1,15 @@
 name: Commit Poster
 
-# Downloads the daily poster PNG from a Canva export URL and commits it.
-# The routine (or a person) commits a pointer file `social/poster/YYYY-MM-DD-ai-brief.png.url`
-# containing the Canva export URL; this workflow fetches it on GitHub's network
-# (which can reach Canva) and commits the resulting PNG. This avoids depending on
-# the routine container's egress allowlist for Canva hosts.
+# Codex commits a validated *.poster.json spec. GitHub renders the locked
+# 1080x1350 layout on its network and commits the PNG. Legacy Canva .png.url
+# pointers remain supported during migration.
 
 on:
   push:
     branches:
       - main
     paths:
+      - "social/poster/**/*.poster.json"
       - "social/poster/**/*.png.url"
   workflow_dispatch: {}
 
@@ -26,30 +25,52 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
 
-      - name: Download posters from .url pointers
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install renderer dependencies
+        run: pip install -r requirements.txt
+
+      - name: Render validated Codex poster specs
         run: |
           shopt -s nullglob
           changed=0
+          for spec in social/poster/*.poster.json; do
+            png="${spec%.poster.json}.png"
+            if [[ -f "$png" ]]; then
+              continue
+            fi
+            stem="$(basename "${spec%.poster.json}")"
+            python scripts/validate_newsroom.py \
+              --article "articles/$stem.md" \
+              --caption "social/caption/$stem.txt" \
+              --poster-spec "$spec"
+            python scripts/render_poster.py --spec "$spec" --output "$png"
+            changed=1
+          done
+          echo "changed=$changed" >> "$GITHUB_ENV"
+
+      - name: Download legacy Canva pointers
+        run: |
+          shopt -s nullglob
           for f in social/poster/*.png.url; do
             png="${f%.url}"
             url="$(tr -d '\r\n' < "$f")"
             echo "Fetching $(basename "$png")"
-            if curl -fSL --max-time 120 "$url" -o "$png"; then
-              if file "$png" | grep -qi 'PNG image'; then
-                rm -f "$f"
-                changed=1
-                echo "Committed-ready: $png"
-              else
-                echo "::warning::Downloaded file is not a PNG (URL may be expired): $png"
-                rm -f "$png"
-              fi
-            else
-              echo "::warning::Download failed for $png"
+            curl -fSL --max-time 120 "$url" -o "$png"
+            if ! file "$png" | grep -qi 'PNG image'; then
+              echo "::error::Downloaded file is not a PNG: $png"
+              exit 1
             fi
+            rm -f "$f"
+            changed=1
+            echo "Committed-ready: $png"
           done
           echo "changed=$changed" >> "$GITHUB_ENV"
 
@@ -61,3 +82,7 @@ jobs:
           git add -A social/poster/
           git commit -m "Add daily AI brief poster image"
           git push
+
+      - name: Report no-op
+        if: env.changed != '1'
+        run: echo "No new poster inputs required rendering."

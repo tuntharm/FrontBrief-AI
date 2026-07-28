@@ -54,12 +54,12 @@ plain-English "why it matters."
 
 ## What it is
 
-**FrontBrief.AI** is an automated AI newsroom built around a daily **Claude
-Routine**. Once a day it runs like a small news startup's AI desk:
+**FrontBrief.AI** is an automated AI newsroom run by a daily **Codex
+automation**. Once a day it operates like a small news startup's AI desk:
 
 - 🔎 **Researches** the last 24–48h of high-quality AI sources across four beats
 - 🗞️ **Writes** a 5-item brief — importance-first, with an investment angle and a Money Map
-- 🎨 **Designs** a matching social poster in Canva, picking the most feed-worthy story
+- 🎨 **Renders** a brand-locked social poster, picking the most feed-worthy story
 - 📤 **Publishes** the web edition; GitHub Actions can deliver the configured LINE digest and Instagram post after their required secrets are set and their workflows succeed
 
 It's built for people who want a concise, high-signal view of the AI world: frontier models,
@@ -91,21 +91,21 @@ differ from the lead article). A few recent editions:
 ## How it works
 
 ```text
-Claude Routine — daily 05:00 Europe/London (the Managing Editor)
+Codex automation — daily 05:00 Europe/London (the Editor-in-Chief)
   ├─ Stage 1  Research pod — 4 parallel beat reporters
   │            (Models & Products · Money & Markets · Deeptech/Research/People · Buzz/Trending)
   ├─ Stage 2  Assignment Editor — dedupes + scores on IMPORTANCE and ENGAGEMENT separately
   ├─ Stage 3  Audience/Social Editor — picks the engagement-first poster story + creative brief
   ├─ Stage 4  Producer/Writer — writes the article, LINE digest, and IG caption
-  └─ Stage 5  EIC final pass — QA, builds the Canva poster, updates the ledger, ships
+  └─ Stage 5  EIC final pass — QA, validates the poster spec, updates the ledger, ships
                  ├─ articles/YYYY-MM-DD-ai-brief.md          (brief + LINE digest + web edition)
-                 ├─ social/poster/YYYY-MM-DD-ai-brief.png.url (Canva export pointer)
+                 ├─ social/poster/YYYY-MM-DD-ai-brief.poster.json (validated render spec)
                  └─ social/caption/YYYY-MM-DD-ai-brief.txt    (Instagram caption)
 
 GitHub Actions
-  ├─ line-dispatch.yml    article push   → sends the LINE digest
-  ├─ commit-poster.yml    .png.url push  → downloads + commits the poster PNG
-  └─ post-instagram.yml   after poster   → posts the poster + caption to Instagram
+  ├─ line-dispatch.yml    new article push → validates + sends the LINE digest
+  ├─ commit-poster.yml    poster spec push → renders + commits the poster PNG
+  └─ post-instagram.yml   new poster PNG   → posts the poster + caption to Instagram
 
 Configured delivery paths
   ├─ Website   frontbrief-ai.vercel.app renders the public "Web Edition" of each brief
@@ -113,8 +113,9 @@ Configured delivery paths
   └─ Instagram posts the poster and caption when its workflow and secrets succeed
 ```
 
-**Claude Routine** handles research, editorial judgement, writing, the poster, the caption, and
-committing. **GitHub Actions** provides the LINE, poster-commit, and Instagram delivery paths.
+**Codex** handles research, editorial judgement, writing, the poster spec, the caption, and
+committing. **GitHub Actions** provides deterministic validation, rendering, LINE, and Instagram
+delivery paths.
 The **Next.js website** (in [`web/`](web/)) renders the reader-facing "Web Edition" of every article.
 
 ### Operational status and verification
@@ -160,19 +161,23 @@ shape within the window.
 
 ```text
 .github/workflows/line-dispatch.yml      # sends the LINE digest on article push
-.github/workflows/commit-poster.yml       # commits the poster PNG from its .png.url pointer
+.github/workflows/commit-poster.yml       # renders and commits a poster PNG from its JSON spec
 .github/workflows/post-instagram.yml      # posts poster + caption to Instagram
 articles/                                 # daily briefs (+ sample-ai-brief.md)
-social/poster/                            # daily posters (PNG + .png.url + index.md + ledger.json)
+social/poster/                            # daily posters (PNG + .poster.json + index.md + ledger.json)
 social/caption/                           # daily Instagram captions
 web/                                      # Next.js public site (frontbrief-ai.vercel.app)
 web/public/mascot/                        # the FrontBrief owl
 assets/brand/                             # logo + footer brand assets
-docs/claude-routine-prompt.md             # the full editorial prompt the routine runs
+docs/codex-routine-prompt.md              # active Codex newsroom and publishing procedure
+docs/claude-routine-prompt.md             # historical Claude routine prompt
+scripts/validate_newsroom.py              # deterministic freshness/dedup/channel gates
+scripts/render_poster.py                   # locked 1080x1350 poster renderer
 scripts/extract_line_digest.py            # pulls the ## LINE Digest section verbatim
 scripts/send_line.py                      # sends one LINE message
 scripts/post_instagram.py                 # posts the poster + caption
-CLAUDE.md                                 # authoritative rules for the routine
+AGENTS.md                                 # active Codex repository instructions
+CLAUDE.md                                 # historical Claude instructions
 requirements.txt
 ```
 
@@ -195,17 +200,15 @@ INSTAGRAM_ACCESS_TOKEN     # long-lived Instagram Graph API token
 is to add the LINE Official Account to a LINE group and use the group ID as `LINE_TO`. The two
 `INSTAGRAM_*` secrets are optional until you turn on Instagram posting.
 
-### Claude Routine
+### Codex automation
 
-1. Open `https://claude.ai/code/routines`.
-2. Create a new routine and connect this GitHub repository.
-3. Schedule it daily at `05:00 Europe/London`.
-4. Paste the full prompt from [`docs/claude-routine-prompt.md`](docs/claude-routine-prompt.md) into the Routine Instructions box.
-5. Make sure the routine can commit and push to the repository.
+The active schedule is a local-project Codex automation at `05:00 Europe/London`, operating from
+this checkout. Its prompt is versioned in
+[`docs/codex-routine-prompt.md`](docs/codex-routine-prompt.md). The zero-duplicate start gate stops
+without publishing when that London date already exists.
 
-When changing the brief criteria, update **both** places: edit `docs/claude-routine-prompt.md` for
-version control, and paste the same updated prompt into the Claude Routine Instructions box (the
-routine uses the Instructions box at runtime).
+`CLAUDE.md` and `docs/claude-routine-prompt.md` are preserved as migration history. Do not keep the
+Claude Routine enabled alongside the Codex publisher.
 
 ### Website
 
@@ -232,16 +235,16 @@ npm run build
 
 ## LINE dispatch
 
-`.github/workflows/line-dispatch.yml` runs when a Markdown file under `articles/**/*.md` is pushed
-to `main`. It also supports manual `workflow_dispatch` for testing (which uses the newest article,
-or the bundled `articles/sample-ai-brief.md`).
+`.github/workflows/line-dispatch.yml` runs only when a new dated Markdown article is added to
+`main`. Historical edits do not resend the newest brief. Manual dispatch defaults to dry-run mode.
 
 `scripts/extract_line_digest.py` sends the hand-written `## LINE Digest` section **verbatim** when
 present, and otherwise degrades gracefully by building a digest from the `TL;DR` and `Top 5` links.
 `scripts/send_line.py` sends one text message and caps it below 4,500 characters.
 
 **Manual test (from GitHub):** add the `LINE_*` secrets → open `Actions` → select
-`LINE Article Dispatch` → `Run workflow` → confirm LINE receives one message.
+`LINE Article Dispatch` → `Run workflow` with dry-run enabled. Disable dry-run only for an explicit
+delivery test.
 
 **Manual test (local):**
 
@@ -250,14 +253,14 @@ python -m pip install -r requirements.txt
 python scripts/extract_line_digest.py
 export LINE_CHANNEL_ACCESS_TOKEN="..."
 export LINE_TO="..."
-python scripts/send_line.py   # sends a real message — inspect reports/latest_line_digest.txt first
+python scripts/send_line.py --dry-run
 ```
 
 ---
 
 ## Article format
 
-Each brief follows the template in [`docs/claude-routine-prompt.md`](docs/claude-routine-prompt.md):
+Each brief follows the template in [`docs/codex-routine-prompt.md`](docs/codex-routine-prompt.md):
 
 ```text
 # FrontBrief.AI — YYYY-MM-DD

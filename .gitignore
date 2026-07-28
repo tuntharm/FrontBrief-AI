@@ -1,7 +1,10 @@
 __pycache__/
+.DS_Store
+**/.DS_Store
 .env
 .venv/
 data/*.tmp
 reports/*.tmp
 reports/latest_line_digest.txt
+test-output/
 .pytest_cache/

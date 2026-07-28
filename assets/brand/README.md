@@ -1,22 +1,20 @@
 # FrontBrief.AI — Brand Assets
 
-The brand image files. Canva's `upload-asset-from-url` downloads server-side, so the GitHub
-**raw** URL works regardless of the routine container's network egress.
+Canonical brand images used locally by the deterministic poster renderer and public website.
 
 ## Files
 
 | File | Use | Raw URL |
 |------|-----|---------|
-| `whitebg.png` | FB monogram + wordmark on a light/white background | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/whitebg.png` |
-| `blackbg.png` | FB monogram + wordmark on a dark/black background | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/blackbg.png` |
-| `footer.png` | Dark banner / footer ("A daily brief from the AI frontier") | `https://raw.githubusercontent.com/tuntharm/dailyaibrief/main/assets/brand/footer.png` |
+| `whitebg.png` | FB monogram + wordmark on a light/white background | `https://raw.githubusercontent.com/tuntharm/FrontBrief-AI/main/assets/brand/whitebg.png` |
+| `blackbg.png` | FB monogram + wordmark on a dark/black background | `https://raw.githubusercontent.com/tuntharm/FrontBrief-AI/main/assets/brand/blackbg.png` |
+| `footer.png` | Dark banner / footer ("A daily brief from the AI frontier") | `https://raw.githubusercontent.com/tuntharm/FrontBrief-AI/main/assets/brand/footer.png` |
 
 ## How these are used
 
-1. The FrontBrief.AI logo already lives on the Canva poster template (page 1): the FB monogram
-   top-right and the wordmark in the bottom-right pill. These files are the canonical reference —
-   use `whitebg.png` on light layouts, `blackbg.png` on dark ones, and `footer.png` for any post
-   header/sign-off strip. Add to Canva via `upload-asset-from-url` with the raw URL above.
-2. The **subject company's logo** (the company the lead story is about) is sourced fresh each run
-   from that company's official site/press kit as a public URL, then added the same way as a
-   small, tasteful mark. Editorial/nominative use only — no logos of unrelated companies.
+1. `scripts/render_poster.py` composes the transparent monogram from `web/public/fb-white.png` and
+   crops the canonical wordmark from `whitebg.png`.
+2. Use `whitebg.png` on light layouts, `blackbg.png` on dark ones, and `footer.png` for any post
+   header/sign-off strip.
+3. The poster background must be a story-specific photo, branded scene, or conceptual image. Never
+   stretch a bare company logo across the background.
