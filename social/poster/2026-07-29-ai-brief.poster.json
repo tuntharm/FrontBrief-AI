@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-29",
+  "category": "AI SECURITY",
+  "headline": "CLAUDE FINDS NEW CRYPTO WEAKNESSES",
+  "subhead": "Mythos weakened HAWK and sped up an attack on reduced-round AES. No production systems are affected.",
+  "poster_story": "Claude Mythos discovers improved HAWK and reduced-round AES attacks",
+  "poster_shape": "research",
+  "image_kind": "branded_scene",
+  "image_url": "https://www-cdn.anthropic.com/images/4zrzovbb/website/802260d34a0653f23fd4944fae43064df367aa44-1000x1000.svg",
+  "visual_source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+  "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+  "publication_date": "2026-07-28",
+  "focus_x": 0.5,
+  "focus_y": 0.5,
+  "brief_stories": [
+    {
+      "headline": "Record Profit Miss Deepens Korea’s AI-Chip Rout",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://apnews.com/article/b8bfaf782877957bbaa7196b70a4d725"
+    },
+    {
+      "headline": "Amazon Winds Down Most Nova Models",
+      "publication_date": "2026-07-28",
+      "event_date": "2026-07-28",
+      "source_url": "https://www.investing.com/news/stock-market-news/amazon-winds-down-most-flagship-ai-models-in-strategy-overhaul-business-insider-reports-4816098"
+    },
+    {
+      "headline": "1,178 Frontier-AI Staff Ask Washington to Pursue International Pacing",
+      "publication_date": "2026-07-28",
+      "event_date": "2026-07-28",
+      "source_url": "https://www.pacingthefrontier.com/"
+    },
+    {
+      "headline": "Claude Finds New Attacks on Experimental Cryptography",
+      "publication_date": "2026-07-28",
+      "event_date": "2026-07-28",
+      "source_url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses"
+    },
+    {
+      "headline": "Enigma Opens 100 Real Robots to Anyone With a Browser",
+      "publication_date": "2026-07-27",
+      "event_date": "2026-07-27",
+      "source_url": "https://www.newswire.com/news/enigma-raises-71-million-seed-round-with-a-new-game-plan-for-ai-and-robots"
+    }
+  ]
+}

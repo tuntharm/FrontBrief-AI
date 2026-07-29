@@ -1,0 +1,10 @@
+Claude helped find new weaknesses in experimental cryptography—but it did not break the AES protecting production systems.
+
+Anthropic says Mythos contributed to an attack that roughly halves the claimed key strength of HAWK, a proposed post-quantum signature scheme, and accelerated an attack on seven-round AES-128 by 200–800×.
+
+The crucial qualifier: production AES-128 uses 10 rounds. HAWK is not deployed, and Anthropic says no production systems are affected.
+
+The real signal is that frontier models are moving from finding coding mistakes toward contributing to cryptanalysis itself.
+
+Full brief in bio.
+#AISecurity #Claude #Anthropic #Cryptography #FrontBriefAI

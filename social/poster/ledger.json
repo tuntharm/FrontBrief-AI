@@ -344,6 +344,14 @@
       "poster_story": "Is Nvidia Funding Its Own AI Boom? — Wall Street fears circular financing as Nvidia's CDS jump the most on record after a ~$750B AI-deal blitz; poster = article #1 because circular-financing was the day's single most must-know AND most engagement-worthy story, so the two tracks coincide per the engagement-first rule. The higher raw-engagement option — Nvidia's $5B into Ilya Sutskever's revenue-less, product-less SSI ($32B) — was passed over on the image gate: this run's egress DID fetch Business Insider CDN image URLs, but they resolved to wrong stock photos (Brad Pitt, a wedding, a dinner party), so no verified recognisable Ilya face could be sourced, and only Pexels loads cleanly into Canva server-side. Per the person-centric rule (don't ship a generic fallback for a named-person story) the desk switched to the image-safe engagement pick. Poster shape is 'money/markets', clearing the back-to-back ban after 07-27's security poster; poster image is a dark Pexels trading-screen with green/red candlesticks that reads as Wall Street risk (avoids the recent server-rack/compute and emergency-stop visuals)",
       "poster_shape": "money",
       "poster_category": "Markets"
+    },
+    {
+      "date": "2026-07-29",
+      "article_lead": "SK Hynix posted a record 60.5 trillion won Q2 operating profit, more than six times its year-earlier result, but still missed forecasts as AP reported an 8% midday KOSPI fall and sharper losses for Korea's leading memory-chip companies — a same-day signal that extraordinary AI-chip earnings no longer automatically clear market expectations",
+      "article_lead_shape": "money",
+      "poster_story": "Claude Finds New Crypto Weaknesses — Anthropic says Claude Mythos developed a stronger attack on the experimental HAWK post-quantum signature candidate and accelerated an attack on seven-round AES-128 by 200–800 times; the poster explicitly states that no production systems are affected. The engagement pick differs from the article #1 money lead, clearing the back-to-back shape rule after 07-28's money/markets poster. Enigma's browser-controlled robots led the initial engagement shortlist but failed the visual gate because its verifiable static launch assets were abstract branding rather than robot imagery. The final poster uses Anthropic's first-party story-specific secured-laptop illustration; no named person appears.",
+      "poster_shape": "research",
+      "poster_category": "AI Security"
     }
   ]
 }
