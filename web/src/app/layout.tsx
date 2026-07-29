@@ -20,6 +20,10 @@ export const metadata: Metadata = {
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  icons: {
+    icon: "/fb-black.png",
+    apple: "/fb-black.png",
+  },
   openGraph: {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
