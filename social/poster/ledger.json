@@ -352,6 +352,14 @@
       "poster_story": "Claude Finds New Crypto Weaknesses — Anthropic says Claude Mythos developed a stronger attack on the experimental HAWK post-quantum signature candidate and accelerated an attack on seven-round AES-128 by 200–800 times; the poster explicitly states that no production systems are affected. The engagement pick differs from the article #1 money lead, clearing the back-to-back shape rule after 07-28's money/markets poster. Enigma's browser-controlled robots led the initial engagement shortlist but failed the visual gate because its verifiable static launch assets were abstract branding rather than robot imagery. The final poster uses Anthropic's first-party story-specific secured-laptop illustration; no named person appears.",
       "poster_shape": "research",
       "poster_category": "AI Security"
+    },
+    {
+      "date": "2026-07-30",
+      "article_lead": "Microsoft closed FY26 with $90.0B in quarterly revenue, Microsoft Cloud revenue of $59.3B (+27%), Azure and other cloud services growth of 43%, and more than 30M paid Microsoft 365 Copilot seats — a same-day demand-side check linking the AI infrastructure buildout to measurable enterprise adoption, while leaving Copilot usage and unit economics undisclosed",
+      "article_lead_shape": "compute",
+      "poster_story": "AI Music Gets a More Human Voice — Google launched Lyria 3.5 in Flow Music with claimed improvements to melodic structure, lyric quality and prompt adherence, vocal expression and pronunciation, plus more direct tempo and duration controls. The engagement pick differs from the Microsoft compute lead and follows 07-29's research poster with a model-launch shape. The visual is Google's first-party story-specific Lyria 3.5 launch image; the poster preserves the production parent's typography, positions, logos and dimensions, and the copy notes Google-attributed capabilities rather than presenting them as independently verified.",
+      "poster_shape": "model-launch",
+      "poster_category": "AI Music"
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "date": "2026-07-30",
+  "category": "AI MUSIC",
+  "headline": "AI MUSIC GETS A MORE HUMAN VOICE",
+  "subhead": "Lyria 3.5 brings richer melodies, sharper lyrics and more expressive vocals to Google’s Flow Music.",
+  "poster_story": "Google Lyria 3.5 launch",
+  "poster_shape": "model-launch",
+  "image_kind": "branded_scene",
+  "image_url": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Lyria3.5_social.max-1440x810.png",
+  "visual_source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/",
+  "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/",
+  "publication_date": "2026-07-29",
+  "focus_x": 0.5,
+  "focus_y": 0.5,
+  "brief_stories": [
+    {
+      "headline": "Microsoft Posts $90B Quarter as Azure Grows 43%",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast"
+    },
+    {
+      "headline": "Meta’s $31.08B Capex Quarter Leaves $784M in Free Cash Flow",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "headline": "Google Launches Lyria 3.5 in Flow Music",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/"
+    },
+    {
+      "headline": "Frontier Agents Complete Engineering but Fail Open-Ended Research",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://arxiv.org/abs/2607.27191"
+    },
+    {
+      "headline": "APEX-Accounting Finds Frontier Models Far From Reliable",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://arxiv.org/abs/2607.27189"
+    }
+  ]
+}
