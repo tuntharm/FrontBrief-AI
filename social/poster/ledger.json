@@ -360,6 +360,14 @@
       "poster_story": "AI Music Gets a More Human Voice — Google launched Lyria 3.5 in Flow Music with claimed improvements to melodic structure, lyric quality and prompt adherence, vocal expression and pronunciation, plus more direct tempo and duration controls. The engagement pick differs from the Microsoft compute lead and follows 07-29's research poster with a model-launch shape. The visual is Google's first-party story-specific Lyria 3.5 launch image; the poster preserves the production parent's typography, positions, logos and dimensions, and the copy notes Google-attributed capabilities rather than presenting them as independently verified.",
       "poster_shape": "model-launch",
       "poster_category": "AI Music"
+    },
+    {
+      "date": "2026-08-02",
+      "article_lead": "Minnesota's AI nudification ban took effect after a federal judge denied xAI's last-minute request for a temporary restraining order, citing xAI's filing delay without deciding the law's constitutional merits; the preliminary-injunction hearing is set for August 19",
+      "article_lead_shape": "regulation",
+      "poster_story": "Snapchat Sidelines All-AI Videos — Snap made wholly AI-generated Spotlight videos ineligible for recommendation while allowing content enhanced with Snapchat's AI tools to remain eligible with transparency indicators. The engagement pick differs from the xAI regulation lead and follows 07-30's model-launch poster with a media/deepfakes shape. The visual is Snap's first-party Spotlight scene, and the production parent page preserves its typography, positions, black panel, both logos and dimensions.",
+      "poster_shape": "media/deepfakes",
+      "poster_category": "Social Media"
     }
   ]
 }

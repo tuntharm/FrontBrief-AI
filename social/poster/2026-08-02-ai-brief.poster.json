@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-02",
+  "category": "SOCIAL MEDIA",
+  "headline": "SNAPCHAT SIDELINES ALL-AI VIDEOS",
+  "subhead": "Wholly AI-generated Spotlight videos lose recommendation, while AI-enhanced posts can still qualify.",
+  "poster_story": "Snapchat Spotlight recommendation policy for wholly AI-generated videos",
+  "poster_shape": "media/deepfakes",
+  "image_kind": "branded_scene",
+  "image_url": "https://images.ctfassets.net/o1znirz7lzo4/5zGtiZWku6WEf7w0SpxApJ/13fd992b7c006008703be81b5d568e3c/spotlight-thumbnail.png",
+  "visual_source_url": "https://newsroom.snap.com/introducing-spotlight",
+  "source_url": "https://newsroom.snap.com/rewarding-authentic-creativity-on-spotlight",
+  "publication_date": "2026-07-31",
+  "focus_x": 0.5,
+  "focus_y": 0.5,
+  "brief_stories": [
+    {
+      "headline": "Minnesota's AI Nudification Ban Takes Effect After xAI Loses Emergency Bid",
+      "publication_date": "2026-07-31",
+      "event_date": "2026-07-31",
+      "source_url": "https://storage.courtlistener.com/recap/gov.uscourts.mnd.235231/gov.uscourts.mnd.235231.21.0.pdf"
+    },
+    {
+      "headline": "Gemini Robotics 2 Brings Whole-Body Control to Humanoids",
+      "publication_date": "2026-07-30",
+      "event_date": "2026-07-30",
+      "source_url": "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/"
+    },
+    {
+      "headline": "OpenAI Cuts GPT-5.6 Luna Prices 80% and Terra Prices 20%",
+      "publication_date": "2026-07-30",
+      "event_date": "2026-07-30",
+      "source_url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"
+    },
+    {
+      "headline": "Snapchat Sidelines Wholly AI-Generated Spotlight Videos",
+      "publication_date": "2026-07-31",
+      "event_date": "2026-07-31",
+      "source_url": "https://newsroom.snap.com/rewarding-authentic-creativity-on-spotlight"
+    },
+    {
+      "headline": "Nscale Agrees to Acquire Anyscale",
+      "publication_date": "2026-07-30",
+      "event_date": "2026-07-30",
+      "source_url": "https://www.nscale.com/press-releases/nscale-acquires-anyscale"
+    }
+  ]
+}
