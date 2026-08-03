@@ -1,0 +1,47 @@
+{
+  "date": "2026-08-03",
+  "category": "RESEARCH",
+  "headline": "OPENAI SAYS AI SOLVED 10 MATH PROBLEMS",
+  "subhead": "Its new 'Astra' model cracked decade-old problems — proofs still unverified.",
+  "poster_story": "OpenAI previews Astra and claims solutions to ten long-open math problems",
+  "poster_shape": "research",
+  "image_kind": "conceptual",
+  "image_url": "https://images.pexels.com/photos/8438918/pexels-photo-8438918.jpeg",
+  "visual_source_url": "https://www.pexels.com/photo/8438918/",
+  "source_url": "https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/",
+  "publication_date": "2026-08-01",
+  "focus_x": 0.5,
+  "focus_y": 0.4,
+  "brief_stories": [
+    {
+      "headline": "Amazon Lifts 2026 AI Capex to About $220 Billion as AWS Re-Accelerates to 37%",
+      "publication_date": "2026-07-30",
+      "event_date": "2026-07-30",
+      "source_url": "https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html"
+    },
+    {
+      "headline": "EU AI Act Article 50 Transparency Rules Take Effect",
+      "publication_date": "2026-08-02",
+      "event_date": "2026-08-02",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+    },
+    {
+      "headline": "OpenAI Previews \"Astra,\" Says It Solved Ten Long-Open Math Problems",
+      "publication_date": "2026-08-01",
+      "event_date": "2026-08-01",
+      "source_url": "https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/"
+    },
+    {
+      "headline": "DeepSeek Ships V4-Flash-0731, a Budget Model It Says Beats Its Own Flagship",
+      "publication_date": "2026-07-31",
+      "event_date": "2026-07-31",
+      "source_url": "https://www.marktechpost.com/2026/07/31/deepseek-upgrades-deepseek-v4-flash-0731-with-major-agentic-and-coding-gains/"
+    },
+    {
+      "headline": "Google DeepMind Folds Its Nobel-Winning AlphaFold Team Into Gemini as Authors Leave for Anthropic",
+      "publication_date": "2026-07-29",
+      "event_date": "2026-07-29",
+      "source_url": "https://the-decoder.com/deepmind-dismantles-its-alphafold-team-as-key-authors-leave-for-anthropic/"
+    }
+  ]
+}
