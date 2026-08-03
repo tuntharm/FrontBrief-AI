@@ -368,6 +368,14 @@
       "poster_story": "Snapchat Sidelines All-AI Videos — Snap made wholly AI-generated Spotlight videos ineligible for recommendation while allowing content enhanced with Snapchat's AI tools to remain eligible with transparency indicators. The engagement pick differs from the xAI regulation lead and follows 07-30's model-launch poster with a media/deepfakes shape. The visual is Snap's first-party Spotlight scene, and the production parent page preserves its typography, positions, black panel, both logos and dimensions.",
       "poster_shape": "media/deepfakes",
       "poster_category": "Social Media"
+    },
+    {
+      "date": "2026-08-03",
+      "article_lead": "Amazon raised its 2026 AI capital-expenditure guidance to about $220B (up from ~$200B) as AWS re-accelerated to 37% growth (~$42.2B, its fastest in 18 quarters) and shares rose ~9-10%, with CEO Andy Jassy naming soaring memory-chip costs as a genuine constraint even as demand outruns supply",
+      "article_lead_shape": "money",
+      "poster_story": "OpenAI Says Its AI Solved 10 Math Problems — OpenAI previewed a next-generation multi-agent model, tentatively 'Astra,' and said it produced solutions to ten math and theoretical-CS problems open for more than a decade, demoed to Washington regulators. The engagement pick differs from the Amazon capex money lead per the two-track rule and follows 08-02's media/deepfakes poster with a research shape, clearing the back-to-back-shape ban. The poster copy hedges the claim ('proofs still unverified') because independent skeptics dispute whether the math verifies. The visual is a Pexels editorial robot-arm-and-strategy-board shot chosen for a clean AI-reasoning read after a chalkboard-math alternative surfaced a school-classroom student; Canva parent page 57 preserves the inherited typography, positions, black panel, both logos and dimensions.",
+      "poster_shape": "research",
+      "poster_category": "Research"
     }
   ]
 }

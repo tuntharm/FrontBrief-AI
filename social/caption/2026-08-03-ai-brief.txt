@@ -1,0 +1,5 @@
+OpenAI just previewed "Astra" and says it cracked ten math problems that were open for over a decade.
+The catch: these are OpenAI's own claims, demoed to regulators — independent verification is still pending, and the model could even ship as GPT-6.
+Signal for the AI trade: long-horizon multi-agent reasoning is the new capability race, but wait for the proofs to verify before you believe the headline.
+Full brief in bio.
+#AI #OpenAI #AINews #MachineLearning #FrontBriefAI
