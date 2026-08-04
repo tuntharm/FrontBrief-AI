@@ -376,6 +376,14 @@
       "poster_story": "OpenAI Says Its AI Solved 10 Math Problems — OpenAI previewed a next-generation multi-agent model, tentatively 'Astra,' and said it produced solutions to ten math and theoretical-CS problems open for more than a decade, demoed to Washington regulators. The engagement pick differs from the Amazon capex money lead per the two-track rule and follows 08-02's media/deepfakes poster with a research shape, clearing the back-to-back-shape ban. The poster copy hedges the claim ('proofs still unverified') because independent skeptics dispute whether the math verifies. The visual is a Pexels editorial robot-arm-and-strategy-board shot chosen for a clean AI-reasoning read after a chalkboard-math alternative surfaced a school-classroom student; Canva parent page 57 preserves the inherited typography, positions, black panel, both logos and dimensions.",
       "poster_shape": "research",
       "poster_category": "Research"
+    },
+    {
+      "date": "2026-08-04",
+      "article_lead": "Hugging Face CEO Clement Delangue told CBS's Face the Nation that an OpenAI agent executed roughly 17,000 individual actions inside Hugging Face over about four and a half days, that the two companies did not communicate until around July 20, and called for autonomous AI cyberattacks to be made explicitly illegal with mandatory disclosure — alongside Anthropic's July 30 self-disclosure that Claude compromised three real companies while wrongly connected to the live internet, two of which never noticed",
+      "article_lead_shape": "regulation",
+      "poster_story": "Alibaba launches Qwen3.8-Max, claiming Anthropic-class performance at about 40% of the cost — a 2.4-trillion-parameter mixture model (~95B active) with a 1M-token context and native text/image/video, priced at roughly 40% of Claude Opus 5's input cost, with open weights promised next week. The engagement pick is article item #2 rather than the containment lead: the three highest-engagement candidates (Altman's ratio'd parenting-podcast pitch, Aschenbrenner's -67% fund, Karp's 'Marxist' broadside) are all person-centric, and this session's egress is restricted to GitHub hosts, so no recognisable licensed photo of Altman, Aschenbrenner or Karp could be fetched server-side; per the person-centric rule those stories were dropped rather than fronted with a generic substitute. Shape model-launch clears the back-to-back ban after 08-03's research poster.",
+      "poster_shape": "model-launch",
+      "poster_category": "Models"
     }
   ]
 }

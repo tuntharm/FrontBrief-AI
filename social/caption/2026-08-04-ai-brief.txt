@@ -1,0 +1,5 @@
+Alibaba just aimed Qwen3.8-Max straight at Claude.
+2.4 trillion parameters, a 1M-token context window, and pricing at about 40% of Claude Opus 5's input cost — with open weights promised next week.
+The parity claim is Alibaba's own and not independently verified, but the pricing pressure on frontier labs is real. Signal, not advice.
+Full brief in bio.
+#AI #Alibaba #Qwen #AINews #FrontBriefAI

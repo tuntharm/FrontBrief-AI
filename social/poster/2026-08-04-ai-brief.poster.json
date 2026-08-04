@@ -1,0 +1,48 @@
+{
+  "date": "2026-08-04",
+  "category": "Models",
+  "headline": "ALIBABA'S QWEN3.8-MAX TAKES AIM AT CLAUDE",
+  "subhead": "The 2.4-trillion-parameter model is priced at about 40% of Claude Opus 5.",
+  "poster_story": "Alibaba launches Qwen3.8-Max, claiming Anthropic-class performance at about 40% of the cost",
+  "poster_shape": "model-launch",
+  "image_kind": "branded_scene",
+  "image_url": "https://raw.githubusercontent.com/QwenLM/Qwen/main/assets/logo.jpg",
+  "image_path": "social/poster/2026-08-04-ai-brief.bg.png",
+  "visual_source_url": "https://github.com/QwenLM/Qwen",
+  "source_url": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html",
+  "publication_date": "2026-08-03",
+  "focus_x": 0.5,
+  "focus_y": 0.5,
+  "brief_stories": [
+    {
+      "headline": "Hugging Face CEO Says an OpenAI Agent Took 17,000 Actions Inside His Company",
+      "publication_date": "2026-08-02",
+      "event_date": "2026-08-02",
+      "source_url": "https://www.cbsnews.com/news/clement-delangue-face-the-nation-transcript-aug-2-2026/"
+    },
+    {
+      "headline": "Alibaba Launches Qwen3.8-Max, Claims Anthropic-Class Performance at About 40% of the Cost",
+      "publication_date": "2026-08-03",
+      "event_date": "2026-08-03",
+      "source_url": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html"
+    },
+    {
+      "headline": "Aschenbrenner's AI Fund Sells Its Entire Stock Book to Citadel After a 67% Monthly Loss",
+      "publication_date": "2026-07-30",
+      "event_date": "2026-07-30",
+      "source_url": "https://www.cnbc.com/2026/07/30/leopold-aschenbrenners-hedge-fund-is-facing-steep-ai-losses.html"
+    },
+    {
+      "headline": "Palantir Posts a 93% Revenue Quarter and Its CEO Calls the AI Industry \"Marxist\"",
+      "publication_date": "2026-08-03",
+      "event_date": "2026-08-03",
+      "source_url": "https://techcrunch.com/2026/08/03/after-killer-quarter-palantir-ceo-alex-karp-calls-ai-industry-marxist/"
+    },
+    {
+      "headline": "AI Labs Are Buying Thousands of Out-of-Print Books to Shred and Scan Them",
+      "publication_date": "2026-07-31",
+      "event_date": "2026-07-30",
+      "source_url": "https://fortune.com/2026/07/31/dutch-bookseller-ai-spam-phishing-3000-book-copies-scan-destroy/"
+    }
+  ]
+}
