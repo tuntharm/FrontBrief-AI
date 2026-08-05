@@ -1,0 +1,5 @@
+Apple capped its bug bounty submissions after a flood of AI-generated reports with hallucinated vulnerabilities clogged human review.
+An Italian security firm then found a real macOS Screen Sharing flaw granting root privileges, valued by its CEO at $100K to $200K, and could not file it. Apple contacted them only after the press did.
+Signal: AI is turning vulnerability triage into a cost centre, and the vendors who fix intake first keep the researchers worth having.
+Full brief in bio.
+#AI #Apple #CyberSecurity #TechNews #FrontBriefAI

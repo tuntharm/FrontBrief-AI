@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-05",
+  "category": "Security",
+  "headline": "APPLE CAPS BUG BOUNTY AFTER AI SLOP",
+  "subhead": "A real macOS root-access flaw worth up to $200K went unreported.",
+  "poster_story": "Apple capped its bug-bounty submissions after a flood of AI-generated reports with hallucinated vulnerabilities clogged human review, and Italian security firm Bynario could not then file a genuine macOS Screen Sharing root-privilege flaw its CEO values at $100,000 to $200,000",
+  "poster_shape": "policy",
+  "image_kind": "photo",
+  "image_url": "https://images.pexels.com/photos/33754602/pexels-photo-33754602.jpeg",
+  "visual_source_url": "https://www.pexels.com/photo/street-view-of-busy-apple-store-in-urban-setting-33754602/",
+  "source_url": "https://the-decoder.com/a-real-macos-flaw-worth-200k-went-unreported-because-apples-bug-bounty-inbox-was-full-of-ai-slop/",
+  "publication_date": "2026-08-02",
+  "focus_x": 0.5,
+  "focus_y": 0.42,
+  "canva_page": 59,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "White House Finalises Its Frontier-AI Framework With a Voluntary 30-Day Pre-Release Look",
+      "publication_date": "2026-08-03",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html"
+    },
+    {
+      "headline": "Apple Caps Its Bug Bounty After AI Slop Floods the Inbox, and a Real $200K macOS Flaw Goes Unreported",
+      "publication_date": "2026-08-02",
+      "event_date": "2026-08-02",
+      "source_url": "https://the-decoder.com/a-real-macos-flaw-worth-200k-went-unreported-because-apples-bug-bounty-inbox-was-full-of-ai-slop/"
+    },
+    {
+      "headline": "AMD Posts a Record $11.5B Quarter and Doubles Data-Center Revenue, and the Stock Falls Anyway",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results"
+    },
+    {
+      "headline": "MiniMax Open-Sources the Top-Ranked Video Model, Then Bars the US, EU, UK and Korea From Running It",
+      "publication_date": "2026-08-03",
+      "event_date": "2026-08-03",
+      "source_url": "https://www.scmp.com/tech/article/3362540/video-ai-minimax-challenges-bytedance-low-price-open-weights-new-h3-model"
+    },
+    {
+      "headline": "Sequoia Puts $1B Into the Nuclear Startup Whose Reactor Already Ran an Nvidia Blackwell Chip",
+      "publication_date": "2026-08-03",
+      "event_date": "2026-08-03",
+      "source_url": "https://techcrunch.com/2026/08/03/sequoias-shaun-maguire-leads-1b-round-for-nuclear-startup-valar-atomics/"
+    }
+  ]
+}
