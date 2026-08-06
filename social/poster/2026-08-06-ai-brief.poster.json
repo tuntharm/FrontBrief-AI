@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-06",
+  "category": "Leadership",
+  "headline": "HASSABIS STEPS BACK AT DEEPMIND",
+  "subhead": "CTO Koray Kavukcuoglu takes the CEO job; Alphabet shed ~$190B intraday.",
+  "poster_story": "Demis Hassabis is stepping down as CEO of Google DeepMind; CTO Koray Kavukcuoglu takes day-to-day control as SVP reporting to Sundar Pichai, while Hassabis becomes chair and Alphabet chief scientist and keeps Isomorphic Labs, and Alphabet shed roughly $190B of market capitalisation intraday",
+  "poster_shape": "person-drama",
+  "image_kind": "photo",
+  "image_url": "https://i0.wp.com/upload.wikimedia.org/wikipedia/commons/5/5a/Demis_Hassabis,_2024_Nobel_Prize_Laureate_in_Chemistry_5.jpg",
+  "visual_source_url": "https://commons.wikimedia.org/wiki/File:Demis_Hassabis,_2024_Nobel_Prize_Laureate_in_Chemistry_5.jpg",
+  "source_url": "https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai",
+  "publication_date": "2026-08-05",
+  "focus_x": 0.5,
+  "focus_y": 0.38,
+  "canva_page": 60,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "Demis Hassabis Steps Down as Google DeepMind CEO",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://www.axios.com/2026/08/05/google-deepmind-demis-hassabis-ai"
+    },
+    {
+      "headline": "Jeff Dean Leaves Google After 27 Years to Found Discovery Loop",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://www.geekwire.com/2026/the-startup-idea-that-convinced-a-uw-computer-science-legend-to-leave-google-after-27-years/"
+    },
+    {
+      "headline": "Anthropic Locks In $10B of Compute From Volta, a Cloud Startup Seven Months Old",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-08-04/anthropic-inks-10-billion-computing-deal-with-new-cloud-startup"
+    },
+    {
+      "headline": "Meta Enters the Coding-Agent War With Muse Code and Muse Spark 1.2",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://venturebeat.com/orchestration/meta-enters-the-ai-coding-wars-with-muse-spark-1-2-and-muse-code-with-persistent-async-background-agents"
+    },
+    {
+      "headline": "Ninth Circuit Lets Perplexity's Agent Shop on Amazon, Vacating the Injunction",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://news.bloomberglaw.com/us-law-week/perplexity-overturns-amazon-ban-on-ai-shopping-bot-on-appeal"
+    }
+  ]
+}
