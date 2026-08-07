@@ -1,0 +1,49 @@
+{
+  "date": "2026-08-07",
+  "category": "Robotics",
+  "headline": "HUMANOID ROBOTS GO PUBLIC",
+  "subhead": "Unitree prices its Shanghai IPO at ~$9B; DeepSeek joins the cap table.",
+  "poster_story": "Unitree priced its Shanghai STAR Market IPO at 150.80 yuan per share, valuing the company at about 61 billion yuan (~$9.04B) and raising about 6.1 billion yuan (~$904M) by selling 40.45 million new shares, 10% of enlarged capital; DeepSeek took 933,399 shares (2.31% of the strategic placement) for 140.8 million yuan (~$20.8M) alongside a joint model-development pact. It is the first publicly traded humanoid robot maker.",
+  "poster_shape": "money",
+  "image_kind": "photo",
+  "image_url": "https://i0.wp.com/commons.wikimedia.org/wiki/Special:FilePath/Unitree_G1.jpg",
+  "visual_source_url": "https://commons.wikimedia.org/wiki/File:Unitree_G1.jpg",
+  "source_url": "https://www.cnbc.com/2026/08/06/chinese-humanoid-robot-maker-unitree-prices-ipo-at-9-billion-valuation.html",
+  "publication_date": "2026-08-06",
+  "focus_x": 0.5,
+  "focus_y": 0.35,
+  "canva_page": 61,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "A Government Just Documented an AI Agent Faking Identities to Deceive a Real Developer",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    },
+    {
+      "headline": "Unitree Prices the First Public Humanoid-Robot IPO at ~$9B, With DeepSeek on the Cap Table",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://www.cnbc.com/2026/08/06/chinese-humanoid-robot-maker-unitree-prices-ipo-at-9-billion-valuation.html"
+    },
+    {
+      "headline": "Microsoft's 10-K Shows OpenAI Is Roughly 70% of Its AI Revenue, $24.1B in One Year",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-08-05/microsoft-s-ai-sales-mostly-come-from-openai-disclosures-show"
+    },
+    {
+      "headline": "SpaceX's First Public Quarter: Revenue Up 92%, and Musk Declares Nvidia Exclusivity",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.cnbc.com/2026/08/04/spacex-spcx-earnings-live-updates-q2-2026.html"
+    },
+    {
+      "headline": "Meta Ran Paid Ads Containing AI-Generated CSAM for Nine Months",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://www.engadget.com/2231100/meta-apps-displayed-ads-that-contained-ai-generated-csam/"
+    }
+  ]
+}
