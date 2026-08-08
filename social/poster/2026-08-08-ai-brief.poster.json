@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-08",
+  "category": "Biotech",
+  "headline": "AI WROTE 16 VIRUSES FROM SCRATCH",
+  "subhead": "Stanford's Evo models wrote whole phage genomes; 16 killed live E. coli.",
+  "poster_story": "Stanford and the Arc Institute used the Evo genome language models, which operate on raw genetic sequence rather than text, to design complete bacteriophage genomes end to end. Hundreds of thousands of candidate genomes were generated, roughly 300 went to laboratory synthesis, and 16 assembled into working phages; combined as a cocktail they killed two E. coli strains that had already evolved resistance to a natural phage. The work, led by Brian Hie with graduate student Samuel King, was published in Science on 2026-08-06. Training deliberately excluded viruses that infect humans, animals or plants, and the companion biosecurity editorial notes that DNA-synthesis screening remains voluntary and was never designed to catch sequences no living organism has carried.",
+  "poster_shape": "research",
+  "image_kind": "conceptual",
+  "image_url": "https://i0.wp.com/commons.wikimedia.org/wiki/Special:FilePath/Bacteriophage_T4_Infection.jpg",
+  "visual_source_url": "https://commons.wikimedia.org/wiki/File:Bacteriophage_T4_Infection.jpg",
+  "image_credit": "Bacteriophage T4 infecting E. coli — molecular illustration by David S. Goodsell, RCSB Protein Data Bank (CC BY 4.0)",
+  "source_url": "https://arcinstitute.org/news/hie-king-first-synthetic-phage",
+  "publication_date": "2026-08-06",
+  "focus_x": 0.5,
+  "focus_y": 0.35,
+  "canva_page": 62,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "AI Wrote 16 Viruses That Never Existed, and the Screening Layer Meant to Catch Them Is Voluntary",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://arcinstitute.org/news/hie-king-first-synthetic-phage"
+    },
+    {
+      "headline": "Musk Commits $16.8B to \"Terafab,\" a 100-Million-Square-Foot Chip Plant in Texas",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://techcrunch.com/2026/08/06/tesla-and-spacex-will-invest-16-8b-to-start-building-terafab-chip-factory-in-texas/"
+    },
+    {
+      "headline": "Washington Stops Chasing Chips and Starts Chasing Compute-Hours",
+      "publication_date": "2026-08-07",
+      "event_date": "2026-08-07",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-08-07/us-reviews-china-s-offshore-access-to-nvidia-chips-after-ai-breakthroughs"
+    },
+    {
+      "headline": "OpenAI Removes the Daily Cap on Free ChatGPT and Makes GPT-5.6 Luna the Default",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/"
+    },
+    {
+      "headline": "A Self-Spreading Worm Hit 400+ npm Packages, and Its Payload Went After Claude Code",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/"
+    }
+  ]
+}

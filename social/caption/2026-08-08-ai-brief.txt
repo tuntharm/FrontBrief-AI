@@ -1,0 +1,6 @@
+AI just wrote 16 viruses that had never existed in nature.
+Stanford and the Arc Institute used their Evo genome models to design complete bacteriophage genomes end to end — around 300 went to lab synthesis, and 16 assembled into working phages that killed E. coli strains already resistant to a natural phage. Published in Science.
+Signal, not advice: the choke point is quietly moving from the lab bench to DNA-synthesis screening, which is still voluntary and was never built to catch sequences no living organism has carried.
+Full brief in bio.
+Image: bacteriophage T4 infecting E. coli, by David S. Goodsell, RCSB Protein Data Bank (CC BY 4.0).
+#AI #Biotech #Biosecurity #AINews #FrontBriefAI
