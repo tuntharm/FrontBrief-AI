@@ -1,0 +1,5 @@
+OpenAI just hit the brakes on its own next model.
+The company says it cannot rule out that "Astra" reaches the top "Critical" cybersecurity tier of its Preparedness Framework — autonomous zero-day discovery against hardened real-world systems — the first time a frontier lab has said this about a flagship. It will run safety testing with US government agencies before any release.
+Signal, not advice: frontier releases now clear a safety gate, not just a compute one — capability can arrive months before it can be sold.
+Full brief in bio.
+#AI #OpenAI #CyberSecurity #AINews #FrontBriefAI
