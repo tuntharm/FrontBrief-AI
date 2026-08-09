@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-09",
+  "category": "Safety",
+  "headline": "OPENAI PAUSES WORK ON ITS NEXT MODEL",
+  "subhead": "OpenAI says it can't rule out 'Astra' reaching its top 'Critical' cyber tier.",
+  "poster_story": "OpenAI publicly slowed development of its next frontier model, saying it cannot rule out that the model reaches the Critical cybersecurity threshold of its Preparedness Framework — the top tier, and the first time any frontier lab has said this about a flagship in public. The capability class at issue is autonomous zero-day discovery plus end-to-end attack planning against hardened real-world systems. OpenAI says it will run safety testing with US government agencies and independent safety institutes before any release, and reporting adds that the White House asked for deployment constraints, which neither side has confirmed. This is a 'cannot rule out' framing rather than a confirmed measurement, and OpenAI states explicitly that Astra was not the model involved in the earlier Hugging Face agent incident.",
+  "poster_shape": "policy",
+  "image_kind": "branded_scene",
+  "image_url": "https://images.pexels.com/photos/16629368/pexels-photo-16629368.jpeg",
+  "visual_source_url": "https://www.pexels.com/photo/webpage-of-chatgpt-a-prototype-ai-chatbot-is-seen-on-the-website-of-openai-on-a-smartphone-examples-capabilities-and-limitations-are-shown-16629368/",
+  "image_credit": "Smartphone showing ChatGPT on OpenAI's website — Pexels (free to use, no attribution required)",
+  "source_url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+  "publication_date": "2026-08-07",
+  "focus_x": 0.5,
+  "focus_y": 0.35,
+  "canva_page": 63,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "OpenAI Slows Its Own Flagship Because It Cannot Rule Out \"Critical\" Cyber Capability",
+      "publication_date": "2026-08-07",
+      "event_date": "2026-08-07",
+      "source_url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/"
+    },
+    {
+      "headline": "The Ninth Circuit Writes the First Rule on Who \"Accesses\" a Website When an AI Agent Does It",
+      "publication_date": "2026-08-04",
+      "event_date": "2026-08-04",
+      "source_url": "https://www.wsgr.com/en/insights/ninth-circuit-addresses-cfaa-and-agentic-ai-tools-in-groundbreaking-decision.html"
+    },
+    {
+      "headline": "AMD Buys the Startup That Bakes Trained Models Straight Into Silicon",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://newsroom.amd.com/news/amd-acquires-taalas-ai-inference/"
+    },
+    {
+      "headline": "Meta Enters the Coding-Agent War on Price, and Charges You in Prompts",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-05",
+      "source_url": "https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/"
+    },
+    {
+      "headline": "Lumilens Leaves Stealth With $900M+ and Says the Bottleneck Moved From Compute to Copper",
+      "publication_date": "2026-08-06",
+      "event_date": "2026-08-06",
+      "source_url": "https://siliconangle.com/2026/08/06/optical-networking-startup-lumilens-launches-900m-funding/"
+    }
+  ]
+}
