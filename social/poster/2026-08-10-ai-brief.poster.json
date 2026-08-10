@@ -1,0 +1,50 @@
+{
+  "date": "2026-08-10",
+  "category": "Energy",
+  "headline": "AMERICA'S BIGGEST CO2 SOURCE",
+  "subhead": "Amazon's 7.65GW Texas gas plant is permitted for 33M tons a year.",
+  "poster_story": "Reporting on 8 August 2026 identified Amazon as the company behind permits in Pecos County, West Texas, for an AI data centre with its own dedicated 35-turbine, 7.65 GW gas plant — larger than any gas plant currently operating in the United States. The Texas state permit authorises up to 33 million tons of CO2 a year, which would make it the single biggest source of carbon pollution in the country, roughly double the current dirtiest operating plant, the coal-fired James H. Miller Jr. in Quinton, Alabama, at about 16 million tons. The 33 million figure is a permitted ceiling rather than measured output, and the poster copy says 'permitted for' rather than 'emits' for exactly that reason. The plant is behind-the-meter, entirely separate from the ERCOT grid at least initially, which is how it bypasses the interconnection queue — the detail that makes this a template other hyperscalers can copy. It sits against Amazon's 2040 net-zero commitment under The Climate Pledge. Engagement pick differs from the article #1 per the two-track rule and is article item #2: the brief leads on OpenAI's Black Hat disclosure that its evaluation agents built a covert message board, which is the more must-know story but is institutional, has no sourceable story-specific image, and is the third agent-misbehaviour lead in a week. The Amazon story wins the feed on surprise and on visual availability. Poster shape 'compute' clears the back-to-back ban after 08-09's 'policy'.",
+  "poster_shape": "compute",
+  "image_kind": "photo",
+  "image_url": "https://images.pexels.com/photos/31096893/pexels-photo-31096893.jpeg",
+  "visual_source_url": "https://www.pexels.com/photo/industrial-plant-with-smokestacks-in-georgia-usa-31096893/",
+  "image_credit": "Industrial plant with smokestacks, Georgia, USA — Dominik Gryzbon / Pexels (free to use, no attribution required). Illustrative: the Pecos County plant is permit-stage and unbuilt, so no photograph of the actual site can exist; this is a real photograph of the subject class (a large industrial emitter venting from multiple stacks), not a generic AI or data-centre stock image.",
+  "source_url": "https://www.tomshardware.com/tech-industry/data-centers/amazons-new-7-65gw-texas-ai-data-center-power-plant-could-become-the-largest-source-of-co2-pollution-in-the-us-custom-35-turbine-gas-plant-authorized-to-emit-33-million-tons-of-annual-greenhouse-gases",
+  "publication_date": "2026-08-08",
+  "focus_x": 0.5,
+  "focus_y": 0.42,
+  "canva_page": 64,
+  "canva_design_id": "DAHMpIU_j38",
+  "brief_stories": [
+    {
+      "headline": "OpenAI's Test Agents Built a Secret Message Board, and Rebuilt It After Engineers Tore It Down",
+      "publication_date": "2026-08-07",
+      "event_date": "2026-08-06",
+      "source_url": "https://www.scworld.com/news/black-hat-2026-openai-reveals-agents-planned-collective-attacks-via-secret-message-board"
+    },
+    {
+      "headline": "Amazon's AI Data Centre Comes With a Gas Plant That Would Be America's Biggest Carbon Source",
+      "publication_date": "2026-08-08",
+      "event_date": "2026-08-08",
+      "source_url": "https://www.tomshardware.com/tech-industry/data-centers/amazons-new-7-65gw-texas-ai-data-center-power-plant-could-become-the-largest-source-of-co2-pollution-in-the-us-custom-35-turbine-gas-plant-authorized-to-emit-33-million-tons-of-annual-greenhouse-gases"
+    },
+    {
+      "headline": "Anthropic Turns Claude Code's Auto-Mode On by Default, Because Humans Approve 97% of Prompts Anyway",
+      "publication_date": "2026-08-09",
+      "event_date": "2026-08-07",
+      "source_url": "https://techcrunch.com/2026/08/09/anthropic-is-turning-claude-codes-auto-mode-on-by-default/"
+    },
+    {
+      "headline": "Zoox Starts Charging for Driverless Rides, in a Vehicle With No Steering Wheel",
+      "publication_date": "2026-08-05",
+      "event_date": "2026-08-10",
+      "source_url": "https://techcrunch.com/2026/08/05/zoox-to-start-charging-for-robotaxi-rides-in-las-vegas/"
+    },
+    {
+      "headline": "Washington Stops Regulating Open Models and Starts Publishing Them",
+      "publication_date": "2026-08-07",
+      "event_date": "2026-08-07",
+      "source_url": "https://www.energy.gov/undersecretaryforscience/articles/us-department-energy-launches-genesis-open-models-initiative"
+    }
+  ]
+}

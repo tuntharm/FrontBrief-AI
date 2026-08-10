@@ -1,0 +1,5 @@
+Amazon's next AI data centre comes with its own power plant.
+Permits in Pecos County, West Texas cover a 35-turbine, 7.65 GW gas plant — bigger than any gas plant operating in the US — authorised to emit up to 33 million tons of CO2 a year, roughly double America's dirtiest operating plant. That is a permitted ceiling, not measured output. It sits behind the meter, outside the ERCOT grid, which is how it skips the interconnection queue.
+Signal, not advice: grid connection, not chips, is the binding constraint on AI buildout — and hyperscalers are now buying their way around it by generating their own power.
+Full brief in bio.
+#AI #Amazon #DataCenters #AINews #FrontBriefAI
